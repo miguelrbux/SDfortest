@@ -1,0 +1,70 @@
+{
+  "designSystem": "BCI Wireframe System",
+  "version": "1.0.0",
+  "description": "Especificaciones de diseño para wireframes en escala de grises. Se basa en una jerarquía visual clara y componentes básicos para prototipado rápido.",
+  "palette": {
+    "name": "Grayscale Palette",
+    "colors": {
+      "primary": { "hex": "#1A1A1A", "role": "Texto principal, títulos, botones de acción." },
+      "secondary": { "hex": "#595959", "role": "Texto de cuerpo, subtítulos, íconos secundarios." },
+      "tertiary": { "hex": "#B3B3B3", "role": "Bordes, divisores, placeholders, estados deshabilitados." },
+      "background": { "hex": "#F2F2F2", "role": "Fondo principal de la interfaz." },
+      "surface": { "hex": "#FFFFFF", "role": "Fondos de tarjetas, modales y otros elementos de superficie." }
+    }
+  },
+  "typography": {
+    "fontFamily": "Overpass, sans-serif",
+    "hierarchy": [
+      { "tag": "headline-1", "size": "44px", "weight": "600", "lineHeight": "52px", "color": "primary" },
+      { "tag": "headline-2", "size": "34px", "weight": "600", "lineHeight": "42px", "color": "primary" },
+      { "tag": "headline-3", "size": "24px", "weight": "700", "lineHeight": "32px", "color": "secondary" },
+      { "tag": "subtitle-1", "size": "20px", "weight": "600", "lineHeight": "28px", "color": "secondary" },
+      { "tag": "subtitle-2", "size": "16px", "weight": "600", "lineHeight": "24px", "color": "secondary" },
+      { "tag": "subtitle-3", "size": "14px", "weight": "600", "lineHeight": "20px", "color": "secondary" },
+      { "tag": "body-1-bold", "size": "16px", "weight": "700", "lineHeight": "24px", "color": "secondary" },
+      { "tag": "body-1-semibold", "size": "16px", "weight": "600", "lineHeight": "24px", "color": "secondary" },
+      { "tag": "body-1-regular", "size": "16px", "weight": "400", "lineHeight": "24px", "color": "secondary" },
+      { "tag": "body-2-bold", "size": "14px", "weight": "700", "lineHeight": "20px", "color": "secondary" },
+      { "tag": "body-2-semibold", "size": "14px", "weight": "600", "lineHeight": "20px", "color": "secondary" },
+      { "tag": "body-2-regular", "size": "14px", "weight": "400", "lineHeight": "20px", "color": "secondary" },
+      { "tag": "overline-bold", "size": "12px", "weight": "700", "lineHeight": "16px", "color": "secondary" },
+      { "tag": "overline-semibold", "size": "12px", "weight": "600", "lineHeight": "16px", "color": "secondary" },
+      { "tag": "overline-regular", "size": "12px", "weight": "400", "lineHeight": "16px", "color": "secondary" },
+      { "tag": "caption", "size": "0.875rem", "weight": "400", "color": "tertiary" }
+    ]
+  },
+  "components": {
+    "buttons": {
+      "primary": { "backgroundColor": "primary", "textColor": "surface", "borderRadius": "100%", "description": "Botón de acción principal." },
+      "secondary": { "backgroundColor": "transparent", "textColor": "primary", "borderColor": "primary", "borderWidth": "2px", "borderRadius": "100%", "description": "Botón de acción secundaria." },
+      "disabled": { "backgroundColor": "tertiary", "textColor": "secondary", "borderRadius": "100%", "description": "Botón inactivo." }
+    },
+    "forms": {
+      "inputs": {
+        "text": { "backgroundColor": "surface", "textColor": "primary", "placeholderColor": "secondary", "borderColor": "tertiary", "borderRadius": "4px", "description": "Campo de texto para entradas de una línea." },
+        "textarea": { "backgroundColor": "surface", "textColor": "primary", "placeholderColor": "secondary", "borderColor": "tertiary", "borderRadius": "4px", "description": "Área de texto para entradas de varias líneas." },
+        "checkbox": { "accentColor": "primary", "labelColor": "primary", "description": "Casillas de verificación para selecciones múltiples." },
+        "radio": { "accentColor": "primary", "labelColor": "primary", "description": "Botones de radio para selecciones únicas." },
+        "select": { "backgroundColor": "surface", "textColor": "primary", "borderColor": "tertiary", "borderRadius": "4px", "description": "Selector de opciones." }
+      }
+    },
+    "containers": {
+      "card": { "backgroundColor": "surface", "borderColor": "tertiary", "borderRadius": "8px", "description": "Contenedor para agrupar contenido relacionado." },
+      "modal": { "backgroundColor": "surface", "overlayColor": "rgba(0, 0, 0, 0.5)", "description": "Ventana emergente para interacciones o información." }
+    },
+    "navigation": {
+      "navbar": { "backgroundColor": "surface", "borderColor": "tertiary", "description": "Barra de navegación principal." },
+      "link": { "textColor": "secondary", "activeColor": "primary", "activeBorderColor": "primary", "description": "Enlace de navegación." },
+      "breadcrumbs": { "textColor": "secondary", "separatorColor": "tertiary", "description": "Migas de pan para indicar la ubicación del usuario." }
+    },
+    "dataDisplay": {
+      "table": { "backgroundColor": "surface", "headerBackground": "#F8F8F8", "headerColor": "primary", "borderColor": "tertiary", "description": "Componente para mostrar datos en formato tabular." },
+      "list": { "textColor": "secondary", "borderColor": "tertiary", "description": "Componente para mostrar listas de elementos." },
+      "progressBar": { "backgroundColor": "tertiary", "fillColor": "secondary", "description": "Indicador visual de progreso." },
+      "placeholder": { "backgroundColor": "tertiary", "description": "Marcador de posición para imágenes o gráficos." }
+    },
+    "feedback": {
+      "alert": { "backgroundColor": "surface", "borderColor": "secondary", "description": "Contenedor para mensajes importantes del sistema." }
+    }
+  }
+}
