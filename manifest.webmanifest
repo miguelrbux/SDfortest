@@ -1,0 +1,16 @@
+{
+  "name": "Valdi · Guía de Valdivia",
+  "short_name": "Valdi",
+  "description": "Dónde comer, qué hacer y cómo moverte en Valdivia, apoyando a la U13 de Las Ánimas.",
+  "start_url": "./#hoy",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0B5D6B",
+  "lang": "es",
+  "icons": [
+    { "src": "icons/isotipo-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icons/isotipo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
