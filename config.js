@@ -4,7 +4,8 @@ window.VALDI_CONFIG = {
   // (Archivo > Compartir > Publicar en la Web > hoja "Publicados" > CSV).
   // Esa hoja NO debe incluir correos, RUT ni datos personales: solo lo que se muestra al turista.
   // Columnas esperadas (fila 1): nombre, rubro, sector, direccion, horario, descripcion,
-  // descripcion_en, web, telefono, nivel, foto, promocion, publicar
+  // descripcion_en, descripcion_pt, web, telefono, nivel, foto, promocion, publicar
+  // descripcion_en y descripcion_pt son opcionales: si faltan, la ficha se muestra en español.
   // "nivel": Aliado ($75.000+) | Destacado ($25.000+) | Colaborador ($5.000+). "publicar": SI para que aparezca.
   negociosCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkwmsgRZonCTa0RcapNSvlVskGuk1dcRcAUg0fLYjutWLAnR2zi_UgoMgCLcgYfJvyjllWhQPTxmIL/pub?single=true&output=csv&gid=487514021",
 

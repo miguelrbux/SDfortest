@@ -13,13 +13,15 @@
    "foto": "Valdivia_y_su_río.JPG",
    "corto": {
     "es": "La maratón pasa por la Costanera y el centro",
-    "en": "The marathon runs along the waterfront"
+    "en": "The marathon runs along the waterfront",
+    "pt": "A maratona passa pela Costanera e pelo centro"
    },
    "es": "El domingo 29 de noviembre la carrera a pie pasa por la Costanera, Avenida España y el centro histórico, con llegada frente al río. Elige un punto fijo en la Costanera para ver pasar a los atletas.",
    "en": "On Sunday, November 29, the run goes along the waterfront, Avenida España and the historic center, finishing by the river. Pick a spot on the waterfront to cheer the athletes.",
    "fuente": "La Tercera",
    "fuenteUrl": "https://www.latercera.com/el-deportivo/noticia/a-casi-una-semana-de-la-largada-valdivia-afina-detalles-para-el-primer-ironman-de-distancia-completa-de-chile/",
-   "lluvia": false
+   "lluvia": false,
+   "pt": "No domingo, 29 de novembro, a corrida passa pela Costanera (orla do rio), pela Avenida España e pelo centro histórico, com chegada em frente ao rio. Escolha um ponto fixo na Costanera para ver os atletas passarem."
   },
   {
    "id": "ironman-saval",
@@ -33,13 +35,15 @@
    "foto": "Flor_del_Loto,_Parque_Saval,_Valdivia._-_panoramio.jpg",
    "corto": {
     "es": "Zona de transición e IRONKIDS el viernes",
-    "en": "Transition area and IRONKIDS on Friday"
+    "en": "Transition area and IRONKIDS on Friday",
+    "pt": "Área de transição e IRONKIDS na sexta"
    },
    "es": "Aquí está la zona de transición. El viernes 27 de noviembre desde las 17:00 hay IRONKIDS y Family Run de 3 y 5 km, ideal para ir en familia.",
    "en": "Home of the transition area. On Friday, November 27 from 17:00 there's IRONKIDS and a 3 and 5 km Family Run, great for families.",
    "fuente": "Diario UACh",
    "fuenteUrl": "https://diario.uach.cl/uach-sera-protagonista-del-ironman-70-3-valdivia/",
-   "lluvia": false
+   "lluvia": false,
+   "pt": "Aqui fica a área de transição. Na sexta, 27 de novembro, a partir das 17h, tem IRONKIDS e Family Run de 3 e 5 km, ótimo para ir em família."
   },
   {
    "id": "mercado-fluvial",
@@ -52,13 +56,15 @@
    "foto": "Feria_Fluvial_Valdivia.jpg",
    "corto": {
     "es": "Mariscos frescos y lobos marinos junto al río",
-    "en": "Fresh seafood and sea lions by the river"
+    "en": "Fresh seafood and sea lions by the river",
+    "pt": "Frutos do mar frescos e lobos-marinhos à beira do rio"
    },
    "es": "Venta de pescados, mariscos y productos locales junto a una colonia de lobos marinos, en la costanera.",
    "en": "Fish, seafood and local products by the river, next to a colony of sea lions on the waterfront.",
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/atractivos/isla-teja-y-mercado-fluvial/",
-   "lluvia": false
+   "lluvia": false,
+   "pt": "Venda de peixes, frutos do mar e produtos locais ao lado de uma colônia de lobos-marinhos, na Costanera."
   },
   {
    "id": "mercado-municipal",
@@ -71,13 +77,15 @@
    "foto": "Mercado_Municipal,_Valdivia.JPG",
    "corto": {
     "es": "Cocinerías y artesanía frente al río",
-    "en": "Local eateries and crafts by the river"
+    "en": "Local eateries and crafts by the river",
+    "pt": "Restaurantes populares e artesanato em frente ao rio"
    },
    "es": "Artesanía y cocinerías con comida típica, frente a la costanera.",
    "en": "Handicrafts and small eateries with traditional food, across from the waterfront.",
    "fuente": "Viagens e Caminhos",
    "fuenteUrl": "https://www.viagensecaminhos.com/valdivia-chile/",
-   "lluvia": true
+   "lluvia": true,
+   "pt": "Artesanato e cocinerías (restaurantes simples) com comida típica, em frente à Costanera."
   },
   {
    "id": "isla-teja",
@@ -90,13 +98,15 @@
    "foto": "Valdivia_desde_teja.JPG",
    "corto": {
     "es": "Parques, museos y vista al centro",
-    "en": "Parks, museums and city views"
+    "en": "Parks, museums and city views",
+    "pt": "Parques, museus e vista para o centro"
    },
    "es": "Se llega a pie por el puente Pedro de Valdivia. Reúne el Jardín Botánico, museos y el Parque Prochelle.",
    "en": "Walk across the Pedro de Valdivia bridge. Home to the Botanical Garden, museums and Prochelle Park.",
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/atractivos/isla-teja-y-mercado-fluvial/",
-   "lluvia": false
+   "lluvia": false,
+   "pt": "Dá para chegar a pé pela ponte Pedro de Valdivia. Reúne o Jardim Botânico, museus e o Parque Prochelle."
   },
   {
    "id": "jardin-botanico",
@@ -109,13 +119,15 @@
    "foto": "UACh-Jardín_Botánico-1.JPG",
    "corto": {
     "es": "Bosque nativo a orillas del río",
-    "en": "Native forest by the river"
+    "en": "Native forest by the river",
+    "pt": "Mata nativa à beira do rio"
    },
    "es": "Flora nativa y exótica a orillas del río. Buen lugar para caminar o hacer un picnic.",
    "en": "Native and exotic plants by the river. A good spot for a walk or a picnic.",
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/itinerarios/conoce-los-imperdibles-de-valdivia-en-2-dias/",
-   "lluvia": false
+   "lluvia": false,
+   "pt": "Flora nativa e exótica à beira do rio. Bom lugar para caminhar ou fazer um piquenique."
   },
   {
    "id": "casa-anwandter",
@@ -128,13 +140,15 @@
    "foto": "Casa_Anwandter2.JPG",
    "corto": {
     "es": "Historia mapuche y alemana",
-    "en": "Mapuche and German history"
+    "en": "Mapuche and German history",
+    "pt": "História mapuche e alemã"
    },
    "es": "Historia mapuche y de la colonización alemana. Plan bajo techo para días de lluvia.",
    "en": "Mapuche history and German settlement. An indoor plan for rainy days.",
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/itinerarios/conoce-los-imperdibles-de-valdivia-en-2-dias/",
-   "lluvia": true
+   "lluvia": true,
+   "pt": "História mapuche e da colonização alemã. Programa em lugar coberto para dias de chuva."
   },
   {
    "id": "navegacion-rio",
@@ -147,13 +161,15 @@
    "foto": "Valdivia,_muelle_fluvial.JPG",
    "corto": {
     "es": "Paseo en barco desde la costanera",
-    "en": "Boat trip from the waterfront"
+    "en": "Boat trip from the waterfront",
+    "pt": "Passeio de barco saindo da Costanera"
    },
    "es": "Paseos en embarcación desde la costanera. Se ven astilleros, el puente levadizo y lobos marinos.",
    "en": "Boat trips from the waterfront, with views of shipyards, the drawbridge and sea lions.",
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/itinerarios/itinerari-en-niebla-historia-y-selva-valdiviana/",
-   "lluvia": false
+   "lluvia": false,
+   "pt": "Passeios de barco saindo da Costanera. Dá para ver estaleiros, a ponte levadiça e lobos-marinhos."
   },
   {
    "id": "fuerte-niebla",
@@ -166,13 +182,15 @@
    "foto": "Castillo_de_Niebla,_Valdivia.JPG",
    "corto": {
     "es": "Fuerte español del siglo XVII sobre el mar",
-    "en": "17th-century Spanish fort above the sea"
+    "en": "17th-century Spanish fort above the sea",
+    "pt": "Forte espanhol do século XVII sobre o mar"
    },
    "es": "Fortificación española del siglo XVII sobre el mar. Unos 25 minutos en bus desde el centro.",
    "en": "17th-century Spanish fort above the sea. About 25 minutes by bus from downtown.",
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/itinerarios/itinerari-en-niebla-historia-y-selva-valdiviana/",
-   "lluvia": false
+   "lluvia": false,
+   "pt": "Fortificação espanhola do século XVII sobre o mar. Cerca de 25 minutos de ônibus desde o centro."
   },
   {
    "id": "fuertes-corral",
@@ -185,13 +203,15 @@
    "foto": "Castillo_San_Sebastián_de_la_Cruz_06.JPG",
    "corto": {
     "es": "Cañones coloniales, en barcaza desde Niebla",
-    "en": "Colonial cannons, by ferry from Niebla"
+    "en": "Colonial cannons, by ferry from Niebla",
+    "pt": "Canhões coloniais, de balsa desde Niebla"
    },
    "es": "Fuertes coloniales del siglo XVII. Se llega en barcaza o lancha desde Niebla.",
    "en": "17th-century colonial forts. Reach them by ferry or boat from Niebla.",
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/destinos/valdivia/",
-   "lluvia": false
+   "lluvia": false,
+   "pt": "Fortes coloniais do século XVII. Chega-se de balsa ou lancha saindo de Niebla."
   },
   {
    "id": "parque-oncol",
@@ -204,13 +224,15 @@
    "foto": "Valdivian_temperate_rainforest.JPG",
    "corto": {
     "es": "Selva valdiviana y miradores al mar",
-    "en": "Rainforest trails and ocean views"
+    "en": "Rainforest trails and ocean views",
+    "pt": "Floresta valdiviana e mirantes para o mar"
    },
    "es": "Reserva de selva valdiviana costera, con senderos y miradores. Se llega en tour o en auto, cerca de 1 hora.",
    "en": "Coastal Valdivian rainforest reserve with trails and viewpoints. Around 1 hour by car or tour.",
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/pt-br/itinerarios/itinerario-em-niebla-historia-e-selva-valdiviana/",
-   "lluvia": false
+   "lluvia": false,
+   "pt": "Reserva de floresta valdiviana costeira, com trilhas e mirantes. Chega-se com passeio guiado ou de carro, em cerca de 1 hora."
   },
   {
    "id": "cervecerias",
@@ -223,13 +245,15 @@
    "foto": "",
    "corto": {
     "es": "La capital cervecera de Chile",
-    "en": "Chile's craft beer capital"
+    "en": "Chile's craft beer capital",
+    "pt": "A capital da cerveja do Chile"
    },
    "es": "Hay visitas guiadas, degustaciones y restaurantes, por ejemplo en Kunstmann, camino a Niebla.",
    "en": "Guided tours, tastings and restaurants, for example at Kunstmann on the road to Niebla.",
    "fuente": "Calendario Chile",
    "fuenteUrl": "https://www.calendariochile.com/turismo/los-mejores-planes-para-hacer-en-valdivia-chile",
-   "lluvia": true
+   "lluvia": true,
+   "pt": "Há visitas guiadas, degustações e restaurantes, por exemplo na Kunstmann, a caminho de Niebla."
   }
  ],
  "planes": [
@@ -241,7 +265,8 @@
     "ironman-costanera",
     "mercado-fluvial",
     "mercado-municipal"
-   ]
+   ],
+   "pt": "Domingo de Ironman"
   },
   {
    "id": "un-dia",
@@ -253,7 +278,8 @@
     "jardin-botanico",
     "casa-anwandter",
     "cervecerias"
-   ]
+   ],
+   "pt": "Valdivia em 1 dia"
   },
   {
    "id": "lluvia",
@@ -263,7 +289,8 @@
     "casa-anwandter",
     "mercado-municipal",
     "cervecerias"
-   ]
+   ],
+   "pt": "Dia de chuva"
   },
   {
    "id": "costa",
@@ -272,7 +299,8 @@
    "paradas": [
     "fuerte-niebla",
     "fuertes-corral"
-   ]
+   ],
+   "pt": "Litoral e fortes"
   }
  ],
  "evento": {
@@ -281,48 +309,58 @@
   "inicio": "2026-11-29T07:00:00-03:00",
   "titulo": {
    "es": "IRONMAN Valdivia",
-   "en": "IRONMAN Valdivia"
+   "en": "IRONMAN Valdivia",
+   "pt": "IRONMAN Valdivia"
   },
   "bajada": {
    "es": "Primer Ironman de distancia completa de Chile, junto al 70.3. Unos 3.000 atletas y más de 30 mil visitantes.",
-   "en": "Chile's first full-distance Ironman, plus the 70.3. About 3,000 athletes and 30,000+ visitors."
+   "en": "Chile's first full-distance Ironman, plus the 70.3. About 3,000 athletes and 30,000+ visitors.",
+   "pt": "Primeiro Ironman de distância completa do Chile, junto com o 70.3. Cerca de 3.000 atletas e mais de 30 mil visitantes."
   },
   "agenda": [
    {
     "dia": {
      "es": "Vie 27",
-     "en": "Fri 27"
+     "en": "Fri 27",
+     "pt": "Sex 27"
     },
     "hora": "17:00",
     "es": "IRONKIDS y Family Run 3 y 5 km · Parque Saval",
-    "en": "IRONKIDS and 3 & 5 km Family Run · Parque Saval"
+    "en": "IRONKIDS and 3 & 5 km Family Run · Parque Saval",
+    "pt": "IRONKIDS e Family Run de 3 e 5 km · Parque Saval"
    },
    {
     "dia": {
      "es": "Dom 29",
-     "en": "Sun 29"
+     "en": "Sun 29",
+     "pt": "Dom 29"
     },
     "hora": "07:00",
     "es": "Largada: natación en el río desde Collico",
-    "en": "Start: river swim from Collico"
+    "en": "Start: river swim from Collico",
+    "pt": "Largada: natação no rio, saindo de Collico"
    },
    {
     "dia": {
      "es": "Dom 29",
-     "en": "Sun 29"
+     "en": "Sun 29",
+     "pt": "Dom 29"
     },
     "hora": "",
     "es": "Bicicleta: 90 km (70.3) y 180 km hacia Máfil y Mariquina",
-    "en": "Bike: 90 km (70.3) and 180 km toward Máfil and Mariquina"
+    "en": "Bike: 90 km (70.3) and 180 km toward Máfil and Mariquina",
+    "pt": "Bike: 90 km (70.3) e 180 km rumo a Máfil e Mariquina"
    },
    {
     "dia": {
      "es": "Dom 29",
-     "en": "Sun 29"
+     "en": "Sun 29",
+     "pt": "Dom 29"
     },
     "hora": "",
     "es": "Trote: 21 y 42 km por Costanera y centro, llegada frente al río",
-    "en": "Run: 21 and 42 km along the waterfront and downtown, finish by the river"
+    "en": "Run: 21 and 42 km along the waterfront and downtown, finish by the river",
+    "pt": "Corrida: 21 e 42 km pela Costanera e pelo centro, chegada em frente ao rio"
    }
   ],
   "consejos": {
@@ -333,11 +371,16 @@
    "en": [
     "Expect road closures most of Sunday: get around on foot.",
     "Book restaurants early: the city will be packed."
+   ],
+   "pt": [
+    "Haverá bloqueios de trânsito durante boa parte do domingo: ande a pé.",
+    "Reserve restaurantes com antecedência: a cidade vai estar lotada."
    ]
   },
   "nota": {
    "es": "Hora de largada según tusdesafios.com. Confirma horarios y cortes en el sitio oficial.",
-   "en": "Start time per tusdesafios.com. Check times and closures on the official site."
+   "en": "Start time per tusdesafios.com. Check times and closures on the official site.",
+   "pt": "Horário de largada segundo tusdesafios.com. Confirme horários e bloqueios no site oficial."
   },
   "url": "https://www.ironman.com/races/im-valdivia"
  }

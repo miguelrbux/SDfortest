@@ -4,8 +4,8 @@ Web instalable (PWA) sin build ni dependencias. Se publica tal cual en GitHub Pa
 
 ## Cómo actualizar los negocios
 1. En la planilla de respuestas del formulario, crea una hoja **Publicados** con estas columnas en la fila 1:
-   `nombre, rubro, sector, direccion, horario, descripcion, descripcion_en, web, telefono, nivel, foto, promocion, publicar`
-   (sin correos, RUT ni datos personales).
+   `nombre, rubro, sector, direccion, horario, descripcion, descripcion_en, descripcion_pt, web, telefono, nivel, foto, promocion, publicar`
+   (sin correos, RUT ni datos personales). `descripcion_en` y `descripcion_pt` son opcionales: si están vacías, la ficha sale en español.
 2. `nivel`: Aliado (desde $75.000), Destacado (desde $25.000) o Colaborador (desde $5.000). `publicar`: SI cuando confirmes la transferencia.
 3. Archivo › Compartir › Publicar en la Web › hoja «Publicados» › CSV. Pega la URL en `negociosCsv` de `config.js`.
 4. Opcional: hoja **Campaña** con columnas `recaudado, negocios` en una fila, publicada como CSV en `campanaCsv`.
@@ -26,3 +26,8 @@ La sección `#transparencia` muestra lo recibido (hoja Campaña), lo entregado a
 Para las entregas, crea en la planilla una hoja **Traspasos** con columnas `fecha, monto, destino, comprobante, nota`
 (fecha AAAA-MM-DD; comprobante = enlace público a la foto o PDF de la transferencia, sin datos bancarios a la vista).
 Publícala como CSV y pega la URL en `traspasosCsv` de `config.js`.
+
+## Idiomas
+Español, inglés y portugués (Brasil). El selector está en la barra superior. La web elige sola el idioma del teléfono la primera vez,
+y se puede forzar con `?lang=pt`, `?lang=en` o `?lang=es` en el enlace (útil para un QR pensado para turistas brasileños).
+Los textos de la interfaz están en `T` de `app.js`; los de lugares, planes y el evento, en los campos `es`, `en` y `pt` de `data/lugares.json`.
