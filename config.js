@@ -6,11 +6,11 @@ window.VALDI_CONFIG = {
   // Columnas esperadas (fila 1): nombre, rubro, sector, direccion, horario, descripcion,
   // descripcion_en, web, telefono, nivel, foto, promocion, publicar
   // "nivel": Aliado ($75.000+) | Destacado ($25.000+) | Colaborador ($5.000+). "publicar": SI para que aparezca.
-  negociosCsv: "https://docs.google.com/spreadsheets/d/1I165leeevFWjT_e0F7oSiHXXPPG2Ks3tLvbGCiOlODY/pub?single=true&output=csv&gid=487514021",
+  negociosCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkwmsgRZonCTa0RcapNSvlVskGuk1dcRcAUg0fLYjutWLAnR2zi_UgoMgCLcgYfJvyjllWhQPTxmIL/pub?single=true&output=csv&gid=487514021",
 
   // Campaña. Si campanaCsv tiene URL (hoja "Campaña" publicada como CSV, con una fila
   // recaudado,negocios), se usa esa; si no, se usan los valores fijos de abajo.
-  campanaCsv: "https://docs.google.com/spreadsheets/d/1I165leeevFWjT_e0F7oSiHXXPPG2Ks3tLvbGCiOlODY/pub?single=true&output=csv&gid=1531113573",
+  campanaCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkwmsgRZonCTa0RcapNSvlVskGuk1dcRcAUg0fLYjutWLAnR2zi_UgoMgCLcgYfJvyjllWhQPTxmIL/pub?single=true&output=csv&gid=1531113573",
   meta: 5000000,
   recaudado: 0,
   negocios: 0,
