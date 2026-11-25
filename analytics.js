@@ -101,6 +101,7 @@
   let ultimoToque = 0;
   document.addEventListener("pointerdown", () => { ultimoToque = Date.now(); }, true);
   document.addEventListener("keydown", () => { ultimoToque = Date.now(); }, true);
+  document.addEventListener("change", () => { ultimoToque = Date.now(); }, true);
   new MutationObserver(() => {
     const nuevo = idioma();
     if (nuevo !== idiomaPrevio && Date.now() - ultimoToque < 3000) {
@@ -144,7 +145,20 @@
       return;
     }
 
+    // Introducción (onboarding)
+    if (n.closest(".onb")) {
+      const slides = document.querySelectorAll(".onb .onb-slide");
+      const i = [...slides].findIndex((x) => x.classList.contains("activa"));
+      const paso = { paso: i + 1, pasos: slides.length };
+      if (n.matches(".onb-saltar")) { introCerrada = true; enviar("intro_saltar", paso); }
+      else if (n.matches(".onb-sig") && i === slides.length - 1) { introCerrada = true; enviar("intro_completar", paso); }
+      else if (n.closest(".onb-idiomas")) enviar("intro_elegir_idioma", Object.assign(paso, { idioma_elegido: n.dataset.l || "" }));
+      return;
+    }
+    if (n.id === "ver-intro") { enviar("intro_ver_de_nuevo", {}); return; }
+
     // Ironman / panorama de la semana
+    if (n.id === "evento-toggle") { enviar(n.getAttribute("aria-expanded") === "true" ? "panorama_colapsar" : "panorama_expandir", { evento: texto(document.getElementById("t-evento")) }); return; }
     if (n.id === "evento-plan") { enviar("ironman_armar_plan", { evento: texto(document.getElementById("t-evento")) }); return; }
     if (n.id === "evento-link") { enviar("ironman_sitio_oficial", { evento: texto(document.getElementById("t-evento")), link_url: href }); return; }
 
@@ -185,6 +199,21 @@
     const d = e.target;
     if (d.matches && d.matches("details.acordeon") && d.open) enviar("abrir_ayuda", { tema: texto(d.querySelector("summary")) });
   }, true);
+
+  // Escape cierra la introducción: cuenta como saltarla.
+  let introCerrada = false;
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape" || introCerrada) return;
+    const slides = document.querySelectorAll(".onb .onb-slide");
+    if (!slides.length) return;
+    introCerrada = true;
+    const i = [...slides].findIndex((x) => x.classList.contains("activa"));
+    enviar("intro_saltar", { paso: i + 1, pasos: slides.length, metodo: "escape" });
+  }, true);
+  // Cada vez que se abre la intro, se mide.
+  new MutationObserver((ms) => {
+    for (const m of ms) for (const nd of m.addedNodes) if (nd.classList && nd.classList.contains("onb")) { introCerrada = false; enviar("intro_ver", {}); }
+  }).observe(document.body, { childList: true });
 
   // ---------- Aviso de cookies ----------
   let aviso = null;
@@ -227,6 +256,14 @@
 
   const decision = leer();
   if (decision === "si") activar();
-  else if (decision !== "no") mostrarAviso();
+  else if (decision !== "no") {
+    // Si está la introducción en pantalla, el aviso aparece cuando se cierre.
+    const esperarIntro = () => {
+      if (!document.querySelector(".onb")) { mostrarAviso(); return; }
+      const ob = new MutationObserver(() => { if (!document.querySelector(".onb")) { ob.disconnect(); setTimeout(mostrarAviso, 400); } });
+      ob.observe(document.body, { childList: true });
+    };
+    setTimeout(esperarIntro, 600); // la intro se abre a los 250 ms
+  }
   pintarTextosAviso();
 })();

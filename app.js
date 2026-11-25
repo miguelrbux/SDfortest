@@ -38,6 +38,7 @@
       up: "Subir", down: "Bajar", less: "Menos tiempo", more: "Más tiempo", del: "Quitar",
       stops: (n) => `${n} paradas`, myDayShare: "Mi día en Valdivia",
       weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% lluvia` : ""}`,
+      eventMore: "Ver agenda y consejos", eventLess: "Ocultar detalles",
       eventTag: "Panorama de la semana", eventPlan: "Armar mi domingo", eventSite: "Sitio oficial", eventBadge: "Ironman",
       countdown: (d, h) => (d > 0 ? `Faltan ${d} día${d === 1 ? "" : "s"}` : h > 0 ? `Faltan ${h} h` : "¡Hoy!"), live: "En carrera ahora",
       seeReport: "Ver informe de transparencia", back: "Volver", transpTitle: "Transparencia", transpSub: "Cada aporte y cada entrega al club, a la vista de todos.",
@@ -47,7 +48,7 @@
       noDonors: "Pronto verás aquí a los negocios que aportan.", updated: (h) => `Datos en vivo desde la planilla de la campaña · ${h}`,
       progress: (p, d) => `${p}% de la meta · ${d}`,
       wordsTitle: "Habla como valdiviano", wordsSub: "Las palabras que vas a escuchar en la calle, la mesa y la micro.",
-      langBtn: "EN", langLabel: "Change language to English", call_: "Llamar al"
+      langLabel: "Idioma", navLabel: "Secciones", sosLabel: "Emergencias", sectorLabel: "Sector", topicsLabel: "Temas", call_: "Llamar al"
     },
     en: {
       skip: "Skip to content", sos: "SOS", offline: "You're offline. Showing your saved information.",
@@ -80,6 +81,7 @@
       up: "Move up", down: "Move down", less: "Less time", more: "More time", del: "Remove",
       stops: (n) => `${n} stops`, myDayShare: "My day in Valdivia",
       weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% rain` : ""}`,
+      eventMore: "See schedule and tips", eventLess: "Hide details",
       eventTag: "This week's big event", eventPlan: "Plan my Sunday", eventSite: "Official site", eventBadge: "Ironman",
       countdown: (d, h) => (d > 0 ? `${d} day${d === 1 ? "" : "s"} to go` : h > 0 ? `${h} h to go` : "Today!"), live: "Racing now",
       seeReport: "See transparency report", back: "Back", transpTitle: "Transparency", transpSub: "Every contribution and every handover to the club, in the open.",
@@ -89,80 +91,126 @@
       noDonors: "Contributing businesses will appear here soon.", updated: (h) => `Live data from the campaign sheet · ${h}`,
       progress: (p, d) => `${p}% of the goal · ${d}`,
       wordsTitle: "Talk like a local", wordsSub: "Words you'll hear on the street, at the table and on the bus.",
-      langBtn: "ES", langLabel: "Cambiar idioma a español", call_: "Call"
+      langLabel: "Language", navLabel: "Sections", sosLabel: "Emergencies", sectorLabel: "Area", topicsLabel: "Topics", call_: "Call"
+    },
+    pt: {
+      skip: "Pular para o conteúdo", sos: "SOS", offline: "Sem conexão. Mostrando as últimas informações salvas.",
+      todayTitle: "Descubra Valdivia", todaySub: "Comer, passear e montar seu dia, tudo num só lugar.",
+      campaignTitle: "Sua visita apoia o time sub-13 do Las Ánimas",
+      of: (m) => `de ${m}`, campaignFoot: (n, d) => `${n ? n + " negócios contribuindo · " : ""}Meta até ${d}`,
+      plansTitle: "Monte seu dia em 1 toque", featuredTitle: "Destaques", ideasTitle: "Imperdíveis", ideasRain: "Programas em lugar coberto", seeAll: "Ver tudo",
+      tipTitle: "Dica do dia", eatTitle: "Comer e beber", doTitle: "O que fazer", dayTitle: "Meu dia", helpTitle: "Ajuda",
+      moveTitle: "Como se locomover", tipsTitle: "Dicas", moveNote: "Preços e horários podem mudar. Confirme antes de ir.",
+      tsunamiTitle: "Terremoto ou tsunami no litoral",
+      tsunamiBody: "Se o tremor não deixar você ficar de pé ou a sirene tocar: suba a pé para um lugar alto. Não espere o aviso oficial.",
+      source: "Fonte", search: "Buscar", searchPh: "Busque um lugar ou prato", searchPh2: "Busque um lugar ou atividade",
+      footerBusiness: "Tem um negócio em Valdivia?", footerCta: "Participe e apoie o sub-13",
+      footerNote: "“Aliado” e “Destaque” indicam uma contribuição maior para a campanha. Informação de referência: confirme os horários antes de ir.",
+      photoCredits: "Fotos: Wikimedia Commons, com licenças livres. Toque no crédito de cada foto para ver autor e licença.",
+      tabToday: "Hoje", tabEat: "Comer", tabDo: "Fazer", tabDay: "Meu dia", tabHelp: "Ajuda",
+      all: "Tudo", directions: "Como chegar", call: "Ligar", web: "Site", whatsapp: "WhatsApp",
+      featured: "Destaque", main: "Aliado", supports: "Apoia o sub-13", indoor: "Lugar coberto",
+      byBusiness: "Informação fornecida pelo estabelecimento", photo: "Foto",
+      results: (n) => `${n} resultado${n === 1 ? "" : "s"}`,
+      empty: "Nenhum resultado. Tente outra busca.", noBusiness: "Em breve você verá aqui os negócios da campanha.",
+      open: (n) => `Ver ${n}`, add: (n) => `Adicionar ${n} ao Meu dia`, remove: (n) => `Tirar ${n} do Meu dia`,
+      added: "Adicionado ao Meu dia", removed: "Retirado do Meu dia", planAdded: (n) => `${n} paradas no Meu dia`,
+      addDay: "Adicionar ao Meu dia", inDay: "No Meu dia", close: "Fechar",
+      min: (m) => (m >= 60 ? `${Math.floor(m / 60)} h${m % 60 ? " " + (m % 60) + " min" : ""}` : `${m} min`),
+      startAt: "Começo às", dayEmptyT: "Seu dia está vazio", dayEmpty: "Toque em “+” em qualquer lugar ou escolha um roteiro pronto.",
+      openRoute: "Ver rota no mapa", share: "Compartilhar", clear: "Limpar", copied: "Roteiro copiado",
+      dayNote: "Os tempos são aproximados e incluem 20 min de deslocamento entre as paradas.",
+      daySummary: (n, fin) => `${n} parada${n === 1 ? "" : "s"} · termina ~${fin}`,
+      up: "Subir", down: "Descer", less: "Menos tempo", more: "Mais tempo", del: "Tirar",
+      stops: (n) => `${n} paradas`, myDayShare: "Meu dia em Valdivia",
+      weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% de chuva` : ""}`,
+      eventMore: "Ver agenda e dicas", eventLess: "Ocultar detalhes",
+      eventTag: "Destaque da semana", eventPlan: "Montar meu domingo", eventSite: "Site oficial", eventBadge: "Ironman",
+      countdown: (d, h) => (d > 0 ? `Falta${d === 1 ? "" : "m"} ${d} dia${d === 1 ? "" : "s"}` : h > 0 ? `Faltam ${h} h` : "É hoje!"), live: "Prova em andamento",
+      seeReport: "Ver relatório de transparência", back: "Voltar", transpTitle: "Transparência", transpSub: "Cada contribuição e cada repasse ao clube, à vista de todos.",
+      kRecv: "Recebido", kSent: "Repassado ao clube", kHeld: "A repassar", howTitle: "Como funciona", transfersTitle: "Repasses ao clube", donorsTitle: "Negócios que contribuem",
+      reglas: ["Os negócios transferem sua contribuição para uma conta usada só para esta campanha, em nome do criador da Remada.", "A cada 15 dias, o valor reunido é repassado à categoria sub-13 do Club de Deportes Las Ánimas.", "Publicamos aqui cada repasse com data e comprovante.", "Até CLP 5.000.000, tudo vai para as famílias. Se a meta for superada, o excedente cobre a operação da Remada e o que sobrar volta para as famílias. A Remada não tem fins lucrativos."],
+      noTransfers: "Ainda não há repasses. O primeiro será feito nos próximos 15 dias.", receipt: "Ver comprovante",
+      noDonors: "Em breve você verá aqui os negócios que contribuem.", updated: (h) => `Dados ao vivo da planilha da campanha · ${h}`,
+      progress: (p, d) => `${p}% da meta · ${d}`,
+      wordsTitle: "Fale como um valdiviano", wordsSub: "Palavras chilenas que você vai ouvir na rua, à mesa e no ônibus. O significado vem em português.",
+      langLabel: "Idioma", navLabel: "Seções", sosLabel: "Emergências", sectorLabel: "Região", topicsLabel: "Temas", call_: "Ligar para"
     }
   };
 
   const EMERGENCIAS = [
-    { n: "131", es: "Ambulancia", en: "Ambulance" },
-    { n: "132", es: "Bomberos", en: "Fire" },
-    { n: "133", es: "Carabineros", en: "Police" },
-    { n: "137", es: "Emergencia en el mar", en: "Sea rescue" }
+    { n: "131", es: "Ambulancia", en: "Ambulance", pt: "Ambulância" },
+    { n: "132", es: "Bomberos", en: "Fire", pt: "Bombeiros" },
+    { n: "133", es: "Carabineros", en: "Police", pt: "Polícia (Carabineros)" },
+    { n: "137", es: "Emergencia en el mar", en: "Sea rescue", pt: "Resgate no mar" }
   ];
   const MOVERSE = [
-    { es: ["A pie", "Centro, costanera e Isla Teja se recorren caminando."], en: ["On foot", "Downtown, the waterfront and Isla Teja are walkable."] },
-    { es: ["Micro (bus)", "Recorren la ciudad y llegan a Niebla. Lleva monedas por si acaso."], en: ["Micro (city bus)", "They cover the city and go to Niebla. Carry some coins."] },
-    { es: ["Colectivo", "Taxi compartido con ruta fija. Rápido y barato, se paga en efectivo."], en: ["Colectivo", "Shared taxi with a fixed route. Fast and cheap, pay in cash."] },
-    { es: ["Taxi y apps", "Lo más cómodo de noche o al aeródromo."], en: ["Taxis and apps", "Easiest at night or to the airport."] },
-    { es: ["Niebla – Corral", "Barcaza y lanchas desde el muelle de Niebla. Con mal tiempo se suspenden."], en: ["Niebla – Corral", "Ferry and boats from Niebla pier. They stop in bad weather."] },
-    { es: ["Llegar y salir", "Aeródromo Pichoy: 30 min al centro. Terminal de buses: a pasos del centro."], en: ["Arriving and leaving", "Pichoy airport: 30 min to downtown. Bus terminal: close to downtown."] }
+    { es: ["A pie", "Centro, costanera e Isla Teja se recorren caminando."], en: ["On foot", "Downtown, the waterfront and Isla Teja are walkable."], pt: ["A pé", "O centro, a Costanera (orla do rio) e a Isla Teja dá para conhecer caminhando."] },
+    { es: ["Micro (bus)", "Recorren la ciudad y llegan a Niebla. Lleva monedas por si acaso."], en: ["Micro (city bus)", "They cover the city and go to Niebla. Carry some coins."], pt: ["Micro (ônibus)", "Circulam pela cidade e vão até Niebla. Leve moedas, por via das dúvidas."] },
+    { es: ["Colectivo", "Taxi compartido con ruta fija. Rápido y barato, se paga en efectivo."], en: ["Colectivo", "Shared taxi with a fixed route. Fast and cheap, pay in cash."], pt: ["Colectivo", "Táxi compartilhado com rota fixa. Rápido e barato, pago em dinheiro."] },
+    { es: ["Taxi y apps", "Lo más cómodo de noche o al aeródromo."], en: ["Taxis and apps", "Easiest at night or to the airport."], pt: ["Táxi e aplicativos", "O mais prático à noite ou para ir ao aeroporto."] },
+    { es: ["Niebla – Corral", "Barcaza y lanchas desde el muelle de Niebla. Con mal tiempo se suspenden."], en: ["Niebla – Corral", "Ferry and boats from Niebla pier. They stop in bad weather."], pt: ["Niebla – Corral", "Balsa e lanchas saem do cais de Niebla. Com mau tempo, são suspensas."] },
+    { es: ["Llegar y salir", "Aeródromo Pichoy: 30 min al centro. Terminal de buses: a pasos del centro."], en: ["Arriving and leaving", "Pichoy airport: 30 min to downtown. Bus terminal: close to downtown."], pt: ["Chegar e partir", "Aeroporto Pichoy: 30 min até o centro. Rodoviária: pertinho do centro."] }
   ];
   const TIPS = [
-    { es: ["Clima", "Llueve seguido, incluso en verano. Lleva chaqueta impermeable."], en: ["Weather", "It rains often, even in summer. Bring a rain jacket."] },
-    { es: ["Dinero", "Casi todo acepta tarjeta. Propina sugerida: 10%."], en: ["Money", "Most places take cards. Customary tip: 10%."] },
-    { es: ["Lobos marinos", "Míralos a distancia. No los alimentes: pueden morder."], en: ["Sea lions", "Watch from a distance. Don't feed them: they bite."] },
-    { es: ["Cerveza", "Valdivia es la capital cervecera. Si tomas, no manejes."], en: ["Beer", "Valdivia is the craft beer capital. If you drink, don't drive."] },
-    { es: ["Ironman y eventos", "En días de carrera se cierran calles y la costanera. Mejor camina."], en: ["Ironman and events", "On race days streets and the waterfront close. Walk instead."] },
-    { es: ["Costa", "Respeta los cierres de senderos y playas: hay riesgo de derrumbes."], en: ["Coast", "Respect closed trails and beaches: there is landslide risk."] }
+    { es: ["Clima", "Llueve seguido, incluso en verano. Lleva chaqueta impermeable."], en: ["Weather", "It rains often, even in summer. Bring a rain jacket."], pt: ["Clima", "Chove com frequência, até no verão. Traga uma jaqueta impermeável."] },
+    { es: ["Dinero", "Casi todo acepta tarjeta. Propina sugerida: 10%."], en: ["Money", "Most places take cards. Customary tip: 10%."], pt: ["Dinheiro", "Quase todo lugar aceita cartão. A gorjeta sugerida (propina) é de 10%."] },
+    { es: ["Lobos marinos", "Míralos a distancia. No los alimentes: pueden morder."], en: ["Sea lions", "Watch from a distance. Don't feed them: they bite."], pt: ["Lobos-marinhos", "Observe de longe. Não dê comida: eles mordem."] },
+    { es: ["Cerveza", "Valdivia es la capital cervecera. Si tomas, no manejes."], en: ["Beer", "Valdivia is the craft beer capital. If you drink, don't drive."], pt: ["Cerveja", "Valdivia é a capital da cerveja artesanal do Chile. Se beber, não dirija."] },
+    { es: ["Ironman y eventos", "En días de carrera se cierran calles y la costanera. Mejor camina."], en: ["Ironman and events", "On race days streets and the waterfront close. Walk instead."], pt: ["Ironman e eventos", "Em dia de prova, ruas e a Costanera ficam fechadas. Melhor ir a pé."] },
+    { es: ["Costa", "Respeta los cierres de senderos y playas: hay riesgo de derrumbes."], en: ["Coast", "Respect closed trails and beaches: there is landslide risk."], pt: ["Litoral", "Respeite trilhas e praias interditadas: há risco de deslizamentos."] }
   ];
   // Palabras locales: [palabra, significado es, significado en, ejemplo]
   const PALABRAS = {
-    charla: { es: "Conversar", en: "Small talk", items: [
-      ["¿Cachai?", "¿Entiendes?", "Get it? / You know?", "«Es por allá, ¿cachai?»"],
-      ["Po", "Muletilla que refuerza: «sí po», «no po»", "Filler word for emphasis: “sí po” = yeah, sure", "«¡Obvio po!»"],
-      ["¿Cómo estai?", "¿Cómo estás? (informal)", "How are you? (casual)", "«¡Hola! ¿Cómo estai?»"],
-      ["Bacán", "Genial, muy bueno", "Awesome", "«El paseo en barco estuvo bacán»"],
-      ["Fome", "Aburrido, sin gracia", "Boring, lame", "«Llovió y el día quedó fome»"],
-      ["Cuático", "Impresionante o exagerado", "Wild, intense, unbelievable", "«Correr 42 km es cuático»"],
-      ["Harto", "Mucho, bastante", "A lot, plenty", "«Hay harta gente en la Costanera»"],
-      ["Al tiro", "Enseguida, ahora mismo", "Right away", "«Te lo traigo al tiro»"],
-      ["Piola", "Tranquilo, sin llamar la atención", "Chill, low-key", "«Un bar piola junto al río»"],
-      ["Pololo / polola", "Novio / novia", "Boyfriend / girlfriend", "«Vine con mi polola»"],
-      ["Cabros", "Chicos, jóvenes", "Kids, young people", "«Los cabros de la U13 juegan el sábado»"],
-      ["Guagua", "Bebé", "Baby", "«¿Hay mudador para la guagua?»"],
-      ["Pega", "Trabajo", "Job, work", "«Mañana tengo pega temprano»"],
-      ["Carrete", "Fiesta, salida nocturna", "Party, night out", "«¿Dónde es el carrete?»"]
+    charla: { es: "Conversar", en: "Small talk", pt: "Conversa", items: [
+      ["¿Cachai?", "¿Entiendes?", "Get it? / You know?", "«Es por allá, ¿cachai?»", "Entendeu? / Sacou?"],
+      ["Po", "Muletilla que refuerza: «sí po», «no po»", "Filler word for emphasis: “sí po” = yeah, sure", "«¡Obvio po!»", "Reforço no fim da frase: “sí po” = sim, claro"],
+      ["¿Cómo estai?", "¿Cómo estás? (informal)", "How are you? (casual)", "«¡Hola! ¿Cómo estai?»", "Como você está? (informal)"],
+      ["Bacán", "Genial, muy bueno", "Awesome", "«El paseo en barco estuvo bacán»", "Muito legal, demais"],
+      ["Fome", "Aburrido, sin gracia", "Boring, lame", "«Llovió y el día quedó fome»", "Chato, sem graça (não tem nada a ver com fome!)"],
+      ["Cuático", "Impresionante o exagerado", "Wild, intense, unbelievable", "«Correr 42 km es cuático»", "Impressionante ou exagerado"],
+      ["Harto", "Mucho, bastante", "A lot, plenty", "«Hay harta gente en la Costanera»", "Muito, bastante"],
+      ["Al tiro", "Enseguida, ahora mismo", "Right away", "«Te lo traigo al tiro»", "Na hora, agora mesmo"],
+      ["Piola", "Tranquilo, sin llamar la atención", "Chill, low-key", "«Un bar piola junto al río»", "Tranquilo, discreto"],
+      ["Pololo / polola", "Novio / novia", "Boyfriend / girlfriend", "«Vine con mi polola»", "Namorado / namorada"],
+      ["Cabros", "Chicos, jóvenes", "Kids, young people", "«Los cabros de la U13 juegan el sábado»", "Garotos, jovens"],
+      ["Guagua", "Bebé", "Baby", "«¿Hay mudador para la guagua?»", "Bebê"],
+      ["Pega", "Trabajo", "Job, work", "«Mañana tengo pega temprano»", "Trabalho"],
+      ["Carrete", "Fiesta, salida nocturna", "Party, night out", "«¿Dónde es el carrete?»", "Festa, balada"]
     ]},
-    mesa: { es: "En la mesa", en: "Food and drink", items: [
-      ["Once", "Merienda de la tarde, con pan, té y algo dulce", "Afternoon tea with bread and something sweet", "«Tomemos once con kuchen»"],
-      ["Kuchen", "Pastel de origen alemán, típico del sur", "German-style cake, a southern classic", "«El kuchen de murta es de aquí»"],
-      ["Schop", "Cerveza de barril", "Draft beer", "«Un schop de la casa, por favor»"],
-      ["Chela", "Cerveza (informal)", "Beer (slang)", "«¿Vamos por unas chelas?»"],
-      ["Copete", "Trago con alcohol", "Alcoholic drink", "«Sin copete, que mañana corro»"],
-      ["Paila marina", "Caldo caliente de mariscos y pescado", "Hot seafood and fish soup", "«Ideal para un día de lluvia»"],
-      ["Curanto", "Mariscos, carnes y papas cocidos juntos", "Shellfish, meat and potatoes cooked together", "«En Niebla sirven curanto en olla»"],
-      ["Completo", "Hot dog con palta, tomate y mayo", "Hot dog with avocado, tomato and mayo", "«Un completo italiano»"],
-      ["Palta", "Aguacate", "Avocado", "«¿Le pone palta?»"],
-      ["Sopaipilla", "Masa frita de zapallo", "Fried pumpkin dough", "«Sopaipillas con pebre cuando llueve»"],
-      ["Pebre", "Salsa de tomate, cebolla, cilantro y ají", "Fresh tomato, onion and chili salsa", "«Pásame el pebre»"],
-      ["Mote con huesillo", "Bebida dulce con trigo y durazno seco", "Sweet drink with wheat and dried peach", "«Refrescante en verano»"],
-      ["Murta", "Fruto silvestre del sur, rojo y aromático", "Wild southern berry", "«Mermelada de murta»"]
+    mesa: { es: "En la mesa", en: "Food and drink", pt: "À mesa", items: [
+      ["Once", "Merienda de la tarde, con pan, té y algo dulce", "Afternoon tea with bread and something sweet", "«Tomemos once con kuchen»", "Lanche da tarde, com pão, chá e algo doce"],
+      ["Kuchen", "Pastel de origen alemán, típico del sur", "German-style cake, a southern classic", "«El kuchen de murta es de aquí»", "Torta de origem alemã, típica do sul"],
+      ["Schop", "Cerveza de barril", "Draft beer", "«Un schop de la casa, por favor»", "Chope"],
+      ["Chela", "Cerveza (informal)", "Beer (slang)", "«¿Vamos por unas chelas?»", "Cerveja (gíria)"],
+      ["Copete", "Trago con alcohol", "Alcoholic drink", "«Sin copete, que mañana corro»", "Bebida alcoólica, drinque"],
+      ["Paila marina", "Caldo caliente de mariscos y pescado", "Hot seafood and fish soup", "«Ideal para un día de lluvia»", "Caldo quente de frutos do mar e peixe"],
+      ["Curanto", "Mariscos, carnes y papas cocidos juntos", "Shellfish, meat and potatoes cooked together", "«En Niebla sirven curanto en olla»", "Frutos do mar, carnes e batatas cozidos juntos"],
+      ["Completo", "Hot dog con palta, tomate y mayo", "Hot dog with avocado, tomato and mayo", "«Un completo italiano»", "Cachorro-quente com abacate, tomate e maionese"],
+      ["Palta", "Aguacate", "Avocado", "«¿Le pone palta?»", "Abacate"],
+      ["Sopaipilla", "Masa frita de zapallo", "Fried pumpkin dough", "«Sopaipillas con pebre cuando llueve»", "Massa frita de abóbora"],
+      ["Pebre", "Salsa de tomate, cebolla, cilantro y ají", "Fresh tomato, onion and chili salsa", "«Pásame el pebre»", "Molho de tomate, cebola, coentro e pimenta"],
+      ["Mote con huesillo", "Bebida dulce con trigo y durazno seco", "Sweet drink with wheat and dried peach", "«Refrescante en verano»", "Bebida doce com trigo e pêssego seco"],
+      ["Murta", "Fruto silvestre del sur, rojo y aromático", "Wild southern berry", "«Mermelada de murta»", "Fruta silvestre do sul, vermelha e aromática"]
     ]},
-    calle: { es: "En la calle", en: "Getting around", items: [
-      ["Micro", "Bus urbano", "City bus", "«La micro a Niebla pasa por la Costanera»"],
-      ["Colectivo", "Taxi compartido con ruta fija", "Shared taxi with a fixed route", "«Toma un colectivo a la Isla Teja»"],
-      ["Paradero", "Parada de bus", "Bus stop", "«Bájate en el paradero del puente»"],
-      ["Taco", "Atasco de tráfico", "Traffic jam", "«Con el Ironman habrá taco»"],
-      ["Luca", "Mil pesos", "1,000 pesos", "«Son cinco lucas»"],
-      ["Gamba", "Cien pesos", "100 pesos", "«Me faltan dos gambas»"],
-      ["Cuadra", "Distancia entre esquinas, unos 100 m", "One city block, about 100 m", "«Está a tres cuadras»"],
-      ["Achuntar", "Acertar, dar en el blanco", "To get it right, hit the spot", "«¡Achuntamos con el día sin lluvia!»"]
+    calle: { es: "En la calle", en: "Getting around", pt: "Na rua", items: [
+      ["Micro", "Bus urbano", "City bus", "«La micro a Niebla pasa por la Costanera»", "Ônibus urbano"],
+      ["Colectivo", "Taxi compartido con ruta fija", "Shared taxi with a fixed route", "«Toma un colectivo a la Isla Teja»", "Táxi compartilhado com rota fixa"],
+      ["Paradero", "Parada de bus", "Bus stop", "«Bájate en el paradero del puente»", "Ponto de ônibus"],
+      ["Taco", "Atasco de tráfico", "Traffic jam", "«Con el Ironman habrá taco»", "Engarrafamento"],
+      ["Luca", "Mil pesos", "1,000 pesos", "«Son cinco lucas»", "Mil pesos"],
+      ["Gamba", "Cien pesos", "100 pesos", "«Me faltan dos gambas»", "Cem pesos"],
+      ["Cuadra", "Distancia entre esquinas, unos 100 m", "One city block, about 100 m", "«Está a tres cuadras»", "Quarteirão, uns 100 m"],
+      ["Achuntar", "Acertar, dar en el blanco", "To get it right, hit the spot", "«¡Achuntamos con el día sin lluvia!»", "Acertar em cheio"]
     ]}
   };
   let temaPalabras = "charla";
 
   const SECTORES = ["Valdivia centro", "Isla Teja", "Otro sector de Valdivia", "Niebla y Los Molinos", "Corral", "Curiñanco y costa"];
-  const SECTOR_EN = { "Valdivia centro": "Downtown", "Isla Teja": "Isla Teja", "Otro sector de Valdivia": "Other areas", "Niebla y Los Molinos": "Niebla", "Corral": "Corral", "Curiñanco y costa": "Coast" };
+  const SECTOR_TR = {
+    en: { "Valdivia centro": "Downtown", "Isla Teja": "Isla Teja", "Otro sector de Valdivia": "Other areas", "Niebla y Los Molinos": "Niebla", "Corral": "Corral", "Curiñanco y costa": "Coast" },
+    pt: { "Valdivia centro": "Centro", "Isla Teja": "Isla Teja", "Otro sector de Valdivia": "Outras regiões", "Niebla y Los Molinos": "Niebla", "Corral": "Corral", "Curiñanco y costa": "Litoral" }
+  };
   const HERO = "Vista_de_Valdivia_(Puente_PdeV,_01).jpg";
   const TRASLADO = 20;
 
@@ -187,7 +235,15 @@
   // ---------- Estado ----------
   const leer = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
   const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) { /* sin almacenamiento */ } };
-  let lang = leer("valdi-lang") || ((navigator.language || "es").toLowerCase().startsWith("es") ? "es" : "en");
+  const IDIOMAS = ["es", "en", "pt"];
+  const LOCALE = { es: "es-CL", en: "en-US", pt: "pt-BR" };
+  const idiomaInicial = () => {
+    try { const q = new URLSearchParams(location.search).get("lang"); if (IDIOMAS.includes(q)) { guardar("valdi-lang", q); return q; } } catch (e) { /* sin parámetros */ }
+    const g = leer("valdi-lang"); if (IDIOMAS.includes(g)) return g;
+    const n = (navigator.language || "es").toLowerCase();
+    return n.startsWith("es") ? "es" : n.startsWith("pt") ? "pt" : "en";
+  };
+  let lang = idiomaInicial();
   const estado = {
     lugares: [], planes: [], negocios: [], evento: null, porId: new Map(),
     campana: { recaudado: CFG.recaudado || 0, negocios: CFG.negocios || 0 }, traspasos: [], cargadoEn: null,
@@ -196,6 +252,9 @@
     inicio: leer("valdi-inicio") || "10:00"
   };
   const t = (k, ...a) => { const v = (T[lang] || T.es)[k]; return typeof v === "function" ? v(...a) : v; };
+  // Texto en el idioma actual; si falta, en español.
+  const tr = (o) => (o && (o[lang] || o.es)) || "";
+  const loc = () => LOCALE[lang] || "es-CL";
 
   // ---------- Utilidades ----------
   const el = (tag, attrs = {}, ...hijos) => {
@@ -211,13 +270,14 @@
   const sinTildes = (s) => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   const slug = (s) => sinTildes(s).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const url = (u) => (/^https?:\/\//i.test(u) ? u : "https://" + u.replace(/^\/+/, ""));
-  const fmtCLP = (n) => new Intl.NumberFormat(lang === "es" ? "es-CL" : "en-US", { style: "currency", currency: "CLP", maximumFractionDigits: 0 }).format(n);
+  const fmtCLP = (n) => new Intl.NumberFormat(loc(), { style: "currency", currency: "CLP", maximumFractionDigits: 0 }).format(n);
   const fotoUrl = (p, w = 800) => !p.foto ? "" : /^https:\/\//.test(p.foto) ? p.foto : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(p.foto)}?width=${w}`;
   const fotoPagina = (p) => (p.foto && !/^https:\/\//.test(p.foto) ? "https://commons.wikimedia.org/wiki/File:" + encodeURIComponent(p.foto.replace(/ /g, "_")) : "");
   const mapaUrl = (p) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.mapa || p.nombre + ", Valdivia");
-  const corto = (p) => (p.corto && (p.corto[lang] || p.corto.es)) || ((lang === "en" && p.en) ? p.en : p.es) || "";
-  const largo = (p) => ((lang === "en" && p.en) ? p.en : p.es) || "";
-  const sector = (p) => (lang === "en" ? (SECTOR_EN[p.sector] || p.sector) : p.sector);
+  const corto = (p) => (p.corto && tr(p.corto)) || tr(p);
+  const largo = (p) => tr(p);
+  const nomSector = (s) => (SECTOR_TR[lang] && SECTOR_TR[lang][s]) || s;
+  const sector = (p) => nomSector(p.sector);
   const hash = (s) => { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
   const hoyClave = new Date().toISOString().slice(0, 10);
   const eventoActivo = () => estado.evento && Date.now() < new Date(estado.evento.hasta).getTime();
@@ -271,14 +331,15 @@
       const txt = await r.text(); guardar(clave, txt); return parseCSV(txt);
     } catch (e) { const v = leer(clave); return v ? parseCSV(v) : null; }
   }
+  const recortar = (d) => { d = d || ""; return d.length > 70 ? d.slice(0, 68).replace(/\s+\S*$/, "") + "…" : d; };
   function aNegocio(f) {
     const nv = sinTildes(f.nivel || "").trim();
     const tipo = /comida|bebida|comer|restaurant|cafe/i.test(f.rubro || "") ? "comer" : "hacer";
     const d = f.descripcion || "";
     return {
       id: "neg-" + slug(f.nombre), negocio: true, tipo, nombre: f.nombre, sector: f.sector || "",
-      direccion: f.direccion || "", horario: f.horario || "", es: d, en: f.descripcion_en || "",
-      corto: { es: d.length > 70 ? d.slice(0, 68).replace(/\s+\S*$/, "") + "…" : d, en: (f.descripcion_en || "").slice(0, 70) || undefined },
+      direccion: f.direccion || "", horario: f.horario || "", es: d, en: f.descripcion_en || "", pt: f.descripcion_pt || "",
+      corto: { es: recortar(d), en: recortar(f.descripcion_en) || undefined, pt: recortar(f.descripcion_pt) || undefined },
       web: f.web || "", telefono: f.telefono || "", foto: /^https:\/\//.test(f.foto || "") ? f.foto : "", promocion: f.promocion || "",
       nivel: nv.startsWith("aliado") || nv.startsWith("principal") ? 0 : nv.startsWith("destacado") ? 1 : 2,
       duracion: tipo === "comer" ? 60 : 90, mapa: [f.nombre, f.direccion, "Valdivia"].filter(Boolean).join(", ")
@@ -330,7 +391,7 @@
     const src = primero && fotoUrl(primero, 640);
     if (src) { const img = el("img", { src, alt: "", loading: "lazy" }); img.addEventListener("error", () => img.remove()); b.append(img); }
     const total = plan.paradas.reduce((s, id) => s + ((estado.porId.get(id) || {}).duracion || 60), 0) + TRASLADO * (plan.paradas.length - 1);
-    b.append(el("strong", { text: plan[lang] || plan.es }), el("span", { text: `${t("stops", plan.paradas.length)} · ${t("min", Math.round(total / 30) * 30)}` }));
+    b.append(el("strong", { text: tr(plan) }), el("span", { text: `${t("stops", plan.paradas.length)} · ${t("min", Math.round(total / 30) * 30)}` }));
     return b;
   }
 
@@ -464,12 +525,12 @@
   function pintarModulo(mod) {
     const q = sinTildes(estado.q[mod]); const f = estado.filtros[mod];
     const base = todos().filter((p) => p.tipo === mod);
-    const items = base.filter((p) => (!f || p.sector === f) && (!q || sinTildes([p.nombre, p.es, p.en, p.sector, p.direccion].join(" ")).includes(q)));
+    const items = base.filter((p) => (!f || p.sector === f) && (!q || sinTildes([p.nombre, p.es, p.en, p.pt, p.sector, nomSector(p.sector), p.direccion].join(" ")).includes(q)));
     pintar($("#lista-" + mod), items, t("empty"));
     $("#n-" + mod).textContent = t("results", items.length);
     const sectores = SECTORES.filter((s) => base.some((p) => p.sector === s));
     $("#filtros-" + mod).replaceChildren(...[null, ...sectores].map((s) =>
-      el("button", { type: "button", class: "pressable", "aria-pressed": String(f === s), text: s ? (lang === "en" ? SECTOR_EN[s] : s) : t("all"), onclick: () => { estado.filtros[mod] = s; pintarModulo(mod); } })));
+      el("button", { type: "button", class: "pressable", "aria-pressed": String(f === s), text: s ? nomSector(s) : t("all"), onclick: () => { estado.filtros[mod] = s; pintarModulo(mod); } })));
   }
   const todos = () => [...estado.negocios, ...estado.lugares].sort(ordenar);
 
@@ -487,7 +548,7 @@
     barra.setAttribute("aria-valuemax", meta); barra.setAttribute("aria-valuenow", recaudado);
     barra.setAttribute("aria-valuetext", `${fmtCLP(recaudado)} ${t("of", fmtCLP(meta))}`);
     requestAnimationFrame(() => { $("#relleno-meta").style.width = Math.min(100, (recaudado / meta) * 100) + "%"; });
-    const fecha = new Intl.DateTimeFormat(lang === "es" ? "es-CL" : "en-US", { day: "numeric", month: "long", timeZone: "America/Santiago" }).format(new Date((CFG.fechaMeta || "2027-01-04") + "T12:00:00-03:00"));
+    const fecha = new Intl.DateTimeFormat(loc(), { day: "numeric", month: "long", timeZone: "America/Santiago" }).format(new Date((CFG.fechaMeta || "2027-01-04") + "T12:00:00-03:00"));
     $("#texto-meta").textContent = t("campaignFoot", negocios, fecha);
 
     pintar($("#lista-destacados"), estado.negocios.slice().sort(ordenar).slice(0, 6), t("noBusiness"));
@@ -499,7 +560,7 @@
     const planes = estado.planes.filter((pl) => pl.id !== "ironman" || eventoActivo());
     $("#lista-planes").replaceChildren(...planes.map(tarjetaPlan));
     $("#planes-dia").replaceChildren(...planes.map(tarjetaPlan));
-    const tip = TIPS[Math.floor(Date.now() / 86400000) % TIPS.length][lang];
+    const tip = tr(TIPS[Math.floor(Date.now() / 86400000) % TIPS.length]);
     $("#tip-dia").textContent = `${tip[0]}: ${tip[1]}`;
   }
   function pintarTransparencia() {
@@ -511,10 +572,10 @@
     const pct = Math.min(100, Math.round((recibido / meta) * 100));
     const barra = $("#barra-transp"); barra.setAttribute("aria-valuemax", meta); barra.setAttribute("aria-valuenow", recibido);
     requestAnimationFrame(() => { $("#relleno-transp").style.width = pct + "%"; });
-    const fecha = new Intl.DateTimeFormat(lang === "es" ? "es-CL" : "en-US", { day: "numeric", month: "long", timeZone: "America/Santiago" }).format(new Date((CFG.fechaMeta || "2027-01-04") + "T12:00:00-03:00"));
+    const fecha = new Intl.DateTimeFormat(loc(), { day: "numeric", month: "long", timeZone: "America/Santiago" }).format(new Date((CFG.fechaMeta || "2027-01-04") + "T12:00:00-03:00"));
     $("#texto-transp").textContent = t("progress", pct, `${fmtCLP(meta)} · ${fecha}`);
     $("#reglas").replaceChildren(...t("reglas").map((r) => el("li", {}, el("p", { text: r }))));
-    const fmtF = (f) => { const d = new Date(f + "T12:00:00-03:00"); return isNaN(d) ? f : new Intl.DateTimeFormat(lang === "es" ? "es-CL" : "en-US", { day: "numeric", month: "short", year: "numeric", timeZone: "America/Santiago" }).format(d); };
+    const fmtF = (f) => { const d = new Date(f + "T12:00:00-03:00"); return isNaN(d) ? f : new Intl.DateTimeFormat(loc(), { day: "numeric", month: "short", year: "numeric", timeZone: "America/Santiago" }).format(d); };
     const ent = estado.traspasos.slice().sort((a, b) => (a.fecha < b.fecha ? 1 : -1));
     $("#lista-entregas").replaceChildren(...(ent.length ? ent.map((x) => el("li", { class: "entrega" },
       el("span", { class: "f", text: fmtF(x.fecha) }), el("strong", { text: fmtCLP(x.monto) }),
@@ -523,14 +584,14 @@
       : [el("li", { class: "vacio", text: t("noTransfers") })]));
     const ap = estado.negocios.slice().sort((a, b) => a.nivel - b.nivel || a.nombre.localeCompare(b.nombre));
     $("#lista-aportantes").replaceChildren(...(ap.length ? ap.map((p) => el("span", { class: "aportante n" + p.nivel, text: p.nombre })) : [el("p", { class: "vacio", text: t("noDonors") })]));
-    const h = estado.cargadoEn ? new Intl.DateTimeFormat(lang === "es" ? "es-CL" : "en-US", { hour: "2-digit", minute: "2-digit", day: "numeric", month: "short", timeZone: "America/Santiago" }).format(estado.cargadoEn) : "";
+    const h = estado.cargadoEn ? new Intl.DateTimeFormat(loc(), { hour: "2-digit", minute: "2-digit", day: "numeric", month: "short", timeZone: "America/Santiago" }).format(estado.cargadoEn) : "";
     $("#transp-actualizado").textContent = h ? t("updated", h) : "";
   }
   function pintarEvento() {
     const ev = estado.evento, caja = $("#evento");
     if (!ev || !eventoActivo()) { caja.hidden = true; return; }
     caja.hidden = false;
-    const L = (o) => (o && (o[lang] || o.es)) || "";
+    const L = tr;
     $("#t-evento").textContent = L(ev.titulo);
     $("#evento-bajada").textContent = L(ev.bajada);
     const falta = new Date(ev.inicio).getTime() - Date.now();
@@ -538,25 +599,25 @@
     $("#evento-cuenta").textContent = falta > 0 ? t("countdown", dias, horas) : t("live");
     $("#evento-agenda").replaceChildren(...ev.agenda.map((a) => el("li", {},
       el("p", { class: "cuando" }, document.createTextNode(L(a.dia)), a.hora ? el("span", { text: a.hora }) : null),
-      el("p", { text: a[lang] || a.es }))));
+      el("p", { text: tr(a) }))));
     $("#evento-consejos").replaceChildren(...L(ev.consejos).map((c) => el("li", { text: c })));
     $("#evento-link").href = ev.url;
     $("#evento-nota").textContent = L(ev.nota);
   }
   function pintarPalabras() {
     $("#filtros-palabras").replaceChildren(...Object.entries(PALABRAS).map(([k, g]) =>
-      el("button", { type: "button", class: "pressable", "aria-pressed": String(k === temaPalabras), text: g[lang], onclick: () => { temaPalabras = k; pintarPalabras(); } })));
-    $("#lista-palabras").replaceChildren(...PALABRAS[temaPalabras].items.map(([w, es, en, ej], i) =>
+      el("button", { type: "button", class: "pressable", "aria-pressed": String(k === temaPalabras), text: tr(g), onclick: () => { temaPalabras = k; pintarPalabras(); } })));
+    $("#lista-palabras").replaceChildren(...PALABRAS[temaPalabras].items.map(([w, es, en, ej, pt], i) =>
       el("article", { class: "palabra", style: reduceMotion ? null : `animation-delay:${Math.min(i, 8) * 30}ms` },
         el("p", { class: "palabra-t", lang: "es", text: w }),
-        el("p", { class: "palabra-s", text: lang === "en" ? en : es }),
+        el("p", { class: "palabra-s", text: lang === "en" ? en : lang === "pt" ? (pt || es) : es }),
         el("p", { class: "palabra-e", lang: "es", text: ej }))));
   }
   function pintarEstaticos() {
     pintarPalabras();
     $("#lista-emergencias").replaceChildren(...EMERGENCIAS.map((e) =>
-      el("a", { href: "tel:" + e.n, class: "pressable", "aria-label": `${t("call_")} ${e.n}, ${e[lang]}` }, el("strong", { text: e.n }), el("span", { text: e[lang] }))));
-    const acordeon = (x) => el("details", { class: "acordeon" }, el("summary", { text: x[lang][0] }), el("p", { text: x[lang][1] }));
+      el("a", { href: "tel:" + e.n, class: "pressable", "aria-label": `${t("call_")} ${e.n}, ${tr(e)}` }, el("strong", { text: e.n }), el("span", { text: tr(e) }))));
+    const acordeon = (x) => el("details", { class: "acordeon" }, el("summary", { text: tr(x)[0] }), el("p", { text: tr(x)[1] }));
     $("#lista-moverse").replaceChildren(...MOVERSE.map(acordeon));
     $("#lista-tips").replaceChildren(...TIPS.map(acordeon));
   }
@@ -564,8 +625,10 @@
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach((n) => { const v = t(n.dataset.i18n); if (typeof v === "string") n.textContent = v; });
     document.querySelectorAll("[data-i18n-ph]").forEach((n) => { n.placeholder = t(n.dataset.i18nPh); });
-    const b = $("#btn-idioma"); b.textContent = t("langBtn"); b.setAttribute("aria-label", t("langLabel"));
+    const sel = $("#sel-idioma"); sel.value = lang; sel.setAttribute("aria-label", t("langLabel")); $("#idioma-cod").textContent = lang.toUpperCase();
+    document.querySelectorAll("[data-i18n-aria]").forEach((n) => { n.setAttribute("aria-label", t(n.dataset.i18nAria)); });
     pintarTodo(); pintarClima();
+    document.dispatchEvent(new CustomEvent("remada:idioma", { detail: lang }));
   }
   function pintarTodo() { pintarTransparencia(); pintarEstaticos(); pintarHoy(); pintarModulo("comer"); pintarModulo("hacer"); pintarDia(); actualizarContador(false); }
 
@@ -606,7 +669,7 @@
     hero.src = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(HERO)}?width=1200`;
 
     ["comer", "hacer"].forEach((m) => $("#buscar-" + m).addEventListener("input", (e) => { estado.q[m] = e.target.value; pintarModulo(m); }));
-    $("#btn-idioma").addEventListener("click", () => { lang = lang === "es" ? "en" : "es"; guardar("valdi-lang", lang); aplicarIdioma(); });
+    $("#sel-idioma").addEventListener("change", (e) => { if (!IDIOMAS.includes(e.target.value)) return; lang = e.target.value; guardar("valdi-lang", lang); aplicarIdioma(); });
     const hi = $("#hora-inicio"); hi.value = estado.inicio;
     hi.addEventListener("change", () => { if (hi.value) { estado.inicio = hi.value; guardar("valdi-inicio", hi.value); pintarDia(); } });
     $("#vaciar-dia").addEventListener("click", () => { estado.dia = []; guardarDia(); actualizarContador(true); pintarDia(); pintarTarjetasMas(); });
@@ -615,6 +678,16 @@
       try { if (navigator.share) { await navigator.share({ title: t("myDayShare"), text: txt }); return; } } catch (e) { return; }
       try { await navigator.clipboard.writeText(txt); toast(t("copied")); } catch (e) { /* sin portapapeles */ }
     });
+    const evToggle = $("#evento-toggle");
+    const pintarToggle = () => {
+      const abierto = leer("remada-evento-abierto") === "1";
+      evToggle.setAttribute("aria-expanded", String(abierto));
+      $("#evento").classList.toggle("abierto", abierto);
+      $("#evento-toggle-txt").textContent = t(abierto ? "eventLess" : "eventMore");
+    };
+    evToggle.addEventListener("click", () => { guardar("remada-evento-abierto", evToggle.getAttribute("aria-expanded") === "true" ? "0" : "1"); pintarToggle(); });
+    pintarToggle();
+    document.addEventListener("remada:idioma", pintarToggle);
     $("#evento-plan").addEventListener("click", () => { const pl = estado.planes.find((x) => x.id === "ironman"); if (pl) { estado.inicio = "10:00"; guardar("valdi-inicio", "10:00"); $("#hora-inicio").value = "10:00"; cargarPlan(pl); } });
     const ficha = $("#ficha");
     ficha.addEventListener("click", (e) => { if (e.target === ficha) cerrarFicha(); });
