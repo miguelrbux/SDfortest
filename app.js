@@ -38,6 +38,9 @@
       up: "Subir", down: "Bajar", less: "Menos tiempo", more: "Más tiempo", del: "Quitar",
       stops: (n) => `${n} paradas`, myDayShare: "Mi día en Valdivia",
       weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% lluvia` : ""}`,
+      eventTag: "Panorama de la semana", eventPlan: "Armar mi domingo", eventSite: "Sitio oficial", eventBadge: "Ironman",
+      countdown: (d, h) => (d > 0 ? `Faltan ${d} día${d === 1 ? "" : "s"}` : h > 0 ? `Faltan ${h} h` : "¡Hoy!"), live: "En carrera ahora",
+      wordsTitle: "Habla como valdiviano", wordsSub: "Las palabras que vas a escuchar en la calle, la mesa y la micro.",
       langBtn: "EN", langLabel: "Change language to English", call_: "Llamar al"
     },
     en: {
@@ -71,6 +74,9 @@
       up: "Move up", down: "Move down", less: "Less time", more: "More time", del: "Remove",
       stops: (n) => `${n} stops`, myDayShare: "My day in Valdivia",
       weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% rain` : ""}`,
+      eventTag: "This week's big event", eventPlan: "Plan my Sunday", eventSite: "Official site", eventBadge: "Ironman",
+      countdown: (d, h) => (d > 0 ? `${d} day${d === 1 ? "" : "s"} to go` : h > 0 ? `${h} h to go` : "Today!"), live: "Racing now",
+      wordsTitle: "Talk like a local", wordsSub: "Words you'll hear on the street, at the table and on the bus.",
       langBtn: "ES", langLabel: "Cambiar idioma a español", call_: "Call"
     }
   };
@@ -95,9 +101,54 @@
     { es: ["Lobos marinos", "Míralos a distancia. No los alimentes: pueden morder."], en: ["Sea lions", "Watch from a distance. Don't feed them: they bite."] },
     { es: ["Cerveza", "Valdivia es la capital cervecera. Si tomas, no manejes."], en: ["Beer", "Valdivia is the craft beer capital. If you drink, don't drive."] },
     { es: ["Ironman y eventos", "En días de carrera se cierran calles y la costanera. Mejor camina."], en: ["Ironman and events", "On race days streets and the waterfront close. Walk instead."] },
-    { es: ["Palabras locales", "«Once»: merienda. «Luca»: $1.000. «Al tiro»: enseguida."], en: ["Local words", "“Once”: afternoon tea. “Luca”: $1,000. “Al tiro”: right away."] },
     { es: ["Costa", "Respeta los cierres de senderos y playas: hay riesgo de derrumbes."], en: ["Coast", "Respect closed trails and beaches: there is landslide risk."] }
   ];
+  // Palabras locales: [palabra, significado es, significado en, ejemplo]
+  const PALABRAS = {
+    charla: { es: "Conversar", en: "Small talk", items: [
+      ["¿Cachai?", "¿Entiendes?", "Get it? / You know?", "«Es por allá, ¿cachai?»"],
+      ["Po", "Muletilla que refuerza: «sí po», «no po»", "Filler word for emphasis: “sí po” = yeah, sure", "«¡Obvio po!»"],
+      ["¿Cómo estai?", "¿Cómo estás? (informal)", "How are you? (casual)", "«¡Hola! ¿Cómo estai?»"],
+      ["Bacán", "Genial, muy bueno", "Awesome", "«El paseo en barco estuvo bacán»"],
+      ["Fome", "Aburrido, sin gracia", "Boring, lame", "«Llovió y el día quedó fome»"],
+      ["Cuático", "Impresionante o exagerado", "Wild, intense, unbelievable", "«Correr 42 km es cuático»"],
+      ["Harto", "Mucho, bastante", "A lot, plenty", "«Hay harta gente en la Costanera»"],
+      ["Al tiro", "Enseguida, ahora mismo", "Right away", "«Te lo traigo al tiro»"],
+      ["Piola", "Tranquilo, sin llamar la atención", "Chill, low-key", "«Un bar piola junto al río»"],
+      ["Pololo / polola", "Novio / novia", "Boyfriend / girlfriend", "«Vine con mi polola»"],
+      ["Cabros", "Chicos, jóvenes", "Kids, young people", "«Los cabros de la U13 juegan el sábado»"],
+      ["Guagua", "Bebé", "Baby", "«¿Hay mudador para la guagua?»"],
+      ["Pega", "Trabajo", "Job, work", "«Mañana tengo pega temprano»"],
+      ["Carrete", "Fiesta, salida nocturna", "Party, night out", "«¿Dónde es el carrete?»"]
+    ]},
+    mesa: { es: "En la mesa", en: "Food and drink", items: [
+      ["Once", "Merienda de la tarde, con pan, té y algo dulce", "Afternoon tea with bread and something sweet", "«Tomemos once con kuchen»"],
+      ["Kuchen", "Pastel de origen alemán, típico del sur", "German-style cake, a southern classic", "«El kuchen de murta es de aquí»"],
+      ["Schop", "Cerveza de barril", "Draft beer", "«Un schop de la casa, por favor»"],
+      ["Chela", "Cerveza (informal)", "Beer (slang)", "«¿Vamos por unas chelas?»"],
+      ["Copete", "Trago con alcohol", "Alcoholic drink", "«Sin copete, que mañana corro»"],
+      ["Paila marina", "Caldo caliente de mariscos y pescado", "Hot seafood and fish soup", "«Ideal para un día de lluvia»"],
+      ["Curanto", "Mariscos, carnes y papas cocidos juntos", "Shellfish, meat and potatoes cooked together", "«En Niebla sirven curanto en olla»"],
+      ["Completo", "Hot dog con palta, tomate y mayo", "Hot dog with avocado, tomato and mayo", "«Un completo italiano»"],
+      ["Palta", "Aguacate", "Avocado", "«¿Le pone palta?»"],
+      ["Sopaipilla", "Masa frita de zapallo", "Fried pumpkin dough", "«Sopaipillas con pebre cuando llueve»"],
+      ["Pebre", "Salsa de tomate, cebolla, cilantro y ají", "Fresh tomato, onion and chili salsa", "«Pásame el pebre»"],
+      ["Mote con huesillo", "Bebida dulce con trigo y durazno seco", "Sweet drink with wheat and dried peach", "«Refrescante en verano»"],
+      ["Murta", "Fruto silvestre del sur, rojo y aromático", "Wild southern berry", "«Mermelada de murta»"]
+    ]},
+    calle: { es: "En la calle", en: "Getting around", items: [
+      ["Micro", "Bus urbano", "City bus", "«La micro a Niebla pasa por la Costanera»"],
+      ["Colectivo", "Taxi compartido con ruta fija", "Shared taxi with a fixed route", "«Toma un colectivo a la Isla Teja»"],
+      ["Paradero", "Parada de bus", "Bus stop", "«Bájate en el paradero del puente»"],
+      ["Taco", "Atasco de tráfico", "Traffic jam", "«Con el Ironman habrá taco»"],
+      ["Luca", "Mil pesos", "1,000 pesos", "«Son cinco lucas»"],
+      ["Gamba", "Cien pesos", "100 pesos", "«Me faltan dos gambas»"],
+      ["Cuadra", "Distancia entre esquinas, unos 100 m", "One city block, about 100 m", "«Está a tres cuadras»"],
+      ["Achuntar", "Acertar, dar en el blanco", "To get it right, hit the spot", "«¡Achuntamos con el día sin lluvia!»"]
+    ]}
+  };
+  let temaPalabras = "charla";
+
   const SECTORES = ["Valdivia centro", "Isla Teja", "Otro sector de Valdivia", "Niebla y Los Molinos", "Corral", "Curiñanco y costa"];
   const SECTOR_EN = { "Valdivia centro": "Downtown", "Isla Teja": "Isla Teja", "Otro sector de Valdivia": "Other areas", "Niebla y Los Molinos": "Niebla", "Corral": "Corral", "Curiñanco y costa": "Coast" };
   const HERO = "Vista_de_Valdivia_(Puente_PdeV,_01).jpg";
@@ -126,7 +177,7 @@
   const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) { /* sin almacenamiento */ } };
   let lang = leer("valdi-lang") || ((navigator.language || "es").toLowerCase().startsWith("es") ? "es" : "en");
   const estado = {
-    lugares: [], planes: [], negocios: [], porId: new Map(),
+    lugares: [], planes: [], negocios: [], evento: null, porId: new Map(),
     campana: { recaudado: CFG.recaudado || 0, negocios: CFG.negocios || 0 },
     lluvia: null, filtros: { comer: null, hacer: null }, q: { comer: "", hacer: "" },
     dia: (() => { try { return JSON.parse(leer("valdi-dia") || "[]"); } catch (e) { return []; } })(),
@@ -157,8 +208,10 @@
   const sector = (p) => (lang === "en" ? (SECTOR_EN[p.sector] || p.sector) : p.sector);
   const hash = (s) => { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
   const hoyClave = new Date().toISOString().slice(0, 10);
+  const eventoActivo = () => estado.evento && Date.now() < new Date(estado.evento.hasta).getTime();
+  const rango = (p) => (p.evento && eventoActivo() ? -1 : p.negocio ? p.nivel : 3);
   const ordenar = (a, b) => {
-    const na = a.negocio ? a.nivel : 3, nb = b.negocio ? b.nivel : 3;
+    const na = rango(a), nb = rango(b);
     return na !== nb ? na - nb : hash(hoyClave + a.id) - hash(hoyClave + b.id);
   };
 
@@ -229,6 +282,7 @@
   }
   function insignias(p) {
     const c = el("div", { class: "insignias" });
+    if (p.evento && eventoActivo()) c.append(el("span", { class: "insignia evt", text: t("eventBadge") }));
     if (p.negocio && p.nivel <= 1) c.append(el("span", { class: "insignia dest", text: p.nivel === 0 ? t("main") : t("featured") }));
     if (p.lluvia && estado.lluvia >= 60) c.append(el("span", { class: "insignia", text: t("indoor") }));
     return c;
@@ -427,14 +481,43 @@
     pintar($("#lista-destacados"), estado.negocios.slice().sort(ordenar).slice(0, 6), t("noBusiness"));
     const lluvia = estado.lluvia != null && estado.lluvia >= 60;
     $("#t-sugerencias").textContent = lluvia ? t("ideasRain") : t("ideasTitle");
-    const base = estado.lugares.slice().sort((a, b) => hash(hoyClave + a.id) - hash(hoyClave + b.id));
-    pintar($("#lista-sugerencias"), (lluvia ? base.filter((p) => p.lluvia) : base).slice(0, 6), t("empty"));
-    $("#lista-planes").replaceChildren(...estado.planes.map(tarjetaPlan));
-    $("#planes-dia").replaceChildren(...estado.planes.map(tarjetaPlan));
+    const base = estado.lugares.filter((p) => !p.evento || eventoActivo()).sort((a, b) => (rango(a) - rango(b)) || (hash(hoyClave + a.id) - hash(hoyClave + b.id)));
+    pintar($("#lista-sugerencias"), (lluvia ? base.filter((p) => p.lluvia || p.evento) : base).slice(0, 6), t("empty"));
+    pintarEvento();
+    const planes = estado.planes.filter((pl) => pl.id !== "ironman" || eventoActivo());
+    $("#lista-planes").replaceChildren(...planes.map(tarjetaPlan));
+    $("#planes-dia").replaceChildren(...planes.map(tarjetaPlan));
     const tip = TIPS[Math.floor(Date.now() / 86400000) % TIPS.length][lang];
     $("#tip-dia").textContent = `${tip[0]}: ${tip[1]}`;
   }
+  function pintarEvento() {
+    const ev = estado.evento, caja = $("#evento");
+    if (!ev || !eventoActivo()) { caja.hidden = true; return; }
+    caja.hidden = false;
+    const L = (o) => (o && (o[lang] || o.es)) || "";
+    $("#t-evento").textContent = L(ev.titulo);
+    $("#evento-bajada").textContent = L(ev.bajada);
+    const falta = new Date(ev.inicio).getTime() - Date.now();
+    const dias = Math.floor(falta / 86400000), horas = Math.ceil(falta / 3600000);
+    $("#evento-cuenta").textContent = falta > 0 ? t("countdown", dias, horas) : t("live");
+    $("#evento-agenda").replaceChildren(...ev.agenda.map((a) => el("li", {},
+      el("p", { class: "cuando" }, document.createTextNode(L(a.dia)), a.hora ? el("span", { text: a.hora }) : null),
+      el("p", { text: a[lang] || a.es }))));
+    $("#evento-consejos").replaceChildren(...L(ev.consejos).map((c) => el("li", { text: c })));
+    $("#evento-link").href = ev.url;
+    $("#evento-nota").textContent = L(ev.nota);
+  }
+  function pintarPalabras() {
+    $("#filtros-palabras").replaceChildren(...Object.entries(PALABRAS).map(([k, g]) =>
+      el("button", { type: "button", class: "pressable", "aria-pressed": String(k === temaPalabras), text: g[lang], onclick: () => { temaPalabras = k; pintarPalabras(); } })));
+    $("#lista-palabras").replaceChildren(...PALABRAS[temaPalabras].items.map(([w, es, en, ej], i) =>
+      el("article", { class: "palabra", style: reduceMotion ? null : `animation-delay:${Math.min(i, 8) * 30}ms` },
+        el("p", { class: "palabra-t", lang: "es", text: w }),
+        el("p", { class: "palabra-s", text: lang === "en" ? en : es }),
+        el("p", { class: "palabra-e", lang: "es", text: ej }))));
+  }
   function pintarEstaticos() {
+    pintarPalabras();
     $("#lista-emergencias").replaceChildren(...EMERGENCIAS.map((e) =>
       el("a", { href: "tel:" + e.n, class: "pressable", "aria-label": `${t("call_")} ${e.n}, ${e[lang]}` }, el("strong", { text: e.n }), el("span", { text: e[lang] }))));
     const acordeon = (x) => el("details", { class: "acordeon" }, el("summary", { text: x[lang][0] }), el("p", { text: x[lang][1] }));
@@ -496,6 +579,7 @@
       try { if (navigator.share) { await navigator.share({ title: t("myDayShare"), text: txt }); return; } } catch (e) { return; }
       try { await navigator.clipboard.writeText(txt); toast(t("copied")); } catch (e) { /* sin portapapeles */ }
     });
+    $("#evento-plan").addEventListener("click", () => { const pl = estado.planes.find((x) => x.id === "ironman"); if (pl) { estado.inicio = "10:00"; guardar("valdi-inicio", "10:00"); $("#hora-inicio").value = "10:00"; cargarPlan(pl); } });
     const ficha = $("#ficha");
     ficha.addEventListener("click", (e) => { if (e.target === ficha) cerrarFicha(); });
     ficha.addEventListener("cancel", (e) => { e.preventDefault(); cerrarFicha(); });
@@ -506,7 +590,7 @@
     window.addEventListener("online", offline); window.addEventListener("offline", offline); offline();
     navegar();
 
-    try { const r = await fetch("data/lugares.json"); const d = await r.json(); estado.lugares = d.lugares; estado.planes = d.planes || []; } catch (e) { /* sin datos */ }
+    try { const r = await fetch("data/lugares.json"); const d = await r.json(); estado.lugares = d.lugares; estado.planes = d.planes || []; estado.evento = d.evento || null; } catch (e) { /* sin datos */ }
     const filas = await traerCSV(CFG.negociosCsv, "valdi-negocios");
     if (filas) estado.negocios = filas.filter((f) => /^s[ií]$/i.test(f.publicar || "") && f.nombre).map(aNegocio);
     estado.porId = new Map([...estado.lugares, ...estado.negocios].map((p) => [p.id, p]));

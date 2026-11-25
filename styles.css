@@ -104,6 +104,40 @@ main { max-width: 760px; margin: 0 auto; padding: 0 16px 24px; outline: none; }
 .hero-kicker { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: .9375rem; background: rgba(255,255,255,.18); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 999px; }
 .hero-kicker:empty { display: none; }
 
+/* ---------- Evento ---------- */
+.evento {
+  position: relative; overflow: hidden; isolation: isolate; color: #fff; border-radius: 24px; padding: 18px; margin: 0 0 20px;
+  background: radial-gradient(120% 90% at 100% 0%, #C2410C 0%, rgba(194,65,12,0) 60%), linear-gradient(160deg, #1A2226 0%, #0B3B44 100%);
+  box-shadow: var(--shadow-up); animation: entrar .5s var(--ease) both;
+}
+.evento::after { content: "IRONMAN"; position: absolute; right: -8px; bottom: -18px; font-size: 5rem; font-weight: 800; letter-spacing: -.04em; color: rgba(255,255,255,.06); z-index: -1; pointer-events: none; }
+.evento-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.evento-etq { font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: #F0A657; color: #1A2226; padding: 4px 10px; border-radius: 999px; }
+.evento-cuenta { font-weight: 800; font-size: .9375rem; color: #FFD7A8; }
+.evento-titulo { font-size: 1.75rem; line-height: 2.125rem; margin: 10px 0 4px; color: #fff; }
+.evento-bajada { color: rgba(255,255,255,.88); margin-bottom: 12px; }
+.agenda { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 8px; }
+.agenda li { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: start; background: rgba(255,255,255,.08); border-radius: 12px; padding: 8px 10px; }
+.agenda .cuando { font-weight: 800; font-size: .8125rem; line-height: 1.2; color: #FFD7A8; }
+.agenda .cuando span { display: block; color: #fff; font-size: 1rem; }
+.agenda p { font-size: .9375rem; }
+.evento-consejos { margin: 0 0 14px; padding-left: 18px; color: rgba(255,255,255,.9); font-size: .9375rem; display: grid; gap: 4px; }
+.evento-acciones { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn-claro, .btn-borde { min-height: 48px; padding: 0 18px; border-radius: 999px; font: inherit; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; cursor: pointer; }
+.btn-claro { background: #fff; color: #0B3B44; border: 0; flex: 1 1 auto; }
+.btn-borde { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.6); }
+.evento-nota { margin-top: 10px; font-size: .75rem; color: rgba(255,255,255,.7); }
+.card .insignia.evt { background: #C2410C; color: #fff; }
+
+/* ---------- Palabras ---------- */
+.sub { color: var(--text-2); margin: 4px 0 0; }
+.palabras { display: grid; gap: 10px; margin-bottom: 24px; }
+@media (min-width: 640px) { .palabras { grid-template-columns: 1fr 1fr; } }
+.palabra { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow); animation: entrar .3s var(--ease) both; }
+.palabra-t { font-size: 1.25rem; font-weight: 800; color: var(--primary-ink); }
+.palabra-s { font-weight: 600; }
+.palabra-e { color: var(--text-2); font-style: italic; font-size: .9375rem; margin-top: 4px; }
+
 /* ---------- Campaña ---------- */
 .campana { background: var(--primary-soft); border-radius: var(--radius); padding: 16px; margin-bottom: 28px; }
 .campana-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
