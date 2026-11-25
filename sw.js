@@ -1,7 +1,7 @@
 // Service worker: la app y los datos base funcionan sin conexión.
-const VERSION = "remada-v7";
+const VERSION = "remada-v8";
 const FOTOS = "valdi-fotos-v1";
-const BASE = ["./", "index.html", "styles.css", "app.js", "onboarding.js", "config.js", "data/lugares.json", "manifest.webmanifest",
+const BASE = ["./", "index.html", "styles.css", "app.js", "onboarding.js", "analytics.js", "config.js", "data/lugares.json", "manifest.webmanifest",
   "icons/favicon.svg", "icons/favicon-32.png", "icons/isotipo-180.png", "icons/isotipo-512.png", "icons/logo-bajada-blanco.svg"];
 
 self.addEventListener("install", (e) => {
