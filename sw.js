@@ -1,5 +1,5 @@
 // Service worker: la app y los datos base funcionan sin conexión.
-const VERSION = "remada-v3";
+const VERSION = "remada-v4";
 const FOTOS = "valdi-fotos-v1";
 const BASE = ["./", "index.html", "styles.css", "app.js", "config.js", "data/lugares.json", "manifest.webmanifest",
   "icons/favicon.svg", "icons/favicon-32.png", "icons/isotipo-180.png", "icons/isotipo-512.png"];
