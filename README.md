@@ -14,3 +14,9 @@ La web lee la planilla cada vez que alguien la abre, así que no hay que volver 
 
 ## Orden
 Aliado del deporte → Destacado → Colaborador → lugares públicos. Dentro de cada nivel el orden rota cada día.
+
+## Fotos
+Las fotos de los lugares públicos vienen de Wikimedia Commons (licencias libres). En `data/lugares.json`, el campo `foto` es el nombre del archivo en Commons; cada tarjeta enlaza a su página con autor y licencia. Para un negocio, pon en la columna `foto` una URL https de una imagen suya.
+
+## Mi día
+El turista agrega lugares con «+» o carga un plan listo (`planes` en `data/lugares.json`). Puede ordenar, ajustar el tiempo de cada parada, abrir la ruta completa en Google Maps y compartirla. Se guarda solo en su teléfono.

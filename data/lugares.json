@@ -1,135 +1,100 @@
 {
-  "_nota": "Lugares públicos e imperdibles de base (Anexo del PRD). Los negocios se cargan desde la planilla publicada (config.js). Todo entra como 'por confirmar' hasta verificar.",
+  "_nota": "Lugares públicos e imperdibles (Anexo del PRD). Fotos de Wikimedia Commons con licencia libre: el crédito enlaza a la página del archivo, que indica autor y licencia. Los negocios se cargan desde la planilla publicada (config.js).",
   "lugares": [
     {
-      "id": "mercado-fluvial",
-      "tipo": "hacer",
-      "categoria": "atractivos",
-      "nombre": "Mercado Fluvial y lobos marinos",
-      "sector": "Valdivia centro",
-      "mapa": "Mercado Fluvial, Valdivia",
+      "id": "mercado-fluvial", "tipo": "hacer", "categoria": "atractivos", "duracion": 45,
+      "nombre": "Mercado Fluvial", "sector": "Valdivia centro", "mapa": "Mercado Fluvial, Valdivia",
+      "foto": "Feria_Fluvial_Valdivia.jpg",
+      "corto": { "es": "Mariscos frescos y lobos marinos junto al río", "en": "Fresh seafood and sea lions by the river" },
       "es": "Venta de pescados, mariscos y productos locales junto a una colonia de lobos marinos, en la costanera.",
       "en": "Fish, seafood and local products by the river, next to a colony of sea lions on the waterfront.",
-      "fuente": "chile.travel",
-      "fuenteUrl": "https://chile.travel/atractivos/isla-teja-y-mercado-fluvial/",
-      "lluvia": false
+      "fuente": "chile.travel", "fuenteUrl": "https://chile.travel/atractivos/isla-teja-y-mercado-fluvial/", "lluvia": false
     },
     {
-      "id": "mercado-municipal",
-      "tipo": "comer",
-      "categoria": "atractivos",
-      "nombre": "Mercado Municipal",
-      "sector": "Valdivia centro",
-      "mapa": "Mercado Municipal de Valdivia",
+      "id": "mercado-municipal", "tipo": "comer", "categoria": "cocina", "duracion": 60,
+      "nombre": "Mercado Municipal", "sector": "Valdivia centro", "mapa": "Mercado Municipal de Valdivia",
+      "foto": "Mercado_Municipal,_Valdivia.JPG",
+      "corto": { "es": "Cocinerías y artesanía frente al río", "en": "Local eateries and crafts by the river" },
       "es": "Artesanía y cocinerías con comida típica, frente a la costanera.",
       "en": "Handicrafts and small eateries with traditional food, across from the waterfront.",
-      "fuente": "Viagens e Caminhos",
-      "fuenteUrl": "https://www.viagensecaminhos.com/valdivia-chile/",
-      "lluvia": true
+      "fuente": "Viagens e Caminhos", "fuenteUrl": "https://www.viagensecaminhos.com/valdivia-chile/", "lluvia": true
     },
     {
-      "id": "isla-teja",
-      "tipo": "hacer",
-      "categoria": "atractivos",
-      "nombre": "Isla Teja",
-      "sector": "Isla Teja",
-      "mapa": "Isla Teja, Valdivia",
+      "id": "isla-teja", "tipo": "hacer", "categoria": "atractivos", "duracion": 60,
+      "nombre": "Isla Teja", "sector": "Isla Teja", "mapa": "Isla Teja, Valdivia",
+      "foto": "Valdivia_desde_teja.JPG",
+      "corto": { "es": "Parques, museos y vista al centro", "en": "Parks, museums and city views" },
       "es": "Se llega a pie por el puente Pedro de Valdivia. Reúne el Jardín Botánico, museos y el Parque Prochelle.",
       "en": "Walk across the Pedro de Valdivia bridge. Home to the Botanical Garden, museums and Prochelle Park.",
-      "fuente": "chile.travel",
-      "fuenteUrl": "https://chile.travel/atractivos/isla-teja-y-mercado-fluvial/",
-      "lluvia": false
+      "fuente": "chile.travel", "fuenteUrl": "https://chile.travel/atractivos/isla-teja-y-mercado-fluvial/", "lluvia": false
     },
     {
-      "id": "jardin-botanico",
-      "tipo": "hacer",
-      "categoria": "naturaleza",
-      "nombre": "Jardín Botánico UACh",
-      "sector": "Isla Teja",
-      "mapa": "Jardín Botánico Universidad Austral de Chile",
+      "id": "jardin-botanico", "tipo": "hacer", "categoria": "naturaleza", "duracion": 75,
+      "nombre": "Jardín Botánico UACh", "sector": "Isla Teja", "mapa": "Jardín Botánico Universidad Austral de Chile",
+      "foto": "UACh-Jardín_Botánico-1.JPG",
+      "corto": { "es": "Bosque nativo a orillas del río", "en": "Native forest by the river" },
       "es": "Flora nativa y exótica a orillas del río. Buen lugar para caminar o hacer un picnic.",
       "en": "Native and exotic plants by the river. A good spot for a walk or a picnic.",
-      "fuente": "chile.travel",
-      "fuenteUrl": "https://chile.travel/itinerarios/conoce-los-imperdibles-de-valdivia-en-2-dias/",
-      "lluvia": false
+      "fuente": "chile.travel", "fuenteUrl": "https://chile.travel/itinerarios/conoce-los-imperdibles-de-valdivia-en-2-dias/", "lluvia": false
     },
     {
-      "id": "casa-anwandter",
-      "tipo": "hacer",
-      "categoria": "cultura",
-      "nombre": "Museo en la Casa Anwandter",
-      "sector": "Isla Teja",
-      "mapa": "Museo Histórico y Antropológico Maurice van de Maele Valdivia",
+      "id": "casa-anwandter", "tipo": "hacer", "categoria": "cultura", "duracion": 60,
+      "nombre": "Museo Casa Anwandter", "sector": "Isla Teja", "mapa": "Museo Histórico y Antropológico Maurice van de Maele Valdivia",
+      "foto": "Casa_Anwandter2.JPG",
+      "corto": { "es": "Historia mapuche y alemana", "en": "Mapuche and German history" },
       "es": "Historia mapuche y de la colonización alemana. Plan bajo techo para días de lluvia.",
       "en": "Mapuche history and German settlement. An indoor plan for rainy days.",
-      "fuente": "chile.travel",
-      "fuenteUrl": "https://chile.travel/itinerarios/conoce-los-imperdibles-de-valdivia-en-2-dias/",
-      "lluvia": true
+      "fuente": "chile.travel", "fuenteUrl": "https://chile.travel/itinerarios/conoce-los-imperdibles-de-valdivia-en-2-dias/", "lluvia": true
     },
     {
-      "id": "navegacion-rio",
-      "tipo": "hacer",
-      "categoria": "rio",
-      "nombre": "Navegación por el río",
-      "sector": "Valdivia centro",
-      "mapa": "Muelle Schuster, Valdivia",
+      "id": "navegacion-rio", "tipo": "hacer", "categoria": "rio", "duracion": 120,
+      "nombre": "Navegación por el río", "sector": "Valdivia centro", "mapa": "Muelle Schuster, Valdivia",
+      "foto": "Valdivia,_muelle_fluvial.JPG",
+      "corto": { "es": "Paseo en barco desde la costanera", "en": "Boat trip from the waterfront" },
       "es": "Paseos en embarcación desde la costanera. Se ven astilleros, el puente levadizo y lobos marinos.",
       "en": "Boat trips from the waterfront, with views of shipyards, the drawbridge and sea lions.",
-      "fuente": "chile.travel",
-      "fuenteUrl": "https://chile.travel/itinerarios/itinerari-en-niebla-historia-y-selva-valdiviana/",
-      "lluvia": false
+      "fuente": "chile.travel", "fuenteUrl": "https://chile.travel/itinerarios/itinerari-en-niebla-historia-y-selva-valdiviana/", "lluvia": false
     },
     {
-      "id": "fuerte-niebla",
-      "tipo": "hacer",
-      "categoria": "historia",
-      "nombre": "Fuerte de Niebla",
-      "sector": "Niebla y Los Molinos",
-      "mapa": "Castillo de Niebla",
+      "id": "fuerte-niebla", "tipo": "hacer", "categoria": "historia", "duracion": 60,
+      "nombre": "Fuerte de Niebla", "sector": "Niebla y Los Molinos", "mapa": "Castillo de Niebla",
+      "foto": "Castillo_de_Niebla,_Valdivia.JPG",
+      "corto": { "es": "Fuerte español del siglo XVII sobre el mar", "en": "17th-century Spanish fort above the sea" },
       "es": "Fortificación española del siglo XVII sobre el mar. Unos 25 minutos en bus desde el centro.",
       "en": "17th-century Spanish fort above the sea. About 25 minutes by bus from downtown.",
-      "fuente": "chile.travel",
-      "fuenteUrl": "https://chile.travel/itinerarios/itinerari-en-niebla-historia-y-selva-valdiviana/",
-      "lluvia": false
+      "fuente": "chile.travel", "fuenteUrl": "https://chile.travel/itinerarios/itinerari-en-niebla-historia-y-selva-valdiviana/", "lluvia": false
     },
     {
-      "id": "fuertes-corral",
-      "tipo": "hacer",
-      "categoria": "historia",
-      "nombre": "Fuertes de Corral",
-      "sector": "Corral",
-      "mapa": "Castillo San Sebastián de la Cruz, Corral",
+      "id": "fuertes-corral", "tipo": "hacer", "categoria": "historia", "duracion": 90,
+      "nombre": "Fuertes de Corral", "sector": "Corral", "mapa": "Castillo San Sebastián de la Cruz, Corral",
+      "foto": "Castillo_San_Sebastián_de_la_Cruz_06.JPG",
+      "corto": { "es": "Cañones coloniales, en barcaza desde Niebla", "en": "Colonial cannons, by ferry from Niebla" },
       "es": "Fuertes coloniales del siglo XVII. Se llega en barcaza o lancha desde Niebla.",
       "en": "17th-century colonial forts. Reach them by ferry or boat from Niebla.",
-      "fuente": "chile.travel",
-      "fuenteUrl": "https://chile.travel/destinos/valdivia/",
-      "lluvia": false
+      "fuente": "chile.travel", "fuenteUrl": "https://chile.travel/destinos/valdivia/", "lluvia": false
     },
     {
-      "id": "parque-oncol",
-      "tipo": "hacer",
-      "categoria": "naturaleza",
-      "nombre": "Parque Oncol",
-      "sector": "Curiñanco y costa",
-      "mapa": "Parque Oncol",
+      "id": "parque-oncol", "tipo": "hacer", "categoria": "naturaleza", "duracion": 180,
+      "nombre": "Parque Oncol", "sector": "Curiñanco y costa", "mapa": "Parque Oncol",
+      "foto": "Valdivian_temperate_rainforest.JPG",
+      "corto": { "es": "Selva valdiviana y miradores al mar", "en": "Rainforest trails and ocean views" },
       "es": "Reserva de selva valdiviana costera, con senderos y miradores. Se llega en tour o en auto, cerca de 1 hora.",
       "en": "Coastal Valdivian rainforest reserve with trails and viewpoints. Around 1 hour by car or tour.",
-      "fuente": "chile.travel",
-      "fuenteUrl": "https://chile.travel/pt-br/itinerarios/itinerario-em-niebla-historia-e-selva-valdiviana/",
-      "lluvia": false
+      "fuente": "chile.travel", "fuenteUrl": "https://chile.travel/pt-br/itinerarios/itinerario-em-niebla-historia-e-selva-valdiviana/", "lluvia": false
     },
     {
-      "id": "cervecerias",
-      "tipo": "comer",
-      "categoria": "cerveza",
-      "nombre": "Cervecerías artesanales",
-      "sector": "Otro sector de Valdivia",
-      "mapa": "Cervecería Kunstmann, Valdivia",
-      "es": "Valdivia es la capital cervecera de Chile. Hay visitas guiadas, degustaciones y restaurantes, por ejemplo en Kunstmann.",
-      "en": "Valdivia is Chile's craft beer capital. Guided tours, tastings and restaurants, for example at Kunstmann.",
-      "fuente": "Calendario Chile",
-      "fuenteUrl": "https://www.calendariochile.com/turismo/los-mejores-planes-para-hacer-en-valdivia-chile",
-      "lluvia": true
+      "id": "cervecerias", "tipo": "comer", "categoria": "cerveza", "duracion": 90,
+      "nombre": "Cervecerías artesanales", "sector": "Otro sector de Valdivia", "mapa": "Cervecería Kunstmann, Valdivia",
+      "foto": "",
+      "corto": { "es": "La capital cervecera de Chile", "en": "Chile's craft beer capital" },
+      "es": "Hay visitas guiadas, degustaciones y restaurantes, por ejemplo en Kunstmann, camino a Niebla.",
+      "en": "Guided tours, tastings and restaurants, for example at Kunstmann on the road to Niebla.",
+      "fuente": "Calendario Chile", "fuenteUrl": "https://www.calendariochile.com/turismo/los-mejores-planes-para-hacer-en-valdivia-chile", "lluvia": true
     }
+  ],
+  "planes": [
+    { "id": "un-dia", "es": "Valdivia en 1 día", "en": "Valdivia in 1 day", "paradas": ["mercado-fluvial", "isla-teja", "jardin-botanico", "casa-anwandter", "cervecerias"] },
+    { "id": "lluvia", "es": "Día de lluvia", "en": "Rainy day", "paradas": ["casa-anwandter", "mercado-municipal", "cervecerias"] },
+    { "id": "costa", "es": "Costa y fuertes", "en": "Coast and forts", "paradas": ["fuerte-niebla", "fuertes-corral"] }
   ]
 }
