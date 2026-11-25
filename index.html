@@ -69,13 +69,21 @@
         </div>
         <h2 id="t-evento" class="evento-titulo"></h2>
         <p class="evento-bajada" id="evento-bajada"></p>
-        <ol class="agenda" id="evento-agenda"></ol>
-        <ul class="evento-consejos" id="evento-consejos"></ul>
-        <div class="evento-acciones">
-          <button type="button" class="btn-claro pressable" id="evento-plan" data-i18n="eventPlan">Armar mi domingo</button>
-          <a class="btn-borde pressable" id="evento-link" target="_blank" rel="noopener" data-i18n="eventSite">Sitio oficial</a>
+        <button type="button" class="evento-toggle pressable" id="evento-toggle" aria-expanded="false" aria-controls="evento-mas">
+          <span id="evento-toggle-txt" data-i18n="eventMore">Ver agenda y consejos</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="evento-mas" id="evento-mas">
+          <div class="evento-mas-in">
+            <ol class="agenda" id="evento-agenda"></ol>
+            <ul class="evento-consejos" id="evento-consejos"></ul>
+            <div class="evento-acciones">
+              <button type="button" class="btn-claro pressable" id="evento-plan" data-i18n="eventPlan">Armar mi domingo</button>
+              <a class="btn-borde pressable" id="evento-link" target="_blank" rel="noopener" data-i18n="eventSite">Sitio oficial</a>
+            </div>
+            <p class="evento-nota" id="evento-nota"></p>
+          </div>
         </div>
-        <p class="evento-nota" id="evento-nota"></p>
       </article>
 
       <article class="campana revelar" aria-labelledby="t-campana">
@@ -226,5 +234,6 @@
 
   <script src="config.js"></script>
   <script src="app.js"></script>
+  <script src="onboarding.js"></script>
 </body>
 </html>

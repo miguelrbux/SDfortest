@@ -38,6 +38,7 @@
       up: "Subir", down: "Bajar", less: "Menos tiempo", more: "Más tiempo", del: "Quitar",
       stops: (n) => `${n} paradas`, myDayShare: "Mi día en Valdivia",
       weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% lluvia` : ""}`,
+      eventMore: "Ver agenda y consejos", eventLess: "Ocultar detalles",
       eventTag: "Panorama de la semana", eventPlan: "Armar mi domingo", eventSite: "Sitio oficial", eventBadge: "Ironman",
       countdown: (d, h) => (d > 0 ? `Faltan ${d} día${d === 1 ? "" : "s"}` : h > 0 ? `Faltan ${h} h` : "¡Hoy!"), live: "En carrera ahora",
       seeReport: "Ver informe de transparencia", back: "Volver", transpTitle: "Transparencia", transpSub: "Cada aporte y cada entrega al club, a la vista de todos.",
@@ -80,6 +81,7 @@
       up: "Move up", down: "Move down", less: "Less time", more: "More time", del: "Remove",
       stops: (n) => `${n} stops`, myDayShare: "My day in Valdivia",
       weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% rain` : ""}`,
+      eventMore: "See schedule and tips", eventLess: "Hide details",
       eventTag: "This week's big event", eventPlan: "Plan my Sunday", eventSite: "Official site", eventBadge: "Ironman",
       countdown: (d, h) => (d > 0 ? `${d} day${d === 1 ? "" : "s"} to go` : h > 0 ? `${h} h to go` : "Today!"), live: "Racing now",
       seeReport: "See transparency report", back: "Back", transpTitle: "Transparency", transpSub: "Every contribution and every handover to the club, in the open.",
@@ -122,6 +124,7 @@
       up: "Subir", down: "Descer", less: "Menos tempo", more: "Mais tempo", del: "Tirar",
       stops: (n) => `${n} paradas`, myDayShare: "Meu dia em Valdivia",
       weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% de chuva` : ""}`,
+      eventMore: "Ver agenda e dicas", eventLess: "Ocultar detalhes",
       eventTag: "Destaque da semana", eventPlan: "Montar meu domingo", eventSite: "Site oficial", eventBadge: "Ironman",
       countdown: (d, h) => (d > 0 ? `Falta${d === 1 ? "" : "m"} ${d} dia${d === 1 ? "" : "s"}` : h > 0 ? `Faltam ${h} h` : "É hoje!"), live: "Prova em andamento",
       seeReport: "Ver relatório de transparência", back: "Voltar", transpTitle: "Transparência", transpSub: "Cada contribuição e cada repasse ao clube, à vista de todos.",
@@ -625,6 +628,7 @@
     const sel = $("#sel-idioma"); sel.value = lang; sel.setAttribute("aria-label", t("langLabel")); $("#idioma-cod").textContent = lang.toUpperCase();
     document.querySelectorAll("[data-i18n-aria]").forEach((n) => { n.setAttribute("aria-label", t(n.dataset.i18nAria)); });
     pintarTodo(); pintarClima();
+    document.dispatchEvent(new CustomEvent("remada:idioma", { detail: lang }));
   }
   function pintarTodo() { pintarTransparencia(); pintarEstaticos(); pintarHoy(); pintarModulo("comer"); pintarModulo("hacer"); pintarDia(); actualizarContador(false); }
 
@@ -674,6 +678,16 @@
       try { if (navigator.share) { await navigator.share({ title: t("myDayShare"), text: txt }); return; } } catch (e) { return; }
       try { await navigator.clipboard.writeText(txt); toast(t("copied")); } catch (e) { /* sin portapapeles */ }
     });
+    const evToggle = $("#evento-toggle");
+    const pintarToggle = () => {
+      const abierto = leer("remada-evento-abierto") === "1";
+      evToggle.setAttribute("aria-expanded", String(abierto));
+      $("#evento").classList.toggle("abierto", abierto);
+      $("#evento-toggle-txt").textContent = t(abierto ? "eventLess" : "eventMore");
+    };
+    evToggle.addEventListener("click", () => { guardar("remada-evento-abierto", evToggle.getAttribute("aria-expanded") === "true" ? "0" : "1"); pintarToggle(); });
+    pintarToggle();
+    document.addEventListener("remada:idioma", pintarToggle);
     $("#evento-plan").addEventListener("click", () => { const pl = estado.planes.find((x) => x.id === "ironman"); if (pl) { estado.inicio = "10:00"; guardar("valdi-inicio", "10:00"); $("#hora-inicio").value = "10:00"; cargarPlan(pl); } });
     const ficha = $("#ficha");
     ficha.addEventListener("click", (e) => { if (e.target === ficha) cerrarFicha(); });
