@@ -19,6 +19,10 @@ window.VALDI_CONFIG = {
   negocios: 0,
   fechaMeta: "2027-01-04",
 
+  // Google Analytics 4: ID de medición de la propiedad (formato G-XXXXXXXXXX).
+  // Vacío = sin medición. Solo mide en remada.cl y solo si la persona acepta el aviso.
+  gaId: "",
+
   // Enlace para que los negocios se sumen (formulario o landing pública).
   paraNegocios: "https://docs.google.com/forms/d/e/1FAIpQLSdZkWJtx6V-nlZaoYKQZ9OuwWrtAkNdfY-YU3qLiQ5IusYVxQ/viewform"
 };
