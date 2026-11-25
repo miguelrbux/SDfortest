@@ -1,4 +1,4 @@
-/* Valdi · guía de Valdivia (PWA). Sin dependencias ni build. */
+/* Remada · guía de Valdivia (PWA). Sin dependencias ni build. */
 (function () {
   "use strict";
   const CFG = window.VALDI_CONFIG || {};
@@ -42,7 +42,7 @@
       countdown: (d, h) => (d > 0 ? `Faltan ${d} día${d === 1 ? "" : "s"}` : h > 0 ? `Faltan ${h} h` : "¡Hoy!"), live: "En carrera ahora",
       seeReport: "Ver informe de transparencia", back: "Volver", transpTitle: "Transparencia", transpSub: "Cada aporte y cada entrega al club, a la vista de todos.",
       kRecv: "Recibido", kSent: "Entregado al club", kHeld: "Por entregar", howTitle: "Cómo funciona", transfersTitle: "Entregas al club", donorsTitle: "Negocios que aportan",
-      reglas: ["Los negocios transfieren su aporte a una cuenta dedicada solo a esta campaña, a nombre del creador de Valdi.", "Cada 15 días, lo reunido se entrega a la categoría U13 del Club de Deportes Las Ánimas.", "Aquí publicamos cada entrega con su fecha y comprobante.", "Hasta los $5.000.000, todo va a las familias. Si se supera la meta, el excedente cubre la operación de Valdi y lo que sobre vuelve a las familias. Valdi no busca lucro."],
+      reglas: ["Los negocios transfieren su aporte a una cuenta dedicada solo a esta campaña, a nombre del creador de Remada.", "Cada 15 días, lo reunido se entrega a la categoría U13 del Club de Deportes Las Ánimas.", "Aquí publicamos cada entrega con su fecha y comprobante.", "Hasta los $5.000.000, todo va a las familias. Si se supera la meta, el excedente cubre la operación de Remada y lo que sobre vuelve a las familias. Remada no busca lucro."],
       noTransfers: "Aún no hay entregas. La primera será dentro de los próximos 15 días.", receipt: "Ver comprobante",
       noDonors: "Pronto verás aquí a los negocios que aportan.", updated: (h) => `Datos en vivo desde la planilla de la campaña · ${h}`,
       progress: (p, d) => `${p}% de la meta · ${d}`,
@@ -84,7 +84,7 @@
       countdown: (d, h) => (d > 0 ? `${d} day${d === 1 ? "" : "s"} to go` : h > 0 ? `${h} h to go` : "Today!"), live: "Racing now",
       seeReport: "See transparency report", back: "Back", transpTitle: "Transparency", transpSub: "Every contribution and every handover to the club, in the open.",
       kRecv: "Received", kSent: "Given to the club", kHeld: "To be handed over", howTitle: "How it works", transfersTitle: "Handovers to the club", donorsTitle: "Contributing businesses",
-      reglas: ["Businesses transfer their contribution to an account used only for this campaign, held by Valdi's creator.", "Every 15 days, the funds are handed to the U13 team of Club de Deportes Las Ánimas.", "We publish each handover here with its date and receipt.", "Up to CLP 5,000,000, everything goes to the families. Any surplus covers Valdi's running costs, and the rest goes back to the families. Valdi is non-profit."],
+      reglas: ["Businesses transfer their contribution to an account used only for this campaign, held by the creator of Remada.", "Every 15 days, the funds are handed to the U13 team of Club de Deportes Las Ánimas.", "We publish each handover here with its date and receipt.", "Up to CLP 5,000,000, everything goes to the families. Any surplus covers Remada's running costs, and the rest goes back to the families. Remada is non-profit."],
       noTransfers: "No handovers yet. The first one will happen within the next 15 days.", receipt: "See receipt",
       noDonors: "Contributing businesses will appear here soon.", updated: (h) => `Live data from the campaign sheet · ${h}`,
       progress: (p, d) => `${p}% of the goal · ${d}`,

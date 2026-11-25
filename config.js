@@ -1,4 +1,4 @@
-// Configuración de Valdi. Es el único archivo que hay que tocar para actualizar la campaña.
+// Configuración de Remada. Es el único archivo que hay que tocar para actualizar la campaña.
 window.VALDI_CONFIG = {
   // URL CSV de la hoja "Publicados" de la planilla de respuestas
   // (Archivo > Compartir > Publicar en la Web > hoja "Publicados" > CSV).

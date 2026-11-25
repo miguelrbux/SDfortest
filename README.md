@@ -1,4 +1,4 @@
-# Valdi · guía de Valdivia (MVP web)
+# Remada · guía de Valdivia (MVP web)
 
 Web instalable (PWA) sin build ni dependencias. Se publica tal cual en GitHub Pages.
 
