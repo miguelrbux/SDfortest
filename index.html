@@ -73,6 +73,7 @@
         <p class="campana-monto"><strong id="monto-recaudado">$0</strong> <span id="monto-meta"></span></p>
         <div class="meta-barra" role="progressbar" aria-labelledby="t-campana" aria-valuemin="0" id="barra-meta"><div class="meta-relleno" id="relleno-meta"></div></div>
         <p class="campana-pie" id="texto-meta"></p>
+        <a href="#transparencia" class="campana-link pressable" data-i18n="seeReport">Ver informe de transparencia</a>
       </article>
 
       <div class="seccion-cab"><h2 data-i18n="plansTitle">Arma tu día en 1 toque</h2></div>
@@ -139,6 +140,30 @@
       <p class="nota" data-i18n="dayNote">Los tiempos son aproximados e incluyen 20 min de traslado entre paradas.</p>
     </section>
 
+    <!-- TRANSPARENCIA -->
+    <section id="vista-transparencia" class="vista" aria-labelledby="t-transp" hidden>
+      <a href="#hoy" class="volver pressable" data-i18n="back">Volver</a>
+      <h1 id="t-transp" data-i18n="transpTitle">Transparencia</h1>
+      <p class="sub" data-i18n="transpSub">Cada aporte y cada traspaso al club, a la vista de todos.</p>
+      <div class="kpis">
+        <div class="kpi"><span data-i18n="kRecv">Recibido</span><strong id="k-recibido">$0</strong></div>
+        <div class="kpi"><span data-i18n="kSent">Entregado al club</span><strong id="k-traspasado">$0</strong></div>
+        <div class="kpi"><span data-i18n="kHeld">Por entregar</span><strong id="k-saldo">$0</strong></div>
+      </div>
+      <div class="meta-barra grande" role="progressbar" aria-labelledby="t-transp" aria-valuemin="0" id="barra-transp"><div class="meta-relleno" id="relleno-transp"></div></div>
+      <p class="campana-pie" id="texto-transp"></p>
+
+      <h2 data-i18n="howTitle">Cómo funciona</h2>
+      <ol class="reglas" id="reglas"></ol>
+
+      <h2 data-i18n="transfersTitle">Entregas al club</h2>
+      <ol class="entregas" id="lista-entregas"></ol>
+
+      <h2 data-i18n="donorsTitle">Negocios que aportan</h2>
+      <div id="lista-aportantes" class="aportantes"></div>
+      <p class="nota" id="transp-actualizado"></p>
+    </section>
+
     <!-- AYUDA -->
     <section id="vista-ayuda" class="vista" aria-labelledby="t-ayuda" hidden>
       <h1 id="t-ayuda" data-i18n="helpTitle">Ayuda</h1>
@@ -166,6 +191,7 @@
       <a id="link-negocios" class="btn pressable" href="#" target="_blank" rel="noopener" data-i18n="footerCta">Súmate y apoya a la U13</a>
     </div>
     <p class="nota" data-i18n="footerNote">«Aliado» y «Destacado» indican un aporte mayor a la campaña. Info referencial: confirma horarios antes de ir.</p>
+    <p class="nota"><a href="#transparencia" data-i18n="seeReport">Ver informe de transparencia</a></p>
     <p class="nota" data-i18n="photoCredits">Fotos: Wikimedia Commons, con licencias libres. Toca el crédito de cada foto para ver autor y licencia.</p>
   </footer>
 

@@ -40,6 +40,12 @@
       weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% lluvia` : ""}`,
       eventTag: "Panorama de la semana", eventPlan: "Armar mi domingo", eventSite: "Sitio oficial", eventBadge: "Ironman",
       countdown: (d, h) => (d > 0 ? `Faltan ${d} día${d === 1 ? "" : "s"}` : h > 0 ? `Faltan ${h} h` : "¡Hoy!"), live: "En carrera ahora",
+      seeReport: "Ver informe de transparencia", back: "Volver", transpTitle: "Transparencia", transpSub: "Cada aporte y cada entrega al club, a la vista de todos.",
+      kRecv: "Recibido", kSent: "Entregado al club", kHeld: "Por entregar", howTitle: "Cómo funciona", transfersTitle: "Entregas al club", donorsTitle: "Negocios que aportan",
+      reglas: ["Los negocios transfieren su aporte a una cuenta dedicada solo a esta campaña, a nombre del creador de Valdi.", "Cada 15 días, lo reunido se entrega a la categoría U13 del Club de Deportes Las Ánimas.", "Aquí publicamos cada entrega con su fecha y comprobante.", "Hasta los $5.000.000, todo va a las familias. Si se supera la meta, el excedente cubre la operación de Valdi y lo que sobre vuelve a las familias. Valdi no busca lucro."],
+      noTransfers: "Aún no hay entregas. La primera será dentro de los próximos 15 días.", receipt: "Ver comprobante",
+      noDonors: "Pronto verás aquí a los negocios que aportan.", updated: (h) => `Datos en vivo desde la planilla de la campaña · ${h}`,
+      progress: (p, d) => `${p}% de la meta · ${d}`,
       wordsTitle: "Habla como valdiviano", wordsSub: "Las palabras que vas a escuchar en la calle, la mesa y la micro.",
       langBtn: "EN", langLabel: "Change language to English", call_: "Llamar al"
     },
@@ -76,6 +82,12 @@
       weather: (t, p) => `${t}°${p >= 40 ? ` · ${p}% rain` : ""}`,
       eventTag: "This week's big event", eventPlan: "Plan my Sunday", eventSite: "Official site", eventBadge: "Ironman",
       countdown: (d, h) => (d > 0 ? `${d} day${d === 1 ? "" : "s"} to go` : h > 0 ? `${h} h to go` : "Today!"), live: "Racing now",
+      seeReport: "See transparency report", back: "Back", transpTitle: "Transparency", transpSub: "Every contribution and every handover to the club, in the open.",
+      kRecv: "Received", kSent: "Given to the club", kHeld: "To be handed over", howTitle: "How it works", transfersTitle: "Handovers to the club", donorsTitle: "Contributing businesses",
+      reglas: ["Businesses transfer their contribution to an account used only for this campaign, held by Valdi's creator.", "Every 15 days, the funds are handed to the U13 team of Club de Deportes Las Ánimas.", "We publish each handover here with its date and receipt.", "Up to CLP 5,000,000, everything goes to the families. Any surplus covers Valdi's running costs, and the rest goes back to the families. Valdi is non-profit."],
+      noTransfers: "No handovers yet. The first one will happen within the next 15 days.", receipt: "See receipt",
+      noDonors: "Contributing businesses will appear here soon.", updated: (h) => `Live data from the campaign sheet · ${h}`,
+      progress: (p, d) => `${p}% of the goal · ${d}`,
       wordsTitle: "Talk like a local", wordsSub: "Words you'll hear on the street, at the table and on the bus.",
       langBtn: "ES", langLabel: "Cambiar idioma a español", call_: "Call"
     }
@@ -178,7 +190,7 @@
   let lang = leer("valdi-lang") || ((navigator.language || "es").toLowerCase().startsWith("es") ? "es" : "en");
   const estado = {
     lugares: [], planes: [], negocios: [], evento: null, porId: new Map(),
-    campana: { recaudado: CFG.recaudado || 0, negocios: CFG.negocios || 0 },
+    campana: { recaudado: CFG.recaudado || 0, negocios: CFG.negocios || 0 }, traspasos: [], cargadoEn: null,
     lluvia: null, filtros: { comer: null, hacer: null }, q: { comer: "", hacer: "" },
     dia: (() => { try { return JSON.parse(leer("valdi-dia") || "[]"); } catch (e) { return []; } })(),
     inicio: leer("valdi-inicio") || "10:00"
@@ -490,6 +502,30 @@
     const tip = TIPS[Math.floor(Date.now() / 86400000) % TIPS.length][lang];
     $("#tip-dia").textContent = `${tip[0]}: ${tip[1]}`;
   }
+  function pintarTransparencia() {
+    const meta = CFG.meta || 5000000, recibido = estado.campana.recaudado;
+    const entregado = estado.traspasos.reduce((s, x) => s + x.monto, 0);
+    $("#k-recibido").textContent = fmtCLP(recibido);
+    $("#k-traspasado").textContent = fmtCLP(entregado);
+    $("#k-saldo").textContent = fmtCLP(Math.max(0, recibido - entregado));
+    const pct = Math.min(100, Math.round((recibido / meta) * 100));
+    const barra = $("#barra-transp"); barra.setAttribute("aria-valuemax", meta); barra.setAttribute("aria-valuenow", recibido);
+    requestAnimationFrame(() => { $("#relleno-transp").style.width = pct + "%"; });
+    const fecha = new Intl.DateTimeFormat(lang === "es" ? "es-CL" : "en-US", { day: "numeric", month: "long", timeZone: "America/Santiago" }).format(new Date((CFG.fechaMeta || "2027-01-04") + "T12:00:00-03:00"));
+    $("#texto-transp").textContent = t("progress", pct, `${fmtCLP(meta)} · ${fecha}`);
+    $("#reglas").replaceChildren(...t("reglas").map((r) => el("li", {}, el("p", { text: r }))));
+    const fmtF = (f) => { const d = new Date(f + "T12:00:00-03:00"); return isNaN(d) ? f : new Intl.DateTimeFormat(lang === "es" ? "es-CL" : "en-US", { day: "numeric", month: "short", year: "numeric", timeZone: "America/Santiago" }).format(d); };
+    const ent = estado.traspasos.slice().sort((a, b) => (a.fecha < b.fecha ? 1 : -1));
+    $("#lista-entregas").replaceChildren(...(ent.length ? ent.map((x) => el("li", { class: "entrega" },
+      el("span", { class: "f", text: fmtF(x.fecha) }), el("strong", { text: fmtCLP(x.monto) }),
+      el("span", { class: "d", text: [x.destino || "U13 Club de Deportes Las Ánimas", x.nota].filter(Boolean).join(" · ") }),
+      /^https:\/\//.test(x.comprobante) ? el("a", { href: x.comprobante, target: "_blank", rel: "noopener", text: t("receipt") }) : null))
+      : [el("li", { class: "vacio", text: t("noTransfers") })]));
+    const ap = estado.negocios.slice().sort((a, b) => a.nivel - b.nivel || a.nombre.localeCompare(b.nombre));
+    $("#lista-aportantes").replaceChildren(...(ap.length ? ap.map((p) => el("span", { class: "aportante n" + p.nivel, text: p.nombre })) : [el("p", { class: "vacio", text: t("noDonors") })]));
+    const h = estado.cargadoEn ? new Intl.DateTimeFormat(lang === "es" ? "es-CL" : "en-US", { hour: "2-digit", minute: "2-digit", day: "numeric", month: "short", timeZone: "America/Santiago" }).format(estado.cargadoEn) : "";
+    $("#transp-actualizado").textContent = h ? t("updated", h) : "";
+  }
   function pintarEvento() {
     const ev = estado.evento, caja = $("#evento");
     if (!ev || !eventoActivo()) { caja.hidden = true; return; }
@@ -531,7 +567,7 @@
     const b = $("#btn-idioma"); b.textContent = t("langBtn"); b.setAttribute("aria-label", t("langLabel"));
     pintarTodo(); pintarClima();
   }
-  function pintarTodo() { pintarEstaticos(); pintarHoy(); pintarModulo("comer"); pintarModulo("hacer"); pintarDia(); actualizarContador(false); }
+  function pintarTodo() { pintarTransparencia(); pintarEstaticos(); pintarHoy(); pintarModulo("comer"); pintarModulo("hacer"); pintarDia(); actualizarContador(false); }
 
   // ---------- Clima ----------
   let clima = null;
@@ -547,7 +583,7 @@
   function pintarClima() { $("#clima").textContent = clima ? "Valdivia · " + t("weather", clima.temp, clima.lluvia) : ""; }
 
   // ---------- Navegación ----------
-  const VISTAS = ["hoy", "comer", "hacer", "dia", "ayuda"];
+  const VISTAS = ["hoy", "comer", "hacer", "dia", "ayuda", "transparencia"];
   let vistaActual = null;
   function navegar() {
     const v = VISTAS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "hoy";
@@ -598,6 +634,9 @@
     const num = (s) => Number(String(s || "0").replace(/[^\d]/g, "")) || 0;
     if (camp && camp[0]) estado.campana = { recaudado: num(camp[0].recaudado), negocios: num(camp[0].negocios) || estado.negocios.length };
     else if (!estado.campana.negocios) estado.campana.negocios = estado.negocios.length;
+    const tr = await traerCSV(CFG.traspasosCsv, "valdi-traspasos");
+    if (tr) estado.traspasos = tr.map((f) => ({ fecha: f.fecha || "", monto: num(f.monto), destino: f.destino || "", comprobante: f.comprobante || "", nota: f.nota || "" })).filter((x) => x.monto > 0);
+    estado.cargadoEn = (filas || camp) ? new Date() : null;
 
     aplicarIdioma();
     document.querySelectorAll("main > section > .revelar, .campana, .tip").forEach((n) => revelar(n));

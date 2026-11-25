@@ -11,6 +11,9 @@ window.VALDI_CONFIG = {
   // Campaña. Si campanaCsv tiene URL (hoja "Campaña" publicada como CSV, con una fila
   // recaudado,negocios), se usa esa; si no, se usan los valores fijos de abajo.
   campanaCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkwmsgRZonCTa0RcapNSvlVskGuk1dcRcAUg0fLYjutWLAnR2zi_UgoMgCLcgYfJvyjllWhQPTxmIL/pub?single=true&output=csv&gid=1531113573",
+  // Informe de transparencia: hoja "Traspasos" publicada como CSV. Columnas (fila 1):
+  // fecha (AAAA-MM-DD), monto, destino, comprobante (URL pública, opcional), nota (opcional)
+  traspasosCsv: "",
   meta: 5000000,
   recaudado: 0,
   negocios: 0,

@@ -20,3 +20,9 @@ Las fotos de los lugares públicos vienen de Wikimedia Commons (licencias libres
 
 ## Mi día
 El turista agrega lugares con «+» o carga un plan listo (`planes` en `data/lugares.json`). Puede ordenar, ajustar el tiempo de cada parada, abrir la ruta completa en Google Maps y compartirla. Se guarda solo en su teléfono.
+
+## Informe de transparencia
+La sección `#transparencia` muestra lo recibido (hoja Campaña), lo entregado al club y los negocios que aportan.
+Para las entregas, crea en la planilla una hoja **Traspasos** con columnas `fecha, monto, destino, comprobante, nota`
+(fecha AAAA-MM-DD; comprobante = enlace público a la foto o PDF de la transferencia, sin datos bancarios a la vista).
+Publícala como CSV y pega la URL en `traspasosCsv` de `config.js`.
