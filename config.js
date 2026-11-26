@@ -24,6 +24,18 @@ window.VALDI_CONFIG = {
   // Vacío = sin medición. Solo mide en remada.cl y solo si la persona acepta el aviso.
   gaId: "G-NV0E87QW82",
 
+  // Aporte voluntario de visitantes (sección Ayuda). Mismos datos publicados en la landing.
+  // Si se borra "banco", la sección se oculta. Registrar estos aportes en "Otros aportes" del panel.
+  banco: {
+    titular: "Miguel Alexis Rebolledo Banda",
+    rut: "16.520.237-6",
+    banco: "Banco Santander",
+    tipo: "Cuenta Vista",
+    numero: "0 070 58 08661 9",
+    correo: "miguelrebolledobanda@gmail.com"
+  },
+  aporteMontos: [2000, 5000, 10000, 20000],
+
   // Enlace para que los negocios se sumen (formulario o landing pública).
   paraNegocios: "https://docs.google.com/forms/d/e/1FAIpQLSdZkWJtx6V-nlZaoYKQZ9OuwWrtAkNdfY-YU3qLiQ5IusYVxQ/viewform"
 };

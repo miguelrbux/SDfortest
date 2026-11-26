@@ -257,10 +257,15 @@
   const decision = leer();
   if (decision === "si") activar();
   else if (decision !== "no") {
-    // Si está la introducción en pantalla, el aviso aparece cuando se cierre.
+    // El aviso no aparece de entrada: espera a que se cierre la introducción y luego
+    // deja explorar un rato (20 s tras la intro, 8 s si no hubo intro). Nunca encima
+    // de la intro, de una ficha abierta ni de un diálogo; en ese caso reintenta.
+    const ESPERA_TRAS_INTRO = 20000, ESPERA_SIN_INTRO = 8000;
+    const ocupado = () => document.querySelector(".onb") || document.querySelector("dialog[open]");
+    const intentar = () => { if (leer()) return; if (ocupado()) { setTimeout(intentar, 3000); return; } mostrarAviso(); };
     const esperarIntro = () => {
-      if (!document.querySelector(".onb")) { mostrarAviso(); return; }
-      const ob = new MutationObserver(() => { if (!document.querySelector(".onb")) { ob.disconnect(); setTimeout(mostrarAviso, 400); } });
+      if (!document.querySelector(".onb")) { setTimeout(intentar, ESPERA_SIN_INTRO); return; }
+      const ob = new MutationObserver(() => { if (!document.querySelector(".onb")) { ob.disconnect(); setTimeout(intentar, ESPERA_TRAS_INTRO); } });
       ob.observe(document.body, { childList: true });
     };
     setTimeout(esperarIntro, 600); // la intro se abre a los 250 ms

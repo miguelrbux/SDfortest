@@ -48,7 +48,22 @@
       noDonors: "Pronto verás aquí a los negocios que aportan.", updated: (h) => `Datos en vivo desde la planilla de la campaña · ${h}`,
       progress: (p, d) => `${p}% de la meta · ${d}`,
       wordsTitle: "Habla como valdiviano", wordsSub: "Las palabras que vas a escuchar en la calle, la mesa y la micro.",
-      langLabel: "Idioma", navLabel: "Secciones", sosLabel: "Emergencias", sectorLabel: "Sector", topicsLabel: "Temas", call_: "Llamar al"
+      langLabel: "Idioma", navLabel: "Secciones", sosLabel: "Emergencias", sectorLabel: "Sector", topicsLabel: "Temas", call_: "Llamar al",
+      today: "Hoy", tomorrow: "Mañana", dayDate: "Otra fecha", dayDateLabel: "¿Para qué día?",
+      nPlans: (n) => `${n} planes listos`, nBusinesses: (n) => `${n} negocio${n === 1 ? "" : "s"}`, nPlaces: (n) => `${n} lugares`,
+      viewLabel: "Vista", viewList: "Lista", viewMap: "Mapa", mapLabel: "Mapa de lugares", nearMe: "Cerca de mí",
+      mapError: "No pudimos cargar el mapa. Revisa tu conexión.", mapSome: (a, b) => `${a} de ${b} lugares en el mapa. El resto, en la lista.`,
+      geoNo: "Tu navegador no permite ubicarte.", geoAsk: "Buscando tu ubicación…", youAreHere: "Estás aquí",
+      geoFar: "Estás lejos de Valdivia. Te mostramos los lugares igual.", geoDenied: "Sin permiso de ubicación. Puedes activarlo en tu navegador.",
+      donateTag: "Súmate a la causa", donateTitle: "Aporta a la U13 de Las Ánimas",
+      donateBody: "Con tu aporte voluntario ayudas a las familias que costean el deporte de sus hijos. Cada entrega al club se publica en Transparencia.",
+      donateAmounts: "Monto sugerido", donateCopy: "Copiar datos", donateNotify: "Avisar mi aporte", donateCta: "Aportar yo también",
+      donateNote: "Transferencia a la cuenta dedicada a esta campaña. En el comentario escribe «U13» y tu nombre. No da beneficio tributario.",
+      bHolder: "Titular", bBank: "Banco", bType: "Tipo de cuenta", bNumber: "Número", bEmail: "Correo", bAmount: "Monto", bComment: "Comentario", yourName: "tu nombre",
+      notifySubject: (m) => `Aporte voluntario U13 · ${m}`, notifyBody: (m) => `Hola, transferí ${m} para la U13 de Las Ánimas.\nNombre: \nFecha: `,
+      bCopied: "Datos copiados. Pégalos en tu app del banco.", bCopyFail: "No se pudo copiar. Mantén presionado para copiar.",
+      installTitle: "Usa Remada a pantalla completa", installBtn: "Instalar",
+      installAndroid: "Instálala en tu inicio: se abre sin la barra del navegador.", installIOS: "Toca Compartir y luego «Agregar a inicio». Se abre sin la barra del navegador."
     },
     en: {
       skip: "Skip to content", sos: "SOS", offline: "You're offline. Showing your saved information.",
@@ -91,7 +106,22 @@
       noDonors: "Contributing businesses will appear here soon.", updated: (h) => `Live data from the campaign sheet · ${h}`,
       progress: (p, d) => `${p}% of the goal · ${d}`,
       wordsTitle: "Talk like a local", wordsSub: "Words you'll hear on the street, at the table and on the bus.",
-      langLabel: "Language", navLabel: "Sections", sosLabel: "Emergencies", sectorLabel: "Area", topicsLabel: "Topics", call_: "Call"
+      langLabel: "Language", navLabel: "Sections", sosLabel: "Emergencies", sectorLabel: "Area", topicsLabel: "Topics", call_: "Call",
+      today: "Today", tomorrow: "Tomorrow", dayDate: "Other date", dayDateLabel: "Which day?",
+      nPlans: (n) => `${n} ready-made plans`, nBusinesses: (n) => `${n} business${n === 1 ? "" : "es"}`, nPlaces: (n) => `${n} places`,
+      viewLabel: "View", viewList: "List", viewMap: "Map", mapLabel: "Map of places", nearMe: "Near me",
+      mapError: "We couldn't load the map. Check your connection.", mapSome: (a, b) => `${a} of ${b} places on the map. The rest are in the list.`,
+      geoNo: "Your browser can't share your location.", geoAsk: "Finding your location…", youAreHere: "You are here",
+      geoFar: "You're far from Valdivia. Here are the places anyway.", geoDenied: "No location permission. You can turn it on in your browser.",
+      donateTag: "Join the cause", donateTitle: "Support the Las Ánimas U13 team",
+      donateBody: "Your voluntary contribution helps families who pay for their kids' sports. Every handover to the club is published under Transparency.",
+      donateAmounts: "Suggested amount", donateCopy: "Copy details", donateNotify: "Let us know", donateCta: "I want to contribute",
+      donateNote: "Bank transfer (Chile) to the account used only for this campaign. Write “U13” and your name in the comment. Not tax-deductible.",
+      bHolder: "Account holder", bBank: "Bank", bType: "Account type", bNumber: "Number", bEmail: "Email", bAmount: "Amount", bComment: "Comment", yourName: "your name",
+      notifySubject: (m) => `U13 voluntary contribution · ${m}`, notifyBody: (m) => `Hi, I transferred ${m} for the Las Ánimas U13 team.\nName: \nDate: `,
+      bCopied: "Details copied. Paste them in your banking app.", bCopyFail: "Couldn't copy. Press and hold to copy.",
+      installTitle: "Use Remada full screen", installBtn: "Install",
+      installAndroid: "Add it to your home screen: it opens without the browser bar.", installIOS: "Tap Share, then “Add to Home Screen”. It opens without the browser bar."
     },
     pt: {
       skip: "Pular para o conteúdo", sos: "SOS", offline: "Sem conexão. Mostrando as últimas informações salvas.",
@@ -134,7 +164,22 @@
       noDonors: "Em breve você verá aqui os negócios que contribuem.", updated: (h) => `Dados ao vivo da planilha da campanha · ${h}`,
       progress: (p, d) => `${p}% da meta · ${d}`,
       wordsTitle: "Fale como um valdiviano", wordsSub: "Palavras chilenas que você vai ouvir na rua, à mesa e no ônibus. O significado vem em português.",
-      langLabel: "Idioma", navLabel: "Seções", sosLabel: "Emergências", sectorLabel: "Região", topicsLabel: "Temas", call_: "Ligar para"
+      langLabel: "Idioma", navLabel: "Seções", sosLabel: "Emergências", sectorLabel: "Região", topicsLabel: "Temas", call_: "Ligar para",
+      today: "Hoje", tomorrow: "Amanhã", dayDate: "Outra data", dayDateLabel: "Para qual dia?",
+      nPlans: (n) => `${n} roteiros prontos`, nBusinesses: (n) => `${n} negócio${n === 1 ? "" : "s"}`, nPlaces: (n) => `${n} lugares`,
+      viewLabel: "Visualização", viewList: "Lista", viewMap: "Mapa", mapLabel: "Mapa de lugares", nearMe: "Perto de mim",
+      mapError: "Não conseguimos carregar o mapa. Verifique sua conexão.", mapSome: (a, b) => `${a} de ${b} lugares no mapa. O resto está na lista.`,
+      geoNo: "Seu navegador não permite localizar você.", geoAsk: "Buscando sua localização…", youAreHere: "Você está aqui",
+      geoFar: "Você está longe de Valdivia. Mostramos os lugares mesmo assim.", geoDenied: "Sem permissão de localização. Ative no seu navegador.",
+      donateTag: "Junte-se à causa", donateTitle: "Apoie o sub-13 do Las Ánimas",
+      donateBody: "Sua contribuição voluntária ajuda as famílias que pagam o esporte dos filhos. Cada repasse ao clube é publicado em Transparência.",
+      donateAmounts: "Valor sugerido", donateCopy: "Copiar dados", donateNotify: "Avisar minha contribuição", donateCta: "Quero contribuir",
+      donateNote: "Transferência (Chile) para a conta usada só nesta campanha. No comentário escreva “U13” e seu nome. Sem benefício fiscal.",
+      bHolder: "Titular", bBank: "Banco", bType: "Tipo de conta", bNumber: "Número", bEmail: "E-mail", bAmount: "Valor", bComment: "Comentário", yourName: "seu nome",
+      notifySubject: (m) => `Contribuição voluntária sub-13 · ${m}`, notifyBody: (m) => `Olá, transferi ${m} para o sub-13 do Las Ánimas.\nNome: \nData: `,
+      bCopied: "Dados copiados. Cole no app do seu banco.", bCopyFail: "Não foi possível copiar. Mantenha pressionado para copiar.",
+      installTitle: "Use a Remada em tela cheia", installBtn: "Instalar",
+      installAndroid: "Adicione à tela inicial: abre sem a barra do navegador.", installIOS: "Toque em Compartilhar e depois em “Adicionar à Tela de Início”. Abre sem a barra do navegador."
     }
   };
 
@@ -248,9 +293,21 @@
     lugares: [], planes: [], negocios: [], evento: null, porId: new Map(),
     campana: { recaudado: CFG.recaudado || 0, negocios: CFG.negocios || 0 }, traspasos: [], cargadoEn: null,
     lluvia: null, filtros: { comer: null, hacer: null }, q: { comer: "", hacer: "" },
-    dia: (() => { try { return JSON.parse(leer("valdi-dia") || "[]"); } catch (e) { return []; } })(),
-    inicio: leer("valdi-inicio") || "10:00"
+    dias: (() => { try { return JSON.parse(leer("remada-dias") || "{}"); } catch (e) { return {}; } })(),
+    fecha: null, dia: [], inicio: "10:00",
+    modo: { comer: "lista", hacer: "lista" }, yo: null
   };
+  // Fecha de hoy en Valdivia (AAAA-MM-DD)
+  const hoyISO = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Santiago" }).format(new Date());
+  const masDias = (iso, n) => { const d = new Date(iso + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+  (function migrarDias() {
+    const hoy = hoyISO();
+    try { const viejo = JSON.parse(leer("valdi-dia") || "null"); if (Array.isArray(viejo) && viejo.length && !estado.dias[hoy]) estado.dias[hoy] = { inicio: leer("valdi-inicio") || "10:00", paradas: viejo }; } catch (e) { /* nada */ }
+    for (const f of Object.keys(estado.dias)) if (f < hoy || !estado.dias[f] || !(estado.dias[f].paradas || []).length) delete estado.dias[f];
+    estado.fecha = hoy;
+    estado.dia = (estado.dias[hoy] && estado.dias[hoy].paradas) || [];
+    estado.inicio = (estado.dias[hoy] && estado.dias[hoy].inicio) || "10:00";
+  })();
   const t = (k, ...a) => { const v = (T[lang] || T.es)[k]; return typeof v === "function" ? v(...a) : v; };
   // Texto en el idioma actual; si falta, en español.
   const tr = (o) => (o && (o[lang] || o.es)) || "";
@@ -338,7 +395,7 @@
     const d = f.descripcion || "";
     return {
       id: "neg-" + slug(f.nombre), negocio: true, tipo, nombre: f.nombre, sector: f.sector || "",
-      direccion: f.direccion || "", horario: f.horario || "", es: d, en: f.descripcion_en || "", pt: f.descripcion_pt || "",
+      direccion: f.direccion || "", lat: Number(f.lat) || null, lng: Number(f.lng) || null, horario: f.horario || "", es: d, en: f.descripcion_en || "", pt: f.descripcion_pt || "",
       corto: { es: recortar(d), en: recortar(f.descripcion_en) || undefined, pt: recortar(f.descripcion_pt) || undefined },
       web: f.web || "", telefono: f.telefono || "", foto: /^https:\/\//.test(f.foto || "") ? f.foto : "", promocion: f.promocion || "",
       nivel: nv.startsWith("aliado") || nv.startsWith("principal") ? 0 : nv.startsWith("destacado") ? 1 : 2,
@@ -444,7 +501,34 @@
   }
 
   // ---------- Mi día ----------
-  function guardarDia() { guardar("valdi-dia", JSON.stringify(estado.dia)); }
+  function guardarDia() {
+    if (estado.dia.length) estado.dias[estado.fecha] = { inicio: estado.inicio, paradas: estado.dia };
+    else delete estado.dias[estado.fecha];
+    guardar("remada-dias", JSON.stringify(estado.dias));
+  }
+  const fmtFecha = (iso, largo) => new Intl.DateTimeFormat(loc(), largo ? { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" } : { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" }).format(new Date(iso + "T12:00:00Z"));
+  const nombreFecha = (iso) => (iso === hoyISO() ? t("today") : iso === masDias(hoyISO(), 1) ? t("tomorrow") : fmtFecha(iso));
+  function cambiarFecha(iso) {
+    if (!iso || iso === estado.fecha) return;
+    guardarDia();
+    estado.fecha = iso < hoyISO() ? hoyISO() : iso;
+    const d = estado.dias[estado.fecha];
+    estado.dia = d ? d.paradas.slice() : [];
+    estado.inicio = (d && d.inicio) || "10:00";
+    $("#hora-inicio").value = estado.inicio; $("#dia-fecha").value = estado.fecha;
+    pintarDia(); pintarTarjetasMas(); actualizarContador(true);
+  }
+  function pintarFechas() {
+    const hoy = hoyISO(), man = masDias(hoy, 1);
+    const fechas = [...new Set([hoy, man, estado.fecha, ...Object.keys(estado.dias)])].filter((f) => f >= hoy).sort();
+    $("#dia-fechas").replaceChildren(...fechas.map((f) => {
+      const n = f === estado.fecha ? estado.dia.length : ((estado.dias[f] && estado.dias[f].paradas.length) || 0);
+      return el("button", { type: "button", class: "fecha-chip pressable", "aria-pressed": String(f === estado.fecha), onclick: () => cambiarFecha(f) },
+        el("span", { text: nombreFecha(f) }), n ? el("b", { text: String(n) }) : null);
+    }));
+    const fi = $("#dia-fecha"); fi.min = hoy; fi.value = estado.fecha;
+    $("#t-dia").textContent = estado.fecha === hoy ? t("dayTitle") : `${t("dayTitle")} · ${fmtFecha(estado.fecha, true)}`;
+  }
   function actualizarContador(pop) {
     const c = $("#contador-dia"); const n = estado.dia.length;
     c.hidden = !n; c.textContent = n;
@@ -453,7 +537,7 @@
   function alternarDia(id) {
     const p = estado.porId.get(id); if (!p) return;
     if (enDia(id)) { estado.dia = estado.dia.filter((s) => s.id !== id); toast(t("removed")); }
-    else { estado.dia.push({ id, dur: p.duracion || 60 }); toast(t("added")); }
+    else { estado.dia.push({ id, dur: p.duracion || 60 }); toast(estado.fecha === hoyISO() ? t("added") : `${t("added")} · ${nombreFecha(estado.fecha)}`); }
     guardarDia(); actualizarContador(true);
     document.querySelectorAll(`[data-mas="${CSS.escape(id)}"]`).forEach((b) => {
       b.setAttribute("aria-pressed", String(enDia(id)));
@@ -476,7 +560,8 @@
   const aHora = (min) => { min = ((min % 1440) + 1440) % 1440; return String(Math.floor(min / 60)).padStart(2, "0") + ":" + String(min % 60).padStart(2, "0"); };
 
   function pintarDia() {
-    estado.dia = estado.dia.filter((s) => estado.porId.has(s.id));
+    if (estado.porId.size) estado.dia = estado.dia.filter((s) => estado.porId.has(s.id));
+    pintarFechas();
     const lista = $("#lista-dia"); const n = estado.dia.length;
     $("#dia-vacio").hidden = n > 0; $("#dia-acciones").hidden = n === 0;
     let reloj = aMin(estado.inicio);
@@ -518,11 +603,196 @@
   function textoDia() {
     let reloj = aMin(estado.inicio);
     const lineas = estado.dia.map((s, i) => { const p = estado.porId.get(s.id); const l = `${aHora(reloj)} ${p.nombre}`; reloj += s.dur + TRASLADO; return l; });
-    return `${t("myDayShare")}\n${lineas.join("\n")}\n\n${location.href.split("#")[0]}`;
+    return `${t("myDayShare")} · ${fmtFecha(estado.fecha, true)}\n${lineas.join("\n")}\n\n${location.href.split("#")[0]}`;
+  }
+
+  // ---------- Paneles de Hoy ----------
+  function iniciarPaneles() {
+    let guardados = {}; try { guardados = JSON.parse(leer("remada-paneles") || "{}"); } catch (e) { /* nada */ }
+    document.querySelectorAll(".panel").forEach((p) => {
+      const id = p.dataset.panel, b = p.querySelector(".panel-btn");
+      const poner = (abierto) => { p.classList.toggle("abierto", abierto); b.setAttribute("aria-expanded", String(abierto)); };
+      poner(id in guardados ? guardados[id] : p.dataset.abierto === "1");
+      b.addEventListener("click", () => {
+        const abierto = b.getAttribute("aria-expanded") !== "true";
+        poner(abierto); guardados[id] = abierto; guardar("remada-paneles", JSON.stringify(guardados));
+      });
+    });
+  }
+
+  // ---------- Mapa (Leaflet propio + teselas CARTO/OSM) ----------
+  const VALDIVIA = [-39.8142, -73.2459];
+  let leafletListo = null;
+  function cargarLeaflet() {
+    if (window.L) return Promise.resolve();
+    if (leafletListo) return leafletListo;
+    leafletListo = new Promise((ok, mal) => {
+      const css = document.createElement("link"); css.rel = "stylesheet"; css.href = "vendor/leaflet/leaflet.css"; document.head.append(css);
+      const s = document.createElement("script"); s.src = "vendor/leaflet/leaflet.js"; s.onload = ok; s.onerror = mal; document.head.append(s);
+    });
+    return leafletListo;
+  }
+  const mapas = {};
+  let geoCache = {}; try { geoCache = JSON.parse(leer("remada-geo") || "{}"); } catch (e) { /* nada */ }
+  let geoCola = Promise.resolve();
+  function geocodificar(p) {
+    // Para negocios sin lat/lng: Nominatim (OSM), 1 consulta por segundo y con caché en el teléfono.
+    const q = [p.direccion, "Valdivia, Chile"].filter(Boolean).join(", ");
+    if (geoCache[q]) return Promise.resolve(geoCache[q]);
+    geoCola = geoCola.then(() => new Promise((r) => setTimeout(r, 1100))).then(async () => {
+      try {
+        const u = "https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=cl&viewbox=-73.6,-39.6,-73.0,-40.0&bounded=1&q=" + encodeURIComponent(q);
+        const r = await fetch(u, { headers: { "Accept-Language": "es" } }); const d = await r.json();
+        if (d && d[0]) { geoCache[q] = [Number(d[0].lat), Number(d[0].lon)]; guardar("remada-geo", JSON.stringify(geoCache)); }
+      } catch (e) { /* sin ubicación */ }
+      return geoCache[q];
+    });
+    return geoCola;
+  }
+  const distKm = (a, b) => { const R = 6371, dLa = (b[0] - a[0]) * Math.PI / 180, dLo = (b[1] - a[1]) * Math.PI / 180; const x = Math.sin(dLa / 2) ** 2 + Math.cos(a[0] * Math.PI / 180) * Math.cos(b[0] * Math.PI / 180) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(x)); };
+  const fmtDist = (km) => (km < 1 ? `${Math.round(km * 1000 / 50) * 50} m` : `${km.toFixed(km < 10 ? 1 : 0).replace(".", lang === "en" ? "." : ",")} km`);
+  function itemsModulo(mod) {
+    const q = sinTildes(estado.q[mod]), f = estado.filtros[mod];
+    return todos().filter((p) => p.tipo === mod && (!f || p.sector === f) && (!q || sinTildes([p.nombre, p.es, p.en, p.sector, p.direccion].join(" ")).includes(q)));
+  }
+  async function pintarMapa(mod) {
+    const caja = $("#mapa-caja-" + mod); if (caja.hidden) return;
+    try { await cargarLeaflet(); } catch (e) { $("#mapa-nota-" + mod).textContent = t("mapError"); return; }
+    const L = window.L;
+    let m = mapas[mod];
+    if (!m) {
+      const mapa = L.map("mapa-" + mod, { zoomControl: true, attributionControl: true }).setView(VALDIVIA, 13);
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+        maxZoom: 19, subdomains: "abcd",
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      }).addTo(mapa);
+      m = mapas[mod] = { mapa, capa: L.layerGroup().addTo(mapa), yo: null, marcadores: {} };
+    }
+    setTimeout(() => m.mapa.invalidateSize(), 50);
+    m.capa.clearLayers(); m.marcadores = {};
+    const items = itemsModulo(mod);
+    const conPos = [];
+    const poner = (p, pos) => {
+      if (!pos) return;
+      const nivel = p.evento ? "evt" : p.negocio ? (p.nivel === 0 ? "aliado" : p.nivel === 1 ? "dest" : "neg") : "lugar";
+      const ic = L.divIcon({ className: "pin pin-" + nivel, html: `<span>${p.tipo === "comer" ? I.food : I.mountain}</span>`, iconSize: [36, 36], iconAnchor: [18, 34] });
+      const mk = L.marker(pos, { icon: ic, title: p.nombre, alt: p.nombre, keyboard: true }).addTo(m.capa);
+      mk.on("click", () => enfocarTarjeta(mod, p.id, true));
+      m.marcadores[p.id] = mk; conPos.push(pos); p._pos = pos;
+    };
+    for (const p of items) {
+      const pos = p.lat && p.lng ? [Number(p.lat), Number(p.lng)] : null;
+      if (pos) poner(p, pos);
+      else if (p.negocio && p.direccion) geocodificar(p).then((g) => { if (g && mapas[mod]) { poner(p, g); pintarCarruselMapa(mod, items); } });
+    }
+    if (m.yo) conPos.push(m.yo);
+    if (conPos.length && !m.ajustado) { m.mapa.fitBounds(L.latLngBounds(conPos).pad(0.15), { maxZoom: 15 }); m.ajustado = true; }
+    pintarCarruselMapa(mod, items);
+  }
+  function pintarCarruselMapa(mod, items) {
+    let lista = items.filter((p) => p._pos || (p.lat && p.lng));
+    if (estado.yo) lista = lista.map((p) => ((p._km = distKm(estado.yo, p._pos || [p.lat, p.lng])), p)).sort((a, b) => a._km - b._km);
+    $("#mapa-lista-" + mod).replaceChildren(...lista.map((p, i) => {
+      const c = tarjeta(p, i); c.dataset.id = p.id; c.classList.add("visible");
+      if (estado.yo && p._km != null) c.querySelector(".card-meta").prepend(el("span", { class: "dist", text: fmtDist(p._km) }));
+      return c;
+    }));
+    $("#mapa-nota-" + mod).textContent = lista.length < items.length ? t("mapSome", lista.length, items.length) : "";
+  }
+  function enfocarTarjeta(mod, id, desdeMapa) {
+    const c = $(`#mapa-lista-${mod} [data-id="${CSS.escape(id)}"]`);
+    if (c) { c.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", inline: "center", block: "nearest" }); c.classList.add("resaltada"); setTimeout(() => c.classList.remove("resaltada"), 1200); }
+    const m = mapas[mod]; if (!desdeMapa && m && m.marcadores[id]) m.mapa.panTo(m.marcadores[id].getLatLng());
+  }
+  function cambiarModo(mod, modo) {
+    estado.modo[mod] = modo;
+    document.querySelectorAll(`.modo[data-mod="${mod}"]`).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.modo === modo)));
+    $("#lista-" + mod).hidden = modo === "mapa"; $("#mapa-caja-" + mod).hidden = modo !== "mapa";
+    if (modo === "mapa") pintarMapa(mod);
+  }
+  function ubicarme(mod) {
+    const nota = $("#mapa-nota-" + mod);
+    if (!navigator.geolocation) { nota.textContent = t("geoNo"); return; }
+    nota.textContent = t("geoAsk");
+    navigator.geolocation.getCurrentPosition((pos) => {
+      estado.yo = [pos.coords.latitude, pos.coords.longitude];
+      const m = mapas[mod]; if (!m) return;
+      if (m.yo) m.yo.remove();
+      const lejos = distKm(estado.yo, VALDIVIA) > 60;
+      m.yo = window.L.circleMarker(estado.yo, { radius: 9, color: "#fff", weight: 3, fillColor: "#1A73E8", fillOpacity: 1 }).addTo(m.mapa).bindTooltip(t("youAreHere"));
+      if (lejos) nota.textContent = t("geoFar"); else { nota.textContent = ""; m.mapa.setView(estado.yo, 15); }
+      pintarCarruselMapa(mod, itemsModulo(mod));
+    }, () => { nota.textContent = t("geoDenied"); }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+  }
+  function iniciarMapas() {
+    document.querySelectorAll(".modo").forEach((b) => b.addEventListener("click", () => cambiarModo(b.dataset.mod, b.dataset.modo)));
+    document.querySelectorAll(".mapa-yo").forEach((b) => b.addEventListener("click", () => ubicarme(b.dataset.mod)));
+    ["comer", "hacer"].forEach((mod) => {
+      const car = $("#mapa-lista-" + mod); let tm;
+      car.addEventListener("scroll", () => { clearTimeout(tm); tm = setTimeout(() => {
+        const r = car.getBoundingClientRect(); let mejor = null, d0 = 1e9;
+        car.querySelectorAll("[data-id]").forEach((c) => { const cr = c.getBoundingClientRect(); const d = Math.abs(cr.left - r.left - 16); if (d < d0) { d0 = d; mejor = c; } });
+        const m = mapas[mod]; if (mejor && m && m.marcadores[mejor.dataset.id]) { m.mapa.panTo(m.marcadores[mejor.dataset.id].getLatLng()); Object.values(m.marcadores).forEach((k) => k.getElement() && k.getElement().classList.remove("activo")); const e = m.marcadores[mejor.dataset.id].getElement(); if (e) e.classList.add("activo"); }
+      }, 120); });
+    });
+  }
+
+  // ---------- Aporte voluntario ----------
+  let montoSel = 5000;
+  function pintarAporte() {
+    const montos = (CFG.aporteMontos || [2000, 5000, 10000, 20000]);
+    $("#montos").replaceChildren(...montos.map((m) => el("button", { type: "button", class: "monto pressable", "aria-pressed": String(m === montoSel), text: fmtCLP(m), onclick: () => { montoSel = m; pintarAporte(); } })));
+    const b = CFG.banco || {};
+    const filas = [[t("bHolder"), b.titular], ["RUT", b.rut], [t("bBank"), b.banco], [t("bType"), b.tipo], [t("bNumber"), b.numero], [t("bEmail"), b.correo], [t("bAmount"), fmtCLP(montoSel)], [t("bComment"), "U13 + " + t("yourName")]].filter((x) => x[1]);
+    $("#banco").replaceChildren(...filas.flatMap(([k, v]) => [el("dt", { text: k }), el("dd", { text: v })]));
+    const asunto = encodeURIComponent(t("notifySubject", fmtCLP(montoSel)));
+    const cuerpo = encodeURIComponent(t("notifyBody", fmtCLP(montoSel)));
+    $("#avisar-aporte").href = b.correo ? `mailto:${b.correo}?subject=${asunto}&body=${cuerpo}` : "#transparencia";
+  }
+  function iniciarAporte() {
+    if (!CFG.banco) { $("#aportar").hidden = true; return; }
+    pintarAporte();
+    document.addEventListener("remada:idioma", pintarAporte);
+    $("#copiar-banco").addEventListener("click", async () => {
+      const b = CFG.banco;
+      const txt = [b.titular, "RUT " + b.rut, b.banco, b.tipo, "N° " + b.numero, b.correo, t("bAmount") + ": " + fmtCLP(montoSel), t("bComment") + ": U13 + " + t("yourName")].filter(Boolean).join("\n");
+      try { await navigator.clipboard.writeText(txt); toast(t("bCopied")); } catch (e) { toast(t("bCopyFail")); }
+    });
+  }
+
+  // ---------- Instalar como app (pantalla completa) ----------
+  let promptInstalar = null;
+  const instalada = () => matchMedia("(display-mode: standalone)").matches || matchMedia("(display-mode: fullscreen)").matches || navigator.standalone === true;
+  function iniciarInstalar() {
+    const caja = $("#instalar");
+    const esIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+    const pintar = () => { $("#instalar-p").textContent = promptInstalar ? t("installAndroid") : t("installIOS"); $("#btn-instalar").hidden = !promptInstalar; };
+    const mostrar = () => { if (instalada() || leer("remada-instalar-cerrado")) return; pintar(); caja.hidden = false; };
+    window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); promptInstalar = e; mostrar(); });
+    if (esIOS) setTimeout(mostrar, 1500);
+    $("#btn-instalar").addEventListener("click", async () => { if (!promptInstalar) return; promptInstalar.prompt(); try { await promptInstalar.userChoice; } catch (e) { /* nada */ } promptInstalar = null; caja.hidden = true; });
+    $("#instalar-x").addEventListener("click", () => { guardar("remada-instalar-cerrado", "1"); caja.hidden = true; });
+    window.addEventListener("appinstalled", () => { caja.hidden = true; });
+    document.addEventListener("remada:idioma", pintar);
+  }
+
+  // ---------- Barra superior que se esconde al bajar ----------
+  function iniciarBarra() {
+    const barra = $(".barra"); let ultimo = window.scrollY, tic = false;
+    window.addEventListener("scroll", () => {
+      if (tic) return; tic = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y > 80 && y > ultimo + 6) barra.classList.add("oculta");
+        else if (y < ultimo - 6 || y < 80) barra.classList.remove("oculta");
+        ultimo = y; tic = false;
+      });
+    }, { passive: true });
   }
 
   // ---------- Vistas ----------
   function pintarModulo(mod) {
+    setTimeout(() => { if (estado.modo[mod] === "mapa") pintarMapa(mod); }, 0);
     const q = sinTildes(estado.q[mod]); const f = estado.filtros[mod];
     const base = todos().filter((p) => p.tipo === mod);
     const items = base.filter((p) => (!f || p.sector === f) && (!q || sinTildes([p.nombre, p.es, p.en, p.pt, p.sector, nomSector(p.sector), p.direccion].join(" ")).includes(q)));
@@ -562,6 +832,11 @@
     $("#planes-dia").replaceChildren(...planes.map(tarjetaPlan));
     const tip = tr(TIPS[Math.floor(Date.now() / 86400000) % TIPS.length]);
     $("#tip-dia").textContent = `${tip[0]}: ${tip[1]}`;
+    $("#res-tip").textContent = tip[0];
+    $("#res-planes").textContent = t("nPlans", planes.length);
+    $("#res-destacados").textContent = estado.negocios.length ? t("nBusinesses", estado.negocios.length) : "";
+    $("#res-imperdibles").textContent = t("nPlaces", Math.min(6, base.length));
+    $("#res-campana").textContent = `${fmtCLP(recaudado)} ${t("of", fmtCLP(meta))}`;
   }
   function pintarTransparencia() {
     const meta = CFG.meta || 5000000, recibido = estado.campana.recaudado;
@@ -649,6 +924,11 @@
   const VISTAS = ["hoy", "comer", "hacer", "dia", "ayuda", "transparencia"];
   let vistaActual = null;
   function navegar() {
+    if (location.hash === "#aportar") {
+      history.replaceState(null, "", "#ayuda"); navegar();
+      setTimeout(() => $("#aportar").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" }), 300);
+      return;
+    }
     const v = VISTAS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "hoy";
     if (v === vistaActual) return;
     VISTAS.forEach((x) => { const s = $("#vista-" + x); s.hidden = x !== v; s.classList.remove("entrando"); });
@@ -671,7 +951,8 @@
     ["comer", "hacer"].forEach((m) => $("#buscar-" + m).addEventListener("input", (e) => { estado.q[m] = e.target.value; pintarModulo(m); }));
     $("#sel-idioma").addEventListener("change", (e) => { if (!IDIOMAS.includes(e.target.value)) return; lang = e.target.value; guardar("valdi-lang", lang); aplicarIdioma(); });
     const hi = $("#hora-inicio"); hi.value = estado.inicio;
-    hi.addEventListener("change", () => { if (hi.value) { estado.inicio = hi.value; guardar("valdi-inicio", hi.value); pintarDia(); } });
+    hi.addEventListener("change", () => { if (hi.value) { estado.inicio = hi.value; guardarDia(); pintarDia(); } });
+    $("#dia-fecha").addEventListener("change", (e) => cambiarFecha(e.target.value));
     $("#vaciar-dia").addEventListener("click", () => { estado.dia = []; guardarDia(); actualizarContador(true); pintarDia(); pintarTarjetasMas(); });
     $("#compartir-dia").addEventListener("click", async () => {
       const txt = textoDia();
@@ -688,7 +969,8 @@
     evToggle.addEventListener("click", () => { guardar("remada-evento-abierto", evToggle.getAttribute("aria-expanded") === "true" ? "0" : "1"); pintarToggle(); });
     pintarToggle();
     document.addEventListener("remada:idioma", pintarToggle);
-    $("#evento-plan").addEventListener("click", () => { const pl = estado.planes.find((x) => x.id === "ironman"); if (pl) { estado.inicio = "10:00"; guardar("valdi-inicio", "10:00"); $("#hora-inicio").value = "10:00"; cargarPlan(pl); } });
+    $("#evento-plan").addEventListener("click", () => { const pl = estado.planes.find((x) => x.id === "ironman"); if (pl) { cambiarFecha((estado.evento && estado.evento.inicio || "").slice(0, 10) || hoyISO()); estado.inicio = "10:00"; $("#hora-inicio").value = "10:00"; cargarPlan(pl); } });
+    iniciarPaneles(); iniciarMapas(); iniciarAporte(); iniciarInstalar(); iniciarBarra();
     const ficha = $("#ficha");
     ficha.addEventListener("click", (e) => { if (e.target === ficha) cerrarFicha(); });
     ficha.addEventListener("cancel", (e) => { e.preventDefault(); cerrarFicha(); });

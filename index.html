@@ -6,6 +6,10 @@
   <title>Remada · Guía de Valdivia</title>
   <meta name="description" content="Dónde comer, qué hacer y cómo armar tu día en Valdivia. Cada negocio de Remada apoya a la U13 del Club de Deportes Las Ánimas.">
   <meta name="theme-color" content="#0B5D6B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Remada">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
@@ -86,30 +90,69 @@
         </div>
       </article>
 
-      <article class="campana revelar" aria-labelledby="t-campana">
-        <div class="campana-top">
-          <span class="campana-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.7V17c0 .6-.5 1-1 1.2C7.8 18.8 7 20.2 7 22M14 14.7V17c0 .6.5 1 1 1.2 1.2.6 2 2 2 3.8M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></span>
-          <h2 id="t-campana" data-i18n="campaignTitle">Tu visita apoya a la U13 de Las Ánimas</h2>
-        </div>
-        <p class="campana-monto"><strong id="monto-recaudado">$0</strong> <span id="monto-meta"></span></p>
-        <div class="meta-barra" role="progressbar" aria-labelledby="t-campana" aria-valuemin="0" id="barra-meta"><div class="meta-relleno" id="relleno-meta"></div></div>
-        <p class="campana-pie" id="texto-meta"></p>
-        <a href="#transparencia" class="campana-link pressable" data-i18n="seeReport">Ver informe de transparencia</a>
-      </article>
+      <div class="paneles">
+        <section class="panel" data-panel="campana" data-abierto="1">
+          <h2 class="panel-cab"><button type="button" class="panel-btn pressable" aria-expanded="true" aria-controls="p-campana">
+            <span class="panel-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.7V17c0 .6-.5 1-1 1.2C7.8 18.8 7 20.2 7 22M14 14.7V17c0 .6.5 1 1 1.2 1.2.6 2 2 2 3.8M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></span>
+            <span class="panel-t"><span id="t-campana" data-i18n="campaignTitle">Tu visita apoya a la U13 de Las Ánimas</span><small class="panel-res" id="res-campana"></small></span>
+            <svg class="panel-flecha" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button></h2>
+          <div class="panel-cuerpo" id="p-campana"><div class="panel-in">
+            <div class="campana">
+              <p class="campana-monto"><strong id="monto-recaudado">$0</strong> <span id="monto-meta"></span></p>
+              <div class="meta-barra" role="progressbar" aria-labelledby="t-campana" aria-valuemin="0" id="barra-meta"><div class="meta-relleno" id="relleno-meta"></div></div>
+              <p class="campana-pie" id="texto-meta"></p>
+              <div class="campana-acc">
+                <a href="#transparencia" class="campana-link pressable" data-i18n="seeReport">Ver informe de transparencia</a>
+                <a href="#aportar" class="campana-link pressable" data-i18n="donateCta">Aportar yo también</a>
+              </div>
+            </div>
+          </div></div>
+        </section>
 
-      <div class="seccion-cab"><h2 data-i18n="plansTitle">Arma tu día en 1 toque</h2></div>
-      <div class="carrusel" id="lista-planes"></div>
+        <section class="panel" data-panel="planes" data-abierto="0">
+          <h2 class="panel-cab"><button type="button" class="panel-btn pressable" aria-expanded="false" aria-controls="p-planes">
+            <span class="panel-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <span class="panel-t"><span data-i18n="plansTitle">Arma tu día en 1 toque</span><small class="panel-res" id="res-planes"></small></span>
+            <svg class="panel-flecha" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button></h2>
+          <div class="panel-cuerpo" id="p-planes"><div class="panel-in"><div class="carrusel" id="lista-planes"></div></div></div>
+        </section>
 
-      <div class="seccion-cab"><h2 data-i18n="featuredTitle">Destacados</h2><a href="#comer" class="ver-todo" data-i18n="seeAll">Ver todo</a></div>
-      <div class="carrusel" id="lista-destacados"></div>
+        <section class="panel" data-panel="destacados" data-abierto="1">
+          <h2 class="panel-cab"><button type="button" class="panel-btn pressable" aria-expanded="true" aria-controls="p-destacados">
+            <span class="panel-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span>
+            <span class="panel-t"><span data-i18n="featuredTitle">Destacados</span><small class="panel-res" id="res-destacados"></small></span>
+            <svg class="panel-flecha" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button></h2>
+          <div class="panel-cuerpo" id="p-destacados"><div class="panel-in"><div class="carrusel" id="lista-destacados"></div><a href="#comer" class="ver-todo" data-i18n="seeAll">Ver todo</a></div></div>
+        </section>
 
-      <div class="seccion-cab"><h2 id="t-sugerencias" data-i18n="ideasTitle">Imperdibles</h2><a href="#hacer" class="ver-todo" data-i18n="seeAll">Ver todo</a></div>
-      <div class="carrusel" id="lista-sugerencias"></div>
+        <section class="panel" data-panel="imperdibles" data-abierto="1">
+          <h2 class="panel-cab"><button type="button" class="panel-btn pressable" aria-expanded="true" aria-controls="p-imperdibles">
+            <span class="panel-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span>
+            <span class="panel-t"><span id="t-sugerencias" data-i18n="ideasTitle">Imperdibles</span><small class="panel-res" id="res-imperdibles"></small></span>
+            <svg class="panel-flecha" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button></h2>
+          <div class="panel-cuerpo" id="p-imperdibles"><div class="panel-in"><div class="carrusel" id="lista-sugerencias"></div><a href="#hacer" class="ver-todo" data-i18n="seeAll">Ver todo</a></div></div>
+        </section>
 
-      <article class="tip revelar">
-        <span class="tip-etq" data-i18n="tipTitle">Tip del día</span>
-        <p id="tip-dia"></p>
-      </article>
+        <section class="panel" data-panel="tip" data-abierto="0">
+          <h2 class="panel-cab"><button type="button" class="panel-btn pressable" aria-expanded="false" aria-controls="p-tip">
+            <span class="panel-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+            <span class="panel-t"><span data-i18n="tipTitle">Tip del día</span><small class="panel-res" id="res-tip"></small></span>
+            <svg class="panel-flecha" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button></h2>
+          <div class="panel-cuerpo" id="p-tip"><div class="panel-in"><p class="tip-txt" id="tip-dia"></p></div></div>
+        </section>
+      </div>
+
+      <div class="instalar" id="instalar" hidden>
+        <img src="icons/isotipo-180.png" alt="" width="44" height="44">
+        <div><p class="instalar-t" data-i18n="installTitle">Usa Remada a pantalla completa</p><p class="instalar-p" id="instalar-p"></p></div>
+        <button type="button" class="btn pressable" id="btn-instalar" data-i18n="installBtn">Instalar</button>
+        <button type="button" class="instalar-x" id="instalar-x" aria-label="Cerrar" data-i18n-aria="close"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
     </section>
 
     <!-- COMER -->
@@ -121,8 +164,18 @@
         <input type="search" id="buscar-comer" data-i18n-ph="searchPh" placeholder="Busca un lugar o plato" autocomplete="off">
       </label>
       <div class="chips" id="filtros-comer" role="group" aria-label="Sector" data-i18n-aria="sectorLabel"></div>
+      <div class="vista-modo" role="group" aria-label="Vista" data-i18n-aria="viewLabel">
+        <button type="button" class="modo pressable" data-modo="lista" data-mod="comer" aria-pressed="true"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span data-i18n="viewList">Lista</span></button>
+        <button type="button" class="modo pressable" data-modo="mapa" data-mod="comer" aria-pressed="false"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 3 3 6v15l6-3 6 3 6-3V3l-6 3-6-3zM9 3v15M15 6v15"/></svg><span data-i18n="viewMap">Mapa</span></button>
+      </div>
       <p class="sr" id="n-comer" aria-live="polite"></p>
       <div id="lista-comer" class="grilla"></div>
+      <div class="mapa-caja" id="mapa-caja-comer" hidden>
+        <div class="mapa" id="mapa-comer" role="application" aria-label="Mapa" data-i18n-aria="mapLabel"></div>
+        <button type="button" class="mapa-yo pressable" data-mod="comer"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8"/></svg><span data-i18n="nearMe">Cerca de mí</span></button>
+        <div class="mapa-carrusel carrusel" id="mapa-lista-comer"></div>
+        <p class="mapa-nota" id="mapa-nota-comer" aria-live="polite"></p>
+      </div>
     </section>
 
     <!-- HACER -->
@@ -134,14 +187,28 @@
         <input type="search" id="buscar-hacer" data-i18n-ph="searchPh2" placeholder="Busca un lugar o actividad" autocomplete="off">
       </label>
       <div class="chips" id="filtros-hacer" role="group" aria-label="Sector" data-i18n-aria="sectorLabel"></div>
+      <div class="vista-modo" role="group" aria-label="Vista" data-i18n-aria="viewLabel">
+        <button type="button" class="modo pressable" data-modo="lista" data-mod="hacer" aria-pressed="true"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span data-i18n="viewList">Lista</span></button>
+        <button type="button" class="modo pressable" data-modo="mapa" data-mod="hacer" aria-pressed="false"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 3 3 6v15l6-3 6 3 6-3V3l-6 3-6-3zM9 3v15M15 6v15"/></svg><span data-i18n="viewMap">Mapa</span></button>
+      </div>
       <p class="sr" id="n-hacer" aria-live="polite"></p>
       <div id="lista-hacer" class="grilla"></div>
+      <div class="mapa-caja" id="mapa-caja-hacer" hidden>
+        <div class="mapa" id="mapa-hacer" role="application" aria-label="Mapa" data-i18n-aria="mapLabel"></div>
+        <button type="button" class="mapa-yo pressable" data-mod="hacer"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8"/></svg><span data-i18n="nearMe">Cerca de mí</span></button>
+        <div class="mapa-carrusel carrusel" id="mapa-lista-hacer"></div>
+        <p class="mapa-nota" id="mapa-nota-hacer" aria-live="polite"></p>
+      </div>
     </section>
 
     <!-- MI DÍA -->
     <section id="vista-dia" class="vista" aria-labelledby="t-dia" hidden>
       <h1 id="t-dia" data-i18n="dayTitle">Mi día</h1>
+      <div class="dia-fechas" role="group" aria-label="Fecha" data-i18n-aria="dayDateLabel" id="dia-fechas"></div>
       <div class="dia-controles">
+        <label class="campo"><span data-i18n="dayDate">Fecha</span>
+          <input type="date" id="dia-fecha">
+        </label>
         <label class="campo"><span data-i18n="startAt">Empiezo a las</span>
           <input type="time" id="hora-inicio" value="10:00" step="900">
         </label>
@@ -189,6 +256,18 @@
     <section id="vista-ayuda" class="vista" aria-labelledby="t-ayuda" hidden>
       <h1 id="t-ayuda" data-i18n="helpTitle">Ayuda</h1>
       <div class="emergencias" id="lista-emergencias"></div>
+      <section class="aportar" id="aportar" aria-labelledby="t-aportar">
+        <p class="aportar-etq" data-i18n="donateTag">Súmate a la causa</p>
+        <h2 id="t-aportar" data-i18n="donateTitle">Aporta a la U13 de Las Ánimas</h2>
+        <p data-i18n="donateBody">Con tu aporte voluntario ayudas a las familias que costean la participación de sus hijos en el deporte. Todo va al club hasta la meta de $5.000.000, y cada entrega se publica en Transparencia.</p>
+        <div class="montos" role="group" aria-label="Monto sugerido" data-i18n-aria="donateAmounts" id="montos"></div>
+        <dl class="banco" id="banco"></dl>
+        <div class="aportar-acc">
+          <button type="button" class="btn pressable" id="copiar-banco" data-i18n="donateCopy">Copiar datos</button>
+          <a class="btn-secundario pressable" id="avisar-aporte" data-i18n="donateNotify">Avisar mi aporte</a>
+        </div>
+        <p class="nota" data-i18n="donateNote">Transferencia a la cuenta dedicada a esta campaña. En el comentario escribe «U13» y tu nombre. No es una donación con beneficio tributario.</p>
+      </section>
       <details class="acordeon alerta" open>
         <summary data-i18n="tsunamiTitle">Sismo o tsunami en la costa</summary>
         <p data-i18n="tsunamiBody">Si el sismo no te deja estar de pie o suena la alarma: sube a pie a un lugar alto. No esperes el aviso oficial.</p>

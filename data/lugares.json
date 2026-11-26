@@ -21,7 +21,9 @@
    "fuente": "La Tercera",
    "fuenteUrl": "https://www.latercera.com/el-deportivo/noticia/a-casi-una-semana-de-la-largada-valdivia-afina-detalles-para-el-primer-ironman-de-distancia-completa-de-chile/",
    "lluvia": false,
-   "pt": "No domingo, 29 de novembro, a corrida passa pela Costanera (orla do rio), pela Avenida España e pelo centro histórico, com chegada em frente ao rio. Escolha um ponto fixo na Costanera para ver os atletas passarem."
+   "pt": "No domingo, 29 de novembro, a corrida passa pela Costanera (orla do rio), pela Avenida España e pelo centro histórico, com chegada em frente ao rio. Escolha um ponto fixo na Costanera para ver os atletas passarem.",
+   "lat": -39.815,
+   "lng": -73.247
   },
   {
    "id": "ironman-saval",
@@ -43,7 +45,9 @@
    "fuente": "Diario UACh",
    "fuenteUrl": "https://diario.uach.cl/uach-sera-protagonista-del-ironman-70-3-valdivia/",
    "lluvia": false,
-   "pt": "Aqui fica a área de transição. Na sexta, 27 de novembro, a partir das 17h, tem IRONKIDS e Family Run de 3 e 5 km, ótimo para ir em família."
+   "pt": "Aqui fica a área de transição. Na sexta, 27 de novembro, a partir das 17h, tem IRONKIDS e Family Run de 3 e 5 km, ótimo para ir em família.",
+   "lat": -39.8017,
+   "lng": -73.2422
   },
   {
    "id": "mercado-fluvial",
@@ -64,7 +68,9 @@
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/atractivos/isla-teja-y-mercado-fluvial/",
    "lluvia": false,
-   "pt": "Venda de peixes, frutos do mar e produtos locais ao lado de uma colônia de lobos-marinhos, na Costanera."
+   "pt": "Venda de peixes, frutos do mar e produtos locais ao lado de uma colônia de lobos-marinhos, na Costanera.",
+   "lat": -39.8143,
+   "lng": -73.2481
   },
   {
    "id": "mercado-municipal",
@@ -85,7 +91,9 @@
    "fuente": "Viagens e Caminhos",
    "fuenteUrl": "https://www.viagensecaminhos.com/valdivia-chile/",
    "lluvia": true,
-   "pt": "Artesanato e cocinerías (restaurantes simples) com comida típica, em frente à Costanera."
+   "pt": "Artesanato e cocinerías (restaurantes simples) com comida típica, em frente à Costanera.",
+   "lat": -39.8139,
+   "lng": -73.247
   },
   {
    "id": "isla-teja",
@@ -106,7 +114,9 @@
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/atractivos/isla-teja-y-mercado-fluvial/",
    "lluvia": false,
-   "pt": "Dá para chegar a pé pela ponte Pedro de Valdivia. Reúne o Jardim Botânico, museus e o Parque Prochelle."
+   "pt": "Dá para chegar a pé pela ponte Pedro de Valdivia. Reúne o Jardim Botânico, museus e o Parque Prochelle.",
+   "lat": -39.81,
+   "lng": -73.258
   },
   {
    "id": "jardin-botanico",
@@ -127,7 +137,9 @@
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/itinerarios/conoce-los-imperdibles-de-valdivia-en-2-dias/",
    "lluvia": false,
-   "pt": "Flora nativa e exótica à beira do rio. Bom lugar para caminhar ou fazer um piquenique."
+   "pt": "Flora nativa e exótica à beira do rio. Bom lugar para caminhar ou fazer um piquenique.",
+   "lat": -39.8045,
+   "lng": -73.2525
   },
   {
    "id": "casa-anwandter",
@@ -148,7 +160,9 @@
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/itinerarios/conoce-los-imperdibles-de-valdivia-en-2-dias/",
    "lluvia": true,
-   "pt": "História mapuche e da colonização alemã. Programa em lugar coberto para dias de chuva."
+   "pt": "História mapuche e da colonização alemã. Programa em lugar coberto para dias de chuva.",
+   "lat": -39.8117,
+   "lng": -73.2509
   },
   {
    "id": "navegacion-rio",
@@ -169,7 +183,9 @@
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/itinerarios/itinerari-en-niebla-historia-y-selva-valdiviana/",
    "lluvia": false,
-   "pt": "Passeios de barco saindo da Costanera. Dá para ver estaleiros, a ponte levadiça e lobos-marinhos."
+   "pt": "Passeios de barco saindo da Costanera. Dá para ver estaleiros, a ponte levadiça e lobos-marinhos.",
+   "lat": -39.8155,
+   "lng": -73.2486
   },
   {
    "id": "fuerte-niebla",
@@ -190,7 +206,9 @@
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/itinerarios/itinerari-en-niebla-historia-y-selva-valdiviana/",
    "lluvia": false,
-   "pt": "Fortificação espanhola do século XVII sobre o mar. Cerca de 25 minutos de ônibus desde o centro."
+   "pt": "Fortificação espanhola do século XVII sobre o mar. Cerca de 25 minutos de ônibus desde o centro.",
+   "lat": -39.8686,
+   "lng": -73.4006
   },
   {
    "id": "fuertes-corral",
@@ -211,7 +229,9 @@
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/destinos/valdivia/",
    "lluvia": false,
-   "pt": "Fortes coloniais do século XVII. Chega-se de balsa ou lancha saindo de Niebla."
+   "pt": "Fortes coloniais do século XVII. Chega-se de balsa ou lancha saindo de Niebla.",
+   "lat": -39.887,
+   "lng": -73.431
   },
   {
    "id": "parque-oncol",
@@ -232,7 +252,9 @@
    "fuente": "chile.travel",
    "fuenteUrl": "https://chile.travel/pt-br/itinerarios/itinerario-em-niebla-historia-e-selva-valdiviana/",
    "lluvia": false,
-   "pt": "Reserva de floresta valdiviana costeira, com trilhas e mirantes. Chega-se com passeio guiado ou de carro, em cerca de 1 hora."
+   "pt": "Reserva de floresta valdiviana costeira, com trilhas e mirantes. Chega-se com passeio guiado ou de carro, em cerca de 1 hora.",
+   "lat": -39.6958,
+   "lng": -73.3133
   },
   {
    "id": "cervecerias",
@@ -253,7 +275,9 @@
    "fuente": "Calendario Chile",
    "fuenteUrl": "https://www.calendariochile.com/turismo/los-mejores-planes-para-hacer-en-valdivia-chile",
    "lluvia": true,
-   "pt": "Há visitas guiadas, degustações e restaurantes, por exemplo na Kunstmann, a caminho de Niebla."
+   "pt": "Há visitas guiadas, degustações e restaurantes, por exemplo na Kunstmann, a caminho de Niebla.",
+   "lat": -39.8366,
+   "lng": -73.2928
   }
  ],
  "planes": [

@@ -1,8 +1,9 @@
 // Service worker: la app y los datos base funcionan sin conexión.
-const VERSION = "remada-v8";
+const VERSION = "remada-v9";
 const FOTOS = "valdi-fotos-v1";
 const BASE = ["./", "index.html", "styles.css", "app.js", "onboarding.js", "analytics.js", "config.js", "data/lugares.json", "manifest.webmanifest",
-  "icons/favicon.svg", "icons/favicon-32.png", "icons/isotipo-180.png", "icons/isotipo-512.png", "icons/logo-bajada-blanco.svg"];
+  "icons/favicon.svg", "icons/favicon-32.png", "icons/isotipo-180.png", "icons/isotipo-512.png", "icons/logo-bajada-blanco.svg",
+  "vendor/leaflet/leaflet.js", "vendor/leaflet/leaflet.css"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(BASE)).then(() => self.skipWaiting()));
