@@ -662,10 +662,18 @@
     let m = mapas[mod];
     if (!m) {
       const mapa = L.map("mapa-" + mod, { zoomControl: true, attributionControl: true }).setView(VALDIVIA, 13);
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-        maxZoom: 19, subdomains: "abcd",
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-      }).addTo(mapa);
+      // Teselas sin clave: OpenStreetMap (con atribución, según su política de uso).
+      // Si fallan varias seguidas, se cambia a OSM Francia, que tampoco pide clave.
+      const OSM = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+      const capas = [
+        ["https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: OSM }],
+        ["https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png", { maxZoom: 19, subdomains: "abc", attribution: OSM + ' · <a href="https://www.openstreetmap.fr/">OSM France</a>' }]
+      ];
+      let capa = L.tileLayer(...capas[0]).addTo(mapa), fallos = 0, cargadas = 0;
+      capa.on("tileload", () => { cargadas++; });
+      capa.on("tileerror", () => {
+        if (++fallos >= 3 && cargadas === 0 && capas.length > 1) { mapa.removeLayer(capa); capas.shift(); capa = L.tileLayer(...capas[0]).addTo(mapa); }
+      });
       m = mapas[mod] = { mapa, capa: L.layerGroup().addTo(mapa), yo: null, marcadores: {} };
     }
     setTimeout(() => m.mapa.invalidateSize(), 50);
