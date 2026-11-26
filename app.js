@@ -330,7 +330,12 @@
   const fmtCLP = (n) => new Intl.NumberFormat(loc(), { style: "currency", currency: "CLP", maximumFractionDigits: 0 }).format(n);
   const fotoUrl = (p, w = 800) => !p.foto ? "" : /^https:\/\//.test(p.foto) ? p.foto : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(p.foto)}?width=${w}`;
   const fotoPagina = (p) => (p.foto && !/^https:\/\//.test(p.foto) ? "https://commons.wikimedia.org/wiki/File:" + encodeURIComponent(p.foto.replace(/ /g, "_")) : "");
-  const mapaUrl = (p) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.mapa || p.nombre + ", Valdivia");
+  // "Cómo llegar": URL pública de Google Maps (sin API key). Usa coordenadas si las hay; si no, la dirección.
+  const mapaUrl = (p) => {
+    const pos = p.lat && p.lng ? [p.lat, p.lng] : p._pos;
+    const destino = pos ? `${Number(pos[0]).toFixed(5)},${Number(pos[1]).toFixed(5)}` : (p.mapa || [p.nombre, p.direccion, "Valdivia"].filter(Boolean).join(", "));
+    return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(destino);
+  };
   const corto = (p) => (p.corto && tr(p.corto)) || tr(p);
   const largo = (p) => tr(p);
   const nomSector = (s) => (SECTOR_TR[lang] && SECTOR_TR[lang][s]) || s;
@@ -703,6 +708,7 @@
     $("#mapa-lista-" + mod).replaceChildren(...lista.map((p, i) => {
       const c = tarjeta(p, i); c.dataset.id = p.id; c.classList.add("visible");
       if (estado.yo && p._km != null) c.querySelector(".card-meta").prepend(el("span", { class: "dist", text: fmtDist(p._km) }));
+      c.querySelector(".card-cuerpo").append(el("a", { class: "card-ir pressable", href: mapaUrl(p), target: "_blank", rel: "noopener", "aria-label": `${t("directions")}: ${p.nombre}`, html: I.nav + " " }, document.createTextNode(t("directions"))));
       return c;
     }));
     $("#mapa-nota-" + mod).textContent = lista.length < items.length ? t("mapSome", lista.length, items.length) : "";
