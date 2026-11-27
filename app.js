@@ -20,7 +20,7 @@
       source: "Fuente", search: "Buscar", searchPh: "Busca un lugar o plato", searchPh2: "Busca un lugar o actividad",
       footerBusiness: "¿Tienes un negocio en Valdivia?", footerCta: "Súmate y apoya a la U13",
       footerNote: "«Aliado» y «Destacado» indican un aporte mayor a la campaña. Info referencial: confirma horarios antes de ir.",
-      photoCredits: "Fotos: Wikimedia Commons, con licencias libres. Toca el crédito de cada foto para ver autor y licencia.",
+      photoCredits: "Fotos de lugares: Wikimedia Commons (licencias libres) o del autor indicado; las de negocios, de cada negocio. Toca el crédito para ver autor y licencia.",
       tabToday: "Hoy", tabEat: "Comer", tabDo: "Hacer", tabDay: "Mi día", tabHelp: "Ayuda",
       all: "Todo", directions: "Cómo llegar", call: "Llamar", web: "Sitio web", whatsapp: "WhatsApp",
       featured: "Destacado", main: "Aliado", supports: "Apoya a la U13", indoor: "Bajo techo",
@@ -78,7 +78,7 @@
       source: "Source", search: "Search", searchPh: "Search a place or dish", searchPh2: "Search a place or activity",
       footerBusiness: "Own a business in Valdivia?", footerCta: "Join and support the U13 team",
       footerNote: "“Partner” and “Featured” mean a larger contribution to the campaign. Info is for reference: check hours before you go.",
-      photoCredits: "Photos: Wikimedia Commons, under free licenses. Tap each photo credit to see author and license.",
+      photoCredits: "Place photos: Wikimedia Commons (free licenses) or the credited author; business photos come from each business. Tap a credit to see author and license.",
       tabToday: "Today", tabEat: "Eat", tabDo: "Do", tabDay: "My day", tabHelp: "Help",
       all: "All", directions: "Directions", call: "Call", web: "Website", whatsapp: "WhatsApp",
       featured: "Featured", main: "Partner", supports: "Supports U13", indoor: "Indoors",
@@ -136,7 +136,7 @@
       source: "Fonte", search: "Buscar", searchPh: "Busque um lugar ou prato", searchPh2: "Busque um lugar ou atividade",
       footerBusiness: "Tem um negócio em Valdivia?", footerCta: "Participe e apoie o sub-13",
       footerNote: "“Aliado” e “Destaque” indicam uma contribuição maior para a campanha. Informação de referência: confirme os horários antes de ir.",
-      photoCredits: "Fotos: Wikimedia Commons, com licenças livres. Toque no crédito de cada foto para ver autor e licença.",
+      photoCredits: "Fotos de lugares: Wikimedia Commons (licenças livres) ou do autor indicado; as de estabelecimentos, de cada um. Toque no crédito para ver autor e licença.",
       tabToday: "Hoje", tabEat: "Comer", tabDo: "Fazer", tabDay: "Meu dia", tabHelp: "Ajuda",
       all: "Tudo", directions: "Como chegar", call: "Ligar", web: "Site", whatsapp: "WhatsApp",
       featured: "Destaque", main: "Aliado", supports: "Apoia o sub-13", indoor: "Lugar coberto",
@@ -328,8 +328,18 @@
   const slug = (s) => sinTildes(s).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const url = (u) => (/^https?:\/\//i.test(u) ? u : "https://" + u.replace(/^\/+/, ""));
   const fmtCLP = (n) => new Intl.NumberFormat(loc(), { style: "currency", currency: "CLP", maximumFractionDigits: 0 }).format(n);
-  const fotoUrl = (p, w = 800) => !p.foto ? "" : /^https:\/\//.test(p.foto) ? p.foto : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(p.foto)}?width=${w}`;
-  const fotoPagina = (p) => (p.foto && !/^https:\/\//.test(p.foto) ? "https://commons.wikimedia.org/wiki/File:" + encodeURIComponent(p.foto.replace(/ /g, "_")) : "");
+  // Una foto puede ser: nombre de archivo de Wikimedia Commons, foto de Google Drive (lh3…/d/ID, la sube el panel) o URL https.
+  const DRIVE = /^https:\/\/lh3\.googleusercontent\.com\/d\/([\w-]+)$/;
+  const fotoSrc = (f, w = 800) => !f ? "" : DRIVE.test(f) ? `${f}=w${w}` : /^https:\/\//.test(f) ? f : `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(f)}?width=${w}`;
+  const paginaCommons = (f) => (f && !/^https:\/\//.test(f) ? "https://commons.wikimedia.org/wiki/File:" + encodeURIComponent(f.replace(/ /g, "_")) : "");
+  const fotoUrl = (p, w = 800) => fotoSrc(p.foto, w);
+  const separarFotos = (v) => String(v || "").split(/\s*\|\s*/).map((x) => x.trim()).filter(Boolean);
+  // Crédito de una foto: enlace a Commons, o el texto que puso el panel ("Foto: …").
+  function credito(f, p, extra = {}) {
+    const pag = paginaCommons(f);
+    if (pag) return el("a", { class: "credito", href: pag, target: "_blank", rel: "noopener", text: "© Wikimedia Commons", "aria-label": `${t("photo")}: Wikimedia Commons`, ...extra });
+    return p.credito ? el("span", { class: "credito", text: p.credito, ...extra }) : null;
+  }
   // "Cómo llegar": URL pública de Google Maps (sin API key). Usa coordenadas si las hay; si no, la dirección.
   const mapaUrl = (p) => {
     const pos = p.lat && p.lng ? [p.lat, p.lng] : p._pos;
@@ -361,7 +371,12 @@
     if (!src) { ph(); return null; }
     const img = el("img", { src, alt, loading: "lazy", decoding: "async" });
     img.addEventListener("load", () => { img.classList.add("cargada"); cont.classList.add("lista"); });
-    img.addEventListener("error", () => { img.remove(); ph(); });
+    img.addEventListener("error", () => {
+      // Fotos de Drive: si falla el servidor de imágenes, se intenta la miniatura de Drive una vez.
+      const m = img.src.match(/^https:\/\/lh3\.googleusercontent\.com\/d\/([\w-]+)=w(\d+)$/);
+      if (m) { img.src = `https://drive.google.com/thumbnail?id=${m[1]}&sz=w${m[2]}`; return; }
+      img.remove(); ph();
+    });
     return img;
   }
 
@@ -396,13 +411,14 @@
   const recortar = (d) => { d = d || ""; return d.length > 70 ? d.slice(0, 68).replace(/\s+\S*$/, "") + "…" : d; };
   function aNegocio(f) {
     const nv = sinTildes(f.nivel || "").trim();
+    const fotos = separarFotos(f.foto).filter((u) => /^https:\/\//.test(u));
     const tipo = /comida|bebida|comer|restaurant|cafe/i.test(f.rubro || "") ? "comer" : "hacer";
     const d = f.descripcion || "";
     return {
       id: "neg-" + slug(f.nombre), negocio: true, tipo, nombre: f.nombre, sector: f.sector || "",
       direccion: f.direccion || "", lat: Number(f.lat) || null, lng: Number(f.lng) || null, horario: f.horario || "", es: d, en: f.descripcion_en || "", pt: f.descripcion_pt || "",
       corto: { es: recortar(d), en: recortar(f.descripcion_en) || undefined, pt: recortar(f.descripcion_pt) || undefined },
-      web: f.web || "", telefono: f.telefono || "", foto: /^https:\/\//.test(f.foto || "") ? f.foto : "", promocion: f.promocion || "",
+      web: f.web || "", telefono: f.telefono || "", foto: fotos[0] || "", fotos, promocion: f.promocion || "",
       nivel: nv.startsWith("aliado") || nv.startsWith("principal") ? 0 : nv.startsWith("destacado") ? 1 : 2,
       duracion: tipo === "comer" ? 60 : 90, mapa: [f.nombre, f.direccion, "Valdivia"].filter(Boolean).join(", ")
     };
@@ -427,8 +443,8 @@
     const img = imagen(fotoUrl(p, 640), "", media, p.tipo === "comer" ? I.food : I.mountain);
     if (img) media.append(img);
     media.append(insignias(p));
-    const pag = fotoPagina(p);
-    if (pag) media.append(el("a", { class: "credito", href: pag, target: "_blank", rel: "noopener", text: "© Wikimedia Commons", style: "z-index:2", "aria-label": `${t("photo")}: Wikimedia Commons` }));
+    const cr = credito(p.foto, p, { style: "z-index:2" });
+    if (cr) media.append(cr);
     const meta = el("div", { class: "card-meta" },
       p.sector ? el("span", { html: I.pin + " " }, document.createTextNode(sector(p))) : null,
       p.duracion ? el("span", { html: I.clock + " " }, document.createTextNode(t("min", p.duracion))) : null);
@@ -461,10 +477,14 @@
   function abrirFicha(p) {
     const d = $("#ficha");
     const media = el("div", { class: "hoja-media" });
-    const img = imagen(fotoUrl(p, 1200), p.nombre, media, p.tipo === "comer" ? I.food : I.mountain);
-    if (img) { img.loading = "eager"; media.append(img); }
-    const pag = fotoPagina(p);
-    if (pag) media.append(el("a", { class: "credito", href: pag, target: "_blank", rel: "noopener", text: "© Wikimedia Commons" }));
+    const fotos = p.fotos && p.fotos.length ? p.fotos : p.foto ? [p.foto] : [];
+    if (fotos.length > 1) media.append(galeria(p, fotos));
+    else {
+      const img = imagen(fotoSrc(fotos[0], 1200), p.nombre, media, p.tipo === "comer" ? I.food : I.mountain);
+      if (img) { img.loading = "eager"; media.append(img); }
+      const cr = credito(fotos[0], p);
+      if (cr) media.append(cr);
+    }
     media.append(el("button", { type: "button", class: "hoja-cerrar", html: I.x, "aria-label": t("close"), onclick: cerrarFicha }));
 
     const acc = el("div", { class: "hoja-acciones" },
@@ -497,6 +517,26 @@
     $("#ficha-cuerpo").replaceChildren(media, info);
     d.classList.remove("cerrando");
     if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+  }
+  // Galería deslizable de la ficha (negocios y lugares con más de una foto).
+  function galeria(p, fotos) {
+    const pista = el("div", { class: "galeria", tabindex: "0", role: "region", "aria-label": `${t("photo")}: ${p.nombre}` });
+    const puntos = el("div", { class: "galeria-puntos", "aria-hidden": "true" });
+    fotos.forEach((f, i) => {
+      const slide = el("div", { class: "galeria-foto" });
+      const img = imagen(fotoSrc(f, 1200), i ? "" : p.nombre, slide, p.tipo === "comer" ? I.food : I.mountain);
+      if (img) { if (i === 0) img.loading = "eager"; slide.append(img); }
+      const cr = credito(f, p); if (cr) slide.append(cr);
+      pista.append(slide);
+      puntos.append(el("span", { class: i ? "" : "activo" }));
+    });
+    const marcar = () => {
+      const i = Math.round(pista.scrollLeft / Math.max(1, pista.clientWidth));
+      [...puntos.children].forEach((d, k) => d.classList.toggle("activo", k === Math.abs(i)));
+    };
+    pista.addEventListener("scroll", () => requestAnimationFrame(marcar), { passive: true });
+    const cont = el("div", { class: "galeria-cont" }, pista, puntos);
+    return cont;
   }
   function cerrarFicha() {
     const d = $("#ficha");
@@ -996,6 +1036,15 @@
     navegar();
 
     try { const r = await fetch("data/lugares.json"); const d = await r.json(); estado.lugares = d.lugares; estado.planes = d.planes || []; estado.evento = d.evento || null; } catch (e) { /* sin datos */ }
+    // Fotos de atracciones elegidas en el panel (hoja "Fotos lugares"): reemplazan a la de lugares.json.
+    const fotosLugares = await traerCSV(CFG.fotosLugaresCsv, "remada-fotos-lugares");
+    if (fotosLugares) {
+      const porId = new Map(fotosLugares.map((f) => [f.id, f]));
+      estado.lugares.forEach((p) => {
+        const f = porId.get(p.id); const lista = f ? separarFotos(f.fotos) : [];
+        if (lista.length) { p.fotos = lista; p.foto = lista[0]; p.credito = f.credito || ""; }
+      });
+    }
     const filas = await traerCSV(CFG.negociosCsv, "valdi-negocios");
     if (filas) estado.negocios = filas.filter((f) => /^s[ií]$/i.test(f.publicar || "") && f.nombre).map(aNegocio);
     estado.porId = new Map([...estado.lugares, ...estado.negocios].map((p) => [p.id, p]));
