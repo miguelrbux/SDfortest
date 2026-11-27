@@ -16,7 +16,9 @@ La web lee la planilla cada vez que alguien la abre, así que no hay que volver 
 Aliado del deporte → Destacado → Colaborador → lugares públicos. Dentro de cada nivel el orden rota cada día.
 
 ## Fotos
-Las fotos de los lugares públicos vienen de Wikimedia Commons (licencias libres). En `data/lugares.json`, el campo `foto` es el nombre del archivo en Commons; cada tarjeta enlaza a su página con autor y licencia. Para un negocio, pon en la columna `foto` una URL https de una imagen suya.
+Las fotos se cargan desde el panel admin (carpeta `panel-admin` del proyecto), que las guarda en Google Drive ("Remada · fotos", acceso con enlace) y escribe sus URLs `https://lh3.googleusercontent.com/d/ID`. La web pide cada foto al tamaño que necesita (`=w640`, `=w1200`).
+- **Negocios**: columna `foto` de Publicados, con varias fotos separadas por ` | `. La primera es la portada; la ficha muestra una galería deslizable. El panel publica hasta 3 fotos para Colaborador y 8 para Destacado y Aliado. Los negocios también pueden mandar fotos con un enlace personal; quedan por revisar en el panel hasta que se aprueban.
+- **Atracciones**: en `data/lugares.json`, `foto` es el nombre del archivo en Wikimedia Commons (licencia libre; el crédito enlaza a su página). Si en el panel se eligen otras fotos, quedan en la hoja **Fotos lugares** (`id, fotos, credito`, publicada como CSV en `fotosLugaresCsv`) y reemplazan a la de `lugares.json`. Una entrada sin `https://` se toma como archivo de Commons.
 
 ## Mi día
 El turista agrega lugares con «+» o carga un plan listo (`planes` en `data/lugares.json`). Puede ordenar, ajustar el tiempo de cada parada, abrir la ruta completa en Google Maps y compartirla. Se guarda solo en su teléfono.

@@ -15,6 +15,10 @@ window.VALDI_CONFIG = {
   // Informe de transparencia: hoja "Traspasos" publicada como CSV. Columnas (fila 1):
   // fecha (AAAA-MM-DD), monto, destino, comprobante (URL pública, opcional), nota (opcional)
   traspasosCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkwmsgRZonCTa0RcapNSvlVskGuk1dcRcAUg0fLYjutWLAnR2zi_UgoMgCLcgYfJvyjllWhQPTxmIL/pub?single=true&output=csv&gid=0",
+  // Fotos de atracciones elegidas en el panel: hoja "Fotos lugares" publicada como CSV.
+  // Columnas: id (el de data/lugares.json), fotos (separadas por " | "; la primera es la portada), credito.
+  // Si la hoja no está publicada, la web usa las fotos de data/lugares.json.
+  fotosLugaresCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQkwmsgRZonCTa0RcapNSvlVskGuk1dcRcAUg0fLYjutWLAnR2zi_UgoMgCLcgYfJvyjllWhQPTxmIL/pub?single=true&output=csv&gid=1127202601",
   meta: 5000000,
   recaudado: 0,
   negocios: 0,

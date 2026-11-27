@@ -1,5 +1,5 @@
 // Service worker: la app y los datos base funcionan sin conexión.
-const VERSION = "remada-v11";
+const VERSION = "remada-v12";
 const FOTOS = "valdi-fotos-v1";
 const BASE = ["./", "index.html", "styles.css", "app.js", "onboarding.js", "analytics.js", "config.js", "data/lugares.json", "manifest.webmanifest",
   "icons/favicon.svg", "icons/favicon-32.png", "icons/isotipo-180.png", "icons/isotipo-512.png", "icons/logo-bajada-blanco.svg",
@@ -15,8 +15,8 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const u = new URL(e.request.url);
   if (e.request.method !== "GET") return;
-  // Fotos de Wikimedia: caché primero, para verlas también sin conexión.
-  if (/(^|\.)wikimedia\.org$/.test(u.hostname) && e.request.destination === "image") {
+  // Fotos de Wikimedia y de Drive (las sube el panel): caché primero, para verlas también sin conexión.
+  if (/(^|\.)(wikimedia\.org|googleusercontent\.com)$/.test(u.hostname) && e.request.destination === "image") {
     e.respondWith(caches.open(FOTOS).then((c) => c.match(e.request).then((hit) => hit || fetch(e.request).then((r) => { c.put(e.request, r.clone()); return r; }))));
     return;
   }
